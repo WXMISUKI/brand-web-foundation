@@ -1,0 +1,50 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build
+.next/
+out/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Debug
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Turbo
+.turbo/
+
+# Testing
+coverage/
+
+# Misc
+*.tsbuildinfo
+
+# Payload CMS runtime
+apps/cms/data/*
+apps/cms/media/*
+!apps/cms/data/.gitkeep
+!apps/cms/media/.gitkeep
+
+# Local tooling data (do not ship in template)
+.workbuddy/
+.codegraph/
