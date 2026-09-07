@@ -1,0 +1,42 @@
+{
+  "name": "cms",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --port 3001",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .next out",
+    "payload": "payload",
+    "generate:types": "payload generate:types",
+    "generate:importmap": "payload generate:importmap"
+  },
+  "dependencies": {
+    "next": "~15.4.11",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "payload": "^3.0.0",
+    "@payloadcms/next": "^3.0.0",
+    "@payloadcms/db-sqlite": "^3.0.0",
+    "@payloadcms/richtext-lexical": "^3.0.0",
+    "sharp": "^0.33.5",
+    "graphql": "^16.10.0",
+    "@brand/ui": "workspace:*",
+    "@brand/i18n": "workspace:*",
+    "@brand/analytics": "workspace:*",
+    "@brand/lib": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@types/node": "^22.0.0",
+    "tailwindcss": "^4.0.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "eslint": "^9.0.0",
+    "@brand/config": "workspace:*"
+  }
+}
