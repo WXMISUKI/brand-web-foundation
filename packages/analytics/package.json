@@ -1,0 +1,19 @@
+{
+  "name": "@brand/analytics",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0",
+    "@types/node": "^22.0.0",
+    "eslint": "^9.0.0",
+    "@brand/config": "workspace:*"
+  }
+}
