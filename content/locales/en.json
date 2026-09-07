@@ -1,0 +1,11 @@
+{
+  "home": {
+    "title": "Welcome",
+    "subtitle": "Brand platform"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "notFound": "Page not found"
+  }
+}

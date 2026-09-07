@@ -1,0 +1,11 @@
+{
+  "home": {
+    "title": "Bem-vindo",
+    "subtitle": "Plataforma de marca"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "notFound": "Página não encontrada"
+  }
+}
