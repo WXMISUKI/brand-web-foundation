@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { heroMedia } from "../data/hero-media";
 
 const chineseSlides = [
   { eyebrow: "NURTURE EVERY POSSIBILITY", title: <>用专业营养，<br />陪伴每一次生长。</>, description: "从土壤到作物，探索更适合种植需求的植物营养方案。", href: "/products", action: "探索产品" },
@@ -19,6 +20,8 @@ export function Hero({ locale = "zh" }: { locale?: "zh" | "en" }) {
   const [playing, setPlaying] = useState(false);
   const [hovered, setHovered] = useState(false);
   const [visible, setVisible] = useState(false);
+  const [failedVideo, setFailedVideo] = useState<string | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const playingBeforePointer = useRef(false);
   const slides = locale === "en" ? englishSlides : chineseSlides;
   useEffect(() => {
@@ -37,9 +40,16 @@ export function Hero({ locale = "zh" }: { locale?: "zh" | "en" }) {
     return () => window.clearInterval(timer);
   }, [playing, hovered, visible, slides.length]);
   const slide = slides[active];
+  const media = heroMedia[active];
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (playing && !hovered && visible) void video.play().catch(() => { if (video.error) setFailedVideo(media.video ?? null); });
+    else video.pause();
+  }, [active, playing, hovered, visible, media.video, failedVideo]);
   const change = (step: number) => setActive((index) => (index + step + slides.length) % slides.length);
   return <section className="hero" aria-label={locale === "en" ? "Featured topics" : "首页主题轮播"} aria-roledescription={locale === "en" ? "carousel" : "轮播"} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} onFocusCapture={() => setPlaying(false)}>
-    <div className="hero-art" aria-hidden="true" />
+    <div className="hero-art" aria-hidden="true" style={{ backgroundImage: `url("${media.image}")` }}>{media.video && media.video !== failedVideo && <video key={media.video} ref={videoRef} className="hero-video" src={media.video} poster={media.image} muted loop playsInline preload="metadata" onError={() => setFailedVideo(media.video ?? null)} />}</div>
     <div className="hero-content" aria-live={playing ? "off" : "polite"} aria-atomic="true">
       <span className="eyebrow light">{slide.eyebrow}</span><h1>{slide.title}</h1><p>{slide.description}</p>
       <Link className="button white" href={slide.href}>{slide.action} <span aria-hidden="true">↗</span></Link>
