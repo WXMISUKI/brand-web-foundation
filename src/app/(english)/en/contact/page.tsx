@@ -1,3 +1,3 @@
-import Link from "next/link";
 import { EnglishHeader, EnglishFooter } from "../../../../components/english-site";
-export default function EnglishContact(){return <div lang="en"><EnglishHeader chinesePath="/contact" /><main className="inner"><div className="crumb"><Link href="/en">Home</Link> / Contact</div><div className="inner-heading"><span className="eyebrow">CONTACT US · SAMPLE</span><h1>Let’s talk.</h1><p>We look forward to learning about your growing and business needs.</p></div><section className="about-block"><h2>Contact information</h2><p>Phone, email, address and enquiry channels await owner confirmation. No form or messaging service is connected.</p><Link className="text-link" href="/en/products">Explore products ↗</Link></section></main><EnglishFooter /></div>}
+import { ContactContent } from "../../../../components/contact-content";
+export default function EnglishContact(){return <><EnglishHeader chinesePath="/contact" /><ContactContent locale="en" /><EnglishFooter /></>}

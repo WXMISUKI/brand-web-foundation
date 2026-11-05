@@ -1,2 +1,3 @@
-import Link from "next/link";import {Header,Footer} from "../../../components/site";
-export default function Contact(){return <><Header englishPath="/en/contact"/><main className="inner"><div className="crumb"><Link href="/">首页</Link> / 联系我们</div><div className="inner-heading"><span className="eyebrow">CONTACT US</span><h1>期待与您交流。</h1><p>我们期待了解您的种植需求与合作计划。</p></div><section className="about-block"><h2>联系方式</h2><p>电话、邮箱、地址和询盘方式等待业主确认。当前页面未接入表单或信息发送服务。</p><Link className="text-link" href="/products">浏览产品 ↗</Link></section></main><Footer/></>}
+import { Header, Footer } from "../../../components/site";
+import { ContactContent } from "../../../components/contact-content";
+export default function Contact(){return <><Header englishPath="/en/contact"/><ContactContent locale="zh"/><Footer/></>}
