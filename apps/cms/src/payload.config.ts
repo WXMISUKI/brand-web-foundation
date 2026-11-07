@@ -12,6 +12,10 @@ import { Pages } from './collections/pages';
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
+if (!process.env.PAYLOAD_SECRET) {
+  throw new Error('PAYLOAD_SECRET environment variable is required.');
+}
+
 export default buildConfig({
   admin: {
     user: Users.slug,
@@ -30,7 +34,7 @@ export default buildConfig({
   },
   collections: [Users, Media, Pages],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || 'CHANGE-ME-IN-PRODUCTION',
+  secret: process.env.PAYLOAD_SECRET,
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
@@ -48,11 +52,21 @@ export default buildConfig({
     });
 
     if (existingUsers.totalDocs === 0) {
+      const seedEmail = process.env.SEED_ADMIN_EMAIL;
+      const seedPassword = process.env.SEED_ADMIN_PASSWORD;
+
+      if (!seedEmail || !seedPassword) {
+        payload.logger.warn(
+          'SEED_ADMIN_EMAIL and SEED_ADMIN_PASSWORD environment variables are required to seed the initial admin user.',
+        );
+        return;
+      }
+
       await payload.create({
         collection: 'users',
         data: {
-          email: process.env.SEED_ADMIN_EMAIL || 'admin@example.com',
-          password: process.env.SEED_ADMIN_PASSWORD || 'changeme123',
+          email: seedEmail,
+          password: seedPassword,
           role: 'admin',
         },
       });

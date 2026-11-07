@@ -1,6 +1,6 @@
 # Foundation Hardening — Acceptance Report (A1–A10)
 
-- **Date**: 2026-09-07
+- **Date**: 2026-09-23
 - **Repo**: `brand-web-foundation`
 - **Spec**: `docs/specs/foundation-hardening-spec.md`
 - **ADR**: `docs/decisions/0001-payload-cms-sqlite-i18n-baseline.md`
@@ -10,18 +10,18 @@
 
 ## Acceptance Verification Matrix
 
-| #       | Category    | Test / Check Command                                | Result            | Evidence / Details                                                                                                                                                     |
-| ------- | ----------- | --------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **A1**  | Automated   | `pnpm lint`                                         | **PASS** (Exit 0) | Single-source ESLint 9 flat config (`eslint.config.mjs` + `@brand/config/eslint`). Deprecated `next lint` removed.                                                     |
-| **A2**  | Automated   | `pnpm typecheck`                                    | **PASS** (Exit 0) | All 7 workspace packages + 2 apps (`apps/web`, `apps/cms`) typecheck cleanly with TypeScript 5.8+.                                                                     |
-| **A3**  | Automated   | `pnpm format:check`                                 | **PASS** (Exit 0) | Prettier configuration committed (`.prettierrc`, `.prettierignore`). All files formatted cleanly.                                                                      |
-| **A4**  | Automated   | `pnpm test`                                         | **PASS** (Exit 0) | Vitest test runner integrated (`vitest run`). 9 tests passed across 2 test suites (`packages/lib/src/cn.test.ts`, `packages/i18n/src/config.test.ts`).                 |
-| **A5**  | HTTP        | Dev server startup (`pnpm dev:web`, `pnpm dev:cms`) | **PASS** (200 OK) | Web server ready on `http://localhost:3000` (200 OK); CMS Payload Admin ready on `http://localhost:3001/admin` (200 OK).                                               |
-| **A6**  | CMS Auth    | Admin Seed & Login                                  | **PASS**          | `payload.config.ts` `onInit` hook seeds default admin user (`admin@example.com` / `changeme123`) idempotently.                                                         |
-| **A7**  | CMS Content | Collections & Access Control                        | **PASS**          | `users`, `media`, `pages` collections configured with proper function-based access control. Anonymous REST GET `/api/pages` returns published pages only.              |
-| **A8**  | Preview     | Draft Preview Channel                               | **PASS**          | Live Preview configured in `pages` collection pointing to `http://localhost:3000/preview/pages/[id]`. Route validates draft token and renders page data.               |
-| **A9**  | Directory   | Asset & TS Single Source Check                      | **PASS**          | Single TypeScript base config in `packages/config/typescript/base.json`. `content/locales/{pt-BR,en}.json` created. `apps/cms/data/` and `apps/cms/media/` gitignored. |
-| **A10** | Doc Check   | Verification & Cleanup                              | **PASS**          | No `next lint` remaining. No `en`/`zh` i18n defaults remaining. README updated with script matrix, directory rules, and ADR links.                                     |
+| #       | Category    | Test / Check Command                                | Result            | Evidence / Details                                                                                                                                                                                               |
+| ------- | ----------- | --------------------------------------------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **A1**  | Automated   | `pnpm lint`                                         | **PASS** (Exit 0) | Single-source ESLint 9 flat config (`eslint.config.mjs` + `@brand/config/eslint`). Deprecated `next lint` removed.                                                                                               |
+| **A2**  | Automated   | `pnpm typecheck`                                    | **PASS** (Exit 0) | All 7 workspace packages + 2 apps (`apps/web`, `apps/cms`) typecheck cleanly with TypeScript 5.8+.                                                                                                               |
+| **A3**  | Automated   | `pnpm format:check`                                 | **PASS** (Exit 0) | Prettier configuration committed (`.prettierrc`, `.prettierignore`). All files formatted cleanly.                                                                                                                |
+| **A4**  | Automated   | `pnpm test`                                         | **PASS** (Exit 0) | Vitest test runner integrated (`vitest run`). 9 tests passed across 2 test suites (`packages/lib/src/cn.test.ts`, `packages/i18n/src/config.test.ts`).                                                           |
+| **A5**  | HTTP        | Dev server startup (`pnpm dev:web`, `pnpm dev:cms`) | **PASS** (200 OK) | Web server ready on `http://localhost:3000` (200 OK); CMS Payload Admin ready on `http://localhost:3001/admin` (200 OK). `pnpm build` verified clean.                                                            |
+| **A6**  | CMS Auth    | Admin Seed & Security Hardening                     | **PASS**          | `payload.config.ts` requires `PAYLOAD_SECRET` without fallback. `onInit` hook seeds admin user explicitly requiring `SEED_ADMIN_EMAIL` and `SEED_ADMIN_PASSWORD` from `.env` with no fallback credentials.       |
+| **A7**  | CMS Content | Collections & Access Control                        | **PASS**          | `users`, `media`, `pages` collections configured with proper function-based access control. Anonymous REST GET `/api/pages` returns published pages only.                                                        |
+| **A8**  | Preview     | Draft Preview Channel                               | **PASS**          | Live Preview configured in `pages` collection pointing to `http://localhost:3000/preview/pages/[id]`. Route validates draft token and renders page data.                                                         |
+| **A9**  | Directory   | Asset & TS Single Source Check                      | **PASS**          | Single TypeScript base config in `packages/config/typescript/base.json`. `content/locales/{pt-BR,en}.json` created. `apps/cms/data/` and `apps/cms/media/` gitignored.                                           |
+| **A10** | Doc Check   | Verification & Cleanup                              | **PASS**          | No hardcoded credentials or secret fallbacks in code or README. No `next lint` remaining. No `en`/`zh` i18n defaults remaining. README formatted and updated with script matrix, directory rules, and ADR links. |
 
 ---
 
@@ -35,7 +35,7 @@
 2. **T2 — Prettier Configuration**:
    - Added root `.prettierrc` (single quotes, trailing commas, 2 space indent, LF).
    - Added `.prettierignore` ignoring `node_modules`, `.next`, `dist`, `apps/cms/data`, `apps/cms/media`, etc.
-   - Formatted repository with `pnpm format`.
+   - Formatted repository with `pnpm format` (`pnpm format:check` verified 100% clean).
 
 3. **T3 — TypeScript Single Source**:
    - Removed duplicate root `tsconfig.base.json`.
@@ -55,16 +55,17 @@
    - Embedded Payload 3.x into `apps/cms` via Next.js App Router integration (`(payload)` route group).
    - Integrated `@payloadcms/db-sqlite` with SQLite database file at `apps/cms/data/payload.db`.
    - Configured `users` (auth + roles), `media` (upload directory at `apps/cms/media/`), and `pages` (drafts + live preview).
-   - Implemented idempotent seed in `payload.config.ts` (`onInit`).
+   - Implemented strict environment check for `PAYLOAD_SECRET` and explicit `SEED_ADMIN_EMAIL`/`SEED_ADMIN_PASSWORD` in `payload.config.ts`.
 
 7. **T7 — Boundary & Directory Standardization**:
    - Cleaned up obsolete Tailwind v3 JS preset dead config.
    - Fixed `@brand/ui` `Button` component with standard Tailwind utility classes and `TODO(design-system)` marker.
    - Documented directory conventions for static assets, copy, media, and SQLite DB in `README.md`.
 
-8. **T8 — Documentation & Acceptance**:
-   - Updated `README.md` with complete quick start, script table, project structure, asset conventions, and ADR-0001 references.
-   - Generated this acceptance report confirming A1–A10 PASS.
+8. **T8 — Documentation & Security Remediation**:
+   - Cleaned up `README.md`: removed hardcoded credential tables and unrelated third-party references, documented environment setup.
+   - Verified clean production builds (`pnpm build`).
+   - Generated this updated acceptance report confirming A1–A10 PASS.
 
 ---
 

@@ -11,10 +11,16 @@ pnpm install
 # Set up environment variables
 cp .env.example .env
 
+# Configure initial CMS admin seed credentials in .env:
+# SEED_ADMIN_EMAIL=admin@example.com
+# SEED_ADMIN_PASSWORD=your-secure-password-here
+
 # Run dev servers
 pnpm dev:web   # Public site → http://localhost:3000
 pnpm dev:cms   # Admin panel → http://localhost:3001/admin
 ```
+
+> ⚠️ **Security Notice**: Initial admin credentials must be configured via `SEED_ADMIN_EMAIL` and `SEED_ADMIN_PASSWORD` in your local `.env` file before initial startup. No hardcoded default credentials or secret fallbacks exist in code. Never commit production credentials or secret keys to source control.
 
 ## Project Structure
 
