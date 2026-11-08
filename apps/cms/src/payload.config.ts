@@ -1,6 +1,6 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { buildConfig } from 'payload';
+import { buildConfig, type SharpDependency } from 'payload';
 import { sqliteAdapter } from '@payloadcms/db-sqlite';
 import { lexicalEditor } from '@payloadcms/richtext-lexical';
 import sharp from 'sharp';
@@ -43,7 +43,10 @@ export default buildConfig({
       url: process.env.DATABASE_URI || 'file:./data/payload.db',
     },
   }),
-  sharp,
+  // Payload's bundled SharpDependency type can come from a different Sharp
+  // minor version than the app's direct dependency. The runtime contract is
+  // the same factory function, so keep the explicit adapter boundary here.
+  sharp: sharp as SharpDependency,
   onInit: async (payload) => {
     // Seed: create initial admin user if none exists
     const existingUsers = await payload.find({
