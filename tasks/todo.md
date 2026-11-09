@@ -1,13 +1,134 @@
-# 任务清单
+# 当前执行清单
 
-- [x] 创建独立空工作区及持久目标。
-- [x] 建立初版规格和阶段计划。
-- [ ] 盘点参考站页面类型、URL 与可访问范围。
-- [ ] 记录代表页面桌面、移动布局和交互状态。
-- [ ] 审查候选工具的源码、依赖、许可与运行方式。
-- [ ] 完成代表页面技术验证，比较输出质量及工程适配。
-- [ ] 确认首版页面范围（轻量 Next.js 路线已获用户确认）。
-- [ ] 按页面类型实现原型并对照验证。
-- [ ] 验证示例产品数据和多语言切换。
-- [ ] 收集并核对业主内容，实现确定的正式功能。
-- [ ] 完成验收和上线准备。
+- [x] 同步 CodeGraph 索引并确认当前工作区结构（81 文件、560 节点、858 关系）
+- [x] 建立 FLBOOK 24 页初步分类清单和导入状态规则
+- [x] 从 FLBOOK 阅读器捕获封面、封底及产品跨页预览，并写入页级 manifest 与产品草稿
+- [x] 建立首期 10 条商品展示资料及页码来源关联
+- [x] 将前台 sample catalog 收敛为 10 条 FLBOOK 产品，并移除早期结构测试商品
+- [x] 建立 FLBOOK staging JSON、页级素材校验器，并接入本地 sample catalog 与 Payload 导入
+- [x] 增加需显式确认且拒绝非空目标的 FLBOOK Payload 正式导入脚本
+- [x] 在隔离 SQLite 中实际执行正式导入脚本并清理临时数据库/媒体
+- [x] 从画册可读页面标题和卖点补齐 10 条中英文展示文案，修正跨页来源并移除包装/场景重复商品
+- [x] 将来源 URL、页码、审核状态、素材状态和 claims 校验字段接入 Payload 产品模型与详情预览
+- [x] 生成 Payload 可接受的 WebP 媒体和十条已批准导入资料
+- [x] 完成 FLBOOK 十条产品的隔离 Payload SQLite dry-run，并验证中英文、分类关系和 WebP 媒体后清理临时库
+- [x] 修正 FLBOOK 相邻候选页的产品归属，增加 `sourceRelatedPages` 与 `excluded-candidate` 追踪并验证详情展示
+- [x] 修复 Windows dry-run SQLite 清理与退出顺序，成功报告不再遗留 `cleanupPending`
+- [x] 扩展 Payload 空库导入：首页、企业资料、FAQ 与示例媒体均可导入并在隔离 SQLite 读回
+- [x] 在独立 SQLite 目标执行扩展后的 `import:flbook`，读回 10 产品、首页/企业 global、FAQ 和 23 条媒体后清理临时库
+- [x] 为十条产品生成详情来源裁剪图，保留完整跨页审计图并接入 Payload/详情预览
+- [x] 完成独立 SQLite Payload 导入后的前台回读：英文/中文首页、产品详情、FAQ、企业页和媒体 URL 均验证通过
+- [x] 修复 Payload 首页 localized array 双语写入，确保英文和中文 Hero 文案同时可读
+- [x] 将高影响首页/目录/详情/内容 UI 字典统一接入 13 语言安全回退，并扩展 locale contract 校验所有字典键覆盖
+- [x] 增加空库 Payload 管理员 bootstrap 命令，要求显式确认、强密码和空用户表，并在隔离 SQLite 验证重复初始化会拒绝
+- [x] 增加媒体目录备份/恢复与 SHA-256 manifest 校验脚本，并用临时媒体树完成跨平台演练
+- [x] 建立默认关闭的 Payload `inquiries` 集合、蜜罐字段和管理员处理状态，明确启用前的迁移与收件渠道门槛
+- [x] 增加询盘 API 闸门：`INQUIRY_MODE=disabled` 时稳定返回 `503 inquiry_disabled`，启用前不访问旧数据库表
+- [x] 在新 SQLite schema 中验证 `INQUIRY_MODE=enabled` 询盘创建 201、未登录读取 403，并清理测试库
+- [x] 使用 Payload schema generator 生成并接入 `20261108_005020_sync_current_schema`，覆盖询盘、作物指南、产品来源字段和相关关系表
+- [x] 在同一隔离 Payload dry-run 中验证新闻、知识文章和案例 staging 的中英文记录及媒体关系
+- [x] 让 Payload 媒体目录支持 `PAYLOAD_MEDIA_DIR`，保留本地默认目录并补充生产部署说明
+- [x] 增加生产环境配置形状校验器，覆盖 PostgreSQL、密钥和持久化媒体目录
+- [x] 按目标逐项记录完成度、证据范围和外部上线缺口
+- [x] 增加 13 语言配置与公开/预览语言边界校验器
+- [x] 建立 13 语言 UI 草稿安全回退 helper，保持生产 en/zh 准入边界不变
+- [x] 完成 1280×720 / 390×844 的首页与共享导航首轮实测，记录基线和移动端无溢出证据
+- [x] 补齐 1440×900、1051×720、1060×720、768×844、320×720，并验证目录/详情窄屏无根横向溢出
+- [x] 审计方案、FAQ、新闻、知识、案例、搜索和资源页面首屏结构及当前数据边界
+- [x] 验证上述内容中心页面在 390px 移动视口下无根横向溢出
+- [x] 将作物指南资料从组件硬编码抽为独立 Payload/staging adapter，并接入已批准通用指南文案
+- [x] 建立 `CropGuides` Payload collection、3 条中英文 staging 记录和隔离 dry-run 读回校验
+- [x] 为新闻列表和详情补充多语言 staging 示例数据，保持 Payload 字段契约
+- [x] 为知识文章和案例补充多语言摘要、作者/日期字段，保持列表与详情数据契约
+- [x] 统一新闻、知识文章和案例的 staging JSON，并增加内容字段与占位素材校验器
+- [x] 为新闻、知识文章和案例补齐双语富文本 staging 正文，并接入 Payload 导入、dry-run 和 sample 详情渲染
+- [x] 完成阶段 0：固定视口与页面状态矩阵
+- [x] 完成阶段 1：共享导航状态矩阵和断点检查
+- [x] 完成阶段 2：首页三个视口逐区对照（1280×720、1440×900、390×844；Hero、兴趣区、作物轨道、快捷入口和移动底栏均已复核）
+- [x] 完成阶段 3：产品目录和详情主链路对照（英文/中文目录与详情、筛选分页、语言切换、来源预览和询盘预览已复核）
+- [x] 完成阶段 4：方案、新闻、知识、案例富文本对照（方案横幅、新闻/知识/案例列表与详情、双语 richBody 和资源状态已复核）
+- [x] 对照参考站首页首屏、产品目录首屏和画册产品详情，确认共享导航、来源预览和询盘预览状态
+- [x] 按参考站结构补齐产品目录横幅、目录面包屑节奏、产品详情底部询盘预览栏，并复查桌面首屏
+- [x] 对齐参考站移动头部的语言/搜索入口与 Contact、Distributor、Partner Zone 快捷栏结构
+- [x] 复查方案页横幅与产品详情横幅的样式隔离，并按参考站首屏结构修正方案页显示
+- [x] 完成新闻列表/详情顶部内容横幅复刻，并加入 21 项冒烟回归中的专门检查
+- [x] 接入参考站 News/Events 筛选参数、Payload `kind` 字段和 staging 活动示例
+- [x] 对照 FAQ 横幅、分类栏和折叠问题结构，并加入专门回归检查
+- [x] 为知识中心接入主题标签数据、Payload 字段、URL 筛选和前台标签栏
+- [x] 实时校准产品目录、产品详情、作物指南、企业页、FAQ、新闻和案例列表的首屏结构与垂直节奏
+- [x] 增加 13 语言非生产预览壳，验证所有语言的 lang、dir、noindex 和非法代码 404
+- [x] 完成 13 语言 About 首个业务预览切片：UI 回退、企业页方向属性、语言链接和非公开路由边界均有隔离回归
+- [x] 完成 13 语言产品目录与详情第二个业务预览切片：目录、详情、产品来源数据、方向属性和路由边界均有隔离回归
+- [x] 完成 13 语言 FAQ、联系和搜索第三个业务预览切片：查询参数、禁用表单、方向属性和普通开发边界均有隔离回归
+- [x] 完成 13 语言新闻、知识和案例第四个业务预览切片：列表、详情、富文本、方向属性和普通开发边界均有隔离回归
+- [x] 完成 13 语言方案与作物指南第五个业务预览切片：五段式章节、产品入口、方向属性和普通开发边界均有隔离回归
+- [x] 完成 13 语言首页第六个业务预览切片：Hero、兴趣区、产品、企业、新闻、案例和普通开发边界均有隔离回归
+- [x] 完成 13 语言资源页面第七个业务预览切片：智慧农业、可持续发展、SDS、质量保证和普通开发边界均有隔离回归
+- [x] 完成真实浏览器交互验收：桌面/移动关键点击、菜单展开、筛选、搜索、详情、表单禁用、中文联系信息和 RTL 截图，证据见 `docs/interaction-acceptance.md`
+- [x] 接入业主提供的企业名、邮箱和 WhatsApp：样例回退、Payload Company Profile 字段、联系页和页脚统一读取
+- [x] 在腾讯云当前实例 `43.160.216.74` 部署并刷新主域名：PostgreSQL 16、FLBOOK 导入、已生成场景素材、`haifa-reference.service`、HTTPS 和英文/中文页面回读通过；旧服务已停止并禁用
+- [x] 使用业主授权 FLBOOK 内容、页级裁剪图和已生成场景素材填充十条产品、首页、方案、企业、新闻、知识、案例和 FAQ
+- [x] 修复 Payload 知识主题筛选对嵌套数组的错误查询，生产 `/en/insights?topic=crop-guides` 与 22 项公网 smoke 全部通过
+- [x] 清理英文/中文公开页面可见的原型、示例和业主确认提示，保留非公开语言预览与后台审核提示
+- [x] PostgreSQL、备份恢复和部署验收（P1：隔离联合恢复、管理员后台编辑、媒体替换、systemd 重启和 23/23 smoke 已通过；证据见 `docs/p1-acceptance-2026-11-08.md`）
+- [x] 增加 PostgreSQL custom dump 备份/恢复脚本与显式恢复确认门槛
+- [x] 增加 standalone Dockerfile、PostgreSQL/媒体持久化 Compose 和部署文件校验器
+- [x] 使用临时生产环境变量完成 Next standalone 生产构建并收敛媒体 tracing 警告
+- [x] 启动 standalone 产物并通过隔离端口健康检查后清理进程
+- [x] 收紧生产环境校验，禁止 production 继续使用 sample 数据源或相对媒体目录
+- [x] 复核 Payload PostgreSQL adapter 的 `prodMigrations` 生产连接行为，并将迁移注册纳入部署文件门禁与运行手册
+- [x] 增加 `/api/ready` 依赖探针（PostgreSQL/SQLite 连通性与媒体目录读写），接入 Compose healthcheck 并加入冒烟回归
+- [x] 建立上线验收矩阵，明确 PASS-SCOPED、CONDITIONAL、WAITING-EXTERNAL 证据和责任边界
+- [x] P2 内容模型与公开安全呈现验收（10 条产品双语详情补充、9 个产品的 76 条来源规格、媒体 alt、About/Contact 缺失信息和 23/23 smoke 已通过；正式 claims/型号/最终翻译继续保持 owner-review，证据见 `docs/p2-acceptance-2026-11-08.md`）
+- [x] P2 10 条 FLBOOK 产品按业主授权批准并生产回读为 `approved` / `claimsVerified=true`，76 条来源规格通过审计
+- [ ] P2 审核 21 条官方候选的型号、包装、销售状态与技术 claims；逐项处理 3 组同名冲突，继续保持未确认项 `owner-review`
+- [ ] P2 复合肥料缺少可靠定量规格来源；如业主没有补充正式资料，则保持无定量表，不推断数值
+- [x] P3 生产多语言路由、询盘写入、SEO 放行与部署验收（13 个语言 URL、smoke 23/23、SEO 5/5、冷启动和 readiness 回读通过）
+- [ ] P3 邮件/工单通知尚未配置；当前询盘仅写入 Payload，需另行决定人工处理或通知集成
+- [x] P3 发布前保护措施（robots/sitemap、noindex、询盘 disabled、en/zh 边界与公开 alt 审计）
+- [x] P3 SEO/询盘合同回归（`npm run test:seo` 4/4：robots/sitemap、canonical/noindex、alt、询盘关闭）
+- [x] 以用户提供的参考网页和 FLBOOK 浏览链接完成参考路由补充映射，明确系列页、产品类型、种植方式等尚未独立实现的差距
+- [x] 修正 FLBOOK staging 页码、笔误与审核状态口径，保持未核验 claims 为 `owner-review/false`
+- [x] 修复 FLBOOK dry-run 公开/管理员 provenance 回读边界，隔离 SQLite 全量导入验证通过并清理临时目录
+- [x] 隐藏产品详情中的 `excluded-candidate` 内部审计字段，只保留买家可理解的画册页码和来源预览
+- [x] 部署参考资料边界修复并完成生产 `api/ready`、静态资源、23/23 smoke、4/4 SEO 回归
+- [x] 为 FLBOOK 校验器增加简介页码与审核状态一致性门禁，防止未来 staging 再次漂移
+- [x] 从 FLBOOK 高分辨率页级表格补齐 9 个产品的 76 条来源规格，并在隔离 dry-run、生产数据库和英中详情页回读
+- [x] 在 390px 生产 Chromium 视口复查新增规格表，确认横向滚动容器、底部快捷栏和详情布局无新增遮挡/根横向溢出
+- [x] 新增规格后重跑 7 个 CMS_EVAL 多语言预览切片、`check:locale` 和 RTL CSS 合同
+- [x] 在 Contact 英中页面明确站内表单未收集询盘，保持外部邮箱/WhatsApp 与站内询盘开关边界
+- [x] 为公开 en/zh 路径补齐 alternate/hreflang 与 x-default，并验证产品详情、About、noindex 和 CMS preview 边界
+- [x] 建立代码级 13 语言 release-readiness 矩阵，`check:locale` 校验 preview/public、noindex 和询盘关闭边界
+- [x] 修正 FLBOOK 第 8、9 页有机水溶肥料英文标题重复，按 slug 精确生产回读并复跑 smoke/SEO
+- [x] P3-B 共享导航键盘收口：移动菜单焦点离开自动关闭，生产 390/1280 视口完成 Escape、焦点返回、规格表滚动和根溢出回归
+- [x] 共享菜单改动后按正确的 CMS_EVAL/生产 URL 边界重跑 7 个多语言预览切片、locale 与 RTL 合同
+- [x] 为 FLBOOK 导入校验增加中英文产品显示名唯一性门禁
+- [x] 对账生产英中产品简介并修正第 10 页英文规格提示、第 6–7 页中文语病，保留复合肥料更谨慎的人工文案
+- [x] 形成独立系列页/种植方式索引的方案 A/B/C 设计文档，等待架构方案确认后实现
+- [x] 按方案 A 实现并部署独立产品系列索引/详情和种植方式索引，复用现有数据并完成生产 route/smoke/SEO/Playwright 验收
+- [x] 用 WebKit iPhone 13 与 Chrome Pixel 7 补做生产移动引擎验收，确认规格表、固定快捷栏、菜单焦点和根溢出
+- [x] 增加 `check:p2-release` 正式内容只读门禁，明确当前 10 条产品仍需 owner-review，不自动批准 claims
+- [x] 生成 P2 逐条内容审核包，明确 10 条产品的来源页、规格行数和外部签核项
+- [x] 对账并修复生产历史导入遗漏的 10 条产品 provenance/review 元数据，管理员审计 `missingCount=0` 且不改变公开安全边界
+- [x] 将管理员视图产品完整性审计纳入 `npm run audit:production-products`
+- [x] 抓取业主提供的原官网 HTTP 产品/公司/技术图片并完成 SHA-256 来源对照
+- [x] 将 7 条可稳定匹配的产品媒体、Homepage/Company banner 和 9 条编辑内容媒体定向替换为官方来源素材
+- [x] 清除 `src` 对 generated/prototype 图片路径的引用，保留遗留文件用于回滚审计
+- [x] 官方素材替换后完成 PostgreSQL/media 备份、systemd 部署、`/api/ready`、公网 smoke 23/23、SEO 5/5 和 390px 真实浏览器回读
+- [x] 将 7 条产品对应的原官网详情页追加到 Payload `sourceNote`，保持 FLBOOK 文字/规格主来源和 owner-review 门禁
+- [x] 增加 `audit:public-media` 公网媒体门禁，并在生产扫描 14 个英文/中文页面、18 个媒体 URL，确认无 generated/prototype 引用、错误图片、序列化 alt 或内容哈希重复
+- [x] 用原官网企业页的可核验事实更新生产 About 英中简介与三项 focus areas，保留旧站运营数字和里程碑为待核验
+- [x] 将原官网联系地址写入 Payload Company Profile 英中字段，生产 Contact 390px 回读无溢出；旧站固定电话保留为来源信息，不替换当前业主 WhatsApp 渠道
+- [x] 扩展 `test:seo` 到产品、系列、方案、About、Contact、FAQ、Search、News/Insights/Cases 列表与详情的 en/zh canonical、alternate、noindex 矩阵，并在生产复验通过
+- [x] 在生产 Chromium 对系列、方案、Contact、FAQ、Search 路由完成 390/1280 真实视口回读，确认溢出 0、broken 图片 0、Console 0 errors
+- [x] 对公开中文 `/zh` 及中文系列、方案、Contact、FAQ、Search 路由完成 390/1280 真实视口回读，确认 `lang=zh-CN`、溢出 0、broken 图片 0、Console 0 errors
+- [x] 从原官网产品中心提取 28 条官方候选产品并落盘为 `owner-review`/`published:false` 清单，不自动追加到生产目录
+- [x] 验证官方候选清单 28 条详情页与 28 条图片 URL 全部 HTTP 200
+- [x] 生成官方候选产品审核包，标出 3 组同名冲突并明确不得按名称自动合并
+- [x] 增加官方候选合同测试，防止候选数量、来源状态或同名冲突在后续刷新时漂移
+- [x] 生成当前 P0-P3 阶段闸门审计，明确保护态、preview-only 和正式上线外部门禁
+- [x] 将产品审核元数据 API/HTML 隔离纳入 SEO 合同回归（生产 5/5）
+- [x] 整理 P3 外部上线决策包，明确产品、语言、询盘和 noindex 的确认格式与保护态
+- [x] 记录项目方选择继续保护态，保持 en/zh、询盘 disabled、noindex 和 owner-review 边界
+- [x] P3 canonical、正式语言、询盘启用和 noindex 解除决策（业主授权及生产回读见 `docs/p3-release-decision-2026-11-09.md`）
+- [x] 以 FLBOOK 浏览链接与 Haifa 参考网页重新完成来源—页面—交互—发布门禁审计，见 `docs/reference-source-audit-2026-11-09.md`
