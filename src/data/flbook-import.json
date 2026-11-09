@@ -1,0 +1,949 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "kind": "flbook",
+    "url": "https://flbook.com.cn/c/LTc82gQQM3",
+    "viewerPages": 24,
+    "rights": "owner-provided",
+    "capturedAt": "2026-11-07"
+  },
+  "products": [
+    {
+      "slug": "medium-element-granular-draft",
+      "displayName": "非水溶中量元素肥料 · 钙镁硅锌型",
+      "englishDisplayName": "Non-water-soluble secondary nutrient fertilizer · Ca-Mg-Si-Zn",
+      "intro": "画册第 6–7 页展示的非水溶中量元素肥料，页面卖点包括提供钙镁硅锌、促进光合吸收、生根抗逆、诱导免疫及保水调土；包装与配方按画册页面整理。",
+      "englishIntro": "Brochure pages 6–7 present a non-water-soluble secondary nutrient fertilizer for plant nutrition, positioned around Ca, Mg, Si and Zn supply, photosynthesis support, rooting, stress resilience and soil water management. Packaging and formula follow the brochure page.",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "sourcePreviewPath": "/images/flbook-pages/pages-06-07.jpg",
+      "category": "medium-nutrient",
+      "sourceNote": "画册第 6–7 页（印刷页 01–02）为同一产品的跨页资料；卖点文字来自页面可读内容，名称、配方和用法已按业主提供画册页面整理；图片与原官网 /display/754923.html 的产品卡视觉一致。",
+      "imageStatus": "owner-supplied",
+      "imagePath": "/images/official-site/product-non-water-soluble.jpg",
+      "officialImageSource": "http://m.zgkomu.cn/display/754923.html",
+      "contentStatus": "approved",
+      "sourceDetailPreviewPath": "/images/flbook-pages/page-06-product.jpg",
+      "claimsVerified": true,
+      "specifications": [
+        {
+          "id": "calcium-magnesium",
+          "locales": {
+            "zh": "钙镁（Ca+Mg）",
+            "en": "Calcium + magnesium (Ca+Mg)"
+          },
+          "unit": "%",
+          "minimum": "20"
+        },
+        {
+          "id": "calcium",
+          "locales": {
+            "zh": "钙（Ca）",
+            "en": "Calcium (Ca)"
+          },
+          "unit": "%",
+          "minimum": "17"
+        },
+        {
+          "id": "magnesium",
+          "locales": {
+            "zh": "镁（Mg）",
+            "en": "Magnesium (Mg)"
+          },
+          "unit": "%",
+          "minimum": "3"
+        },
+        {
+          "id": "zinc",
+          "locales": {
+            "zh": "锌（Zn）",
+            "en": "Zinc (Zn)"
+          },
+          "unit": "%",
+          "minimum": "0.05"
+        },
+        {
+          "id": "boron",
+          "locales": {
+            "zh": "硼（B）",
+            "en": "Boron (B)"
+          },
+          "unit": "%",
+          "minimum": "0.05"
+        },
+        {
+          "id": "silicon",
+          "locales": {
+            "zh": "硅（SiO₂）",
+            "en": "Silicon (SiO₂)"
+          },
+          "unit": "%",
+          "minimum": "10"
+        },
+        {
+          "id": "humic-acid",
+          "locales": {
+            "zh": "腐植酸",
+            "en": "Humic acid"
+          },
+          "unit": "%",
+          "minimum": "2"
+        },
+        {
+          "id": "organic-matter",
+          "locales": {
+            "zh": "有机质",
+            "en": "Organic matter"
+          },
+          "unit": "%",
+          "minimum": "5"
+        },
+        {
+          "id": "moisture",
+          "locales": {
+            "zh": "水分（H₂O）",
+            "en": "Moisture (H₂O)"
+          },
+          "unit": "%",
+          "maximum": "3"
+        },
+        {
+          "id": "phosphite",
+          "locales": {
+            "zh": "亚磷酸根（HPO₃²⁻）",
+            "en": "Phosphite (HPO₃²⁻)"
+          },
+          "unit": "%",
+          "minimum": "1"
+        },
+        {
+          "id": "ph",
+          "locales": {
+            "zh": "pH（1:250 倍稀释）",
+            "en": "pH (1:250 dilution)"
+          },
+          "unit": "pH",
+          "minimum": "7",
+          "maximum": "9"
+        },
+        {
+          "id": "particle-size-pass-rate",
+          "locales": {
+            "zh": "粒度（1.00mm–4.75mm）通过率",
+            "en": "Particle size pass rate (1.00mm–4.75mm)"
+          },
+          "unit": "%",
+          "minimum": "90"
+        }
+      ]
+    },
+    {
+      "slug": "organic-water-soluble-growth-draft",
+      "displayName": "有机水溶肥料 · 促长靓叶生根",
+      "englishDisplayName": "Organic water-soluble fertilizer · Growth, leaf quality and rooting",
+      "intro": "画册第 8 页有机水溶肥料，页面标注“促长/靓叶/生根、促生亚磷酸型”，包装规格约 20KG；具体指标已按画册页面整理。",
+      "englishIntro": "Brochure page 8 presents an organic water-soluble fertilizer marked for growth, leaf appearance and rooting, with a phosphite-oriented positioning and an approximately 20 kg pack. The description follows the brochure page.",
+      "sourcePages": [
+        8
+      ],
+      "sourcePreviewPath": "/images/flbook-pages/pages-08-09.jpg",
+      "category": "organic-water-soluble",
+      "sourceNote": "画册第 8–9 页（印刷页 03–04）包含两个包装产品；本条来源为 viewer 第 8 页左侧绿色包装；图片与原官网 /display/754921.html 的产品卡视觉一致。",
+      "imageStatus": "owner-supplied",
+      "imagePath": "/images/official-site/product-organic-peptide.jpg",
+      "officialImageSource": "http://m.zgkomu.cn/display/754921.html",
+      "contentStatus": "approved",
+      "sourceDetailPreviewPath": "/images/flbook-pages/page-08-product.jpg",
+      "claimsVerified": true,
+      "specifications": [
+        {
+          "id": "acid-soluble-protein",
+          "locales": {
+            "zh": "酸溶蛋白",
+            "en": "Acid-soluble protein"
+          },
+          "unit": "g/L",
+          "minimum": "310"
+        },
+        {
+          "id": "peptides",
+          "locales": {
+            "zh": "多肽",
+            "en": "Peptides"
+          },
+          "unit": "g/L",
+          "minimum": "270"
+        },
+        {
+          "id": "phosphite",
+          "locales": {
+            "zh": "亚磷酸根（HPO₃²⁻）",
+            "en": "Phosphite (HPO₃²⁻)"
+          },
+          "unit": "g/L",
+          "minimum": "15"
+        },
+        {
+          "id": "organic-matter",
+          "locales": {
+            "zh": "有机质",
+            "en": "Organic matter"
+          },
+          "unit": "g/L",
+          "minimum": "250"
+        },
+        {
+          "id": "npk",
+          "locales": {
+            "zh": "氮磷钾",
+            "en": "N-P-K"
+          },
+          "unit": "g/L",
+          "minimum": "120"
+        },
+        {
+          "id": "insoluble",
+          "locales": {
+            "zh": "水不溶物",
+            "en": "Water-insoluble matter"
+          },
+          "unit": "g/L",
+          "maximum": "50"
+        },
+        {
+          "id": "ph",
+          "locales": {
+            "zh": "pH（1:250 倍稀释）",
+            "en": "pH (1:250 dilution)"
+          },
+          "unit": "pH",
+          "minimum": "5.0",
+          "maximum": "7.0"
+        }
+      ]
+    },
+    {
+      "slug": "organic-water-soluble-quality-draft",
+      "displayName": "有机水溶肥料 · 促长促叶生根",
+      "englishDisplayName": "Organic water-soluble fertilizer · Growth, foliage and rooting",
+      "intro": "画册第 9 页有机水溶肥料，页面标注“促长/促叶/生根、促生亚磷酸型”，包装规格约 20KG；具体指标已按画册页面整理。",
+      "englishIntro": "Brochure page 9 shows a second organic water-soluble fertilizer positioned for growth, leaf development and rooting, with an approximately 20 kg pack. The description follows the brochure page.",
+      "sourcePages": [
+        9
+      ],
+      "sourcePreviewPath": "/images/flbook-pages/pages-08-09.jpg",
+      "category": "organic-water-soluble",
+      "sourceNote": "画册第 8–9 页（印刷页 03–04）包含两个包装产品；本条来源为 viewer 第 9 页右侧橙色包装；图片与原官网 /display/754926.html 的产品卡视觉一致。",
+      "imageStatus": "owner-supplied",
+      "imagePath": "/images/official-site/product-organic-fulvic.jpg",
+      "officialImageSource": "http://m.zgkomu.cn/display/754926.html",
+      "contentStatus": "approved",
+      "sourceDetailPreviewPath": "/images/flbook-pages/page-09-product.jpg",
+      "claimsVerified": true,
+      "specifications": [
+        {
+          "id": "acid-soluble-protein",
+          "locales": {
+            "zh": "酸溶蛋白",
+            "en": "Acid-soluble protein"
+          },
+          "unit": "g/L",
+          "minimum": "160"
+        },
+        {
+          "id": "peptides",
+          "locales": {
+            "zh": "多肽",
+            "en": "Peptides"
+          },
+          "unit": "g/L",
+          "minimum": "170"
+        },
+        {
+          "id": "phosphite",
+          "locales": {
+            "zh": "亚磷酸根（HPO₃²⁻）",
+            "en": "Phosphite (HPO₃²⁻)"
+          },
+          "unit": "g/L",
+          "minimum": "15"
+        },
+        {
+          "id": "organic-matter",
+          "locales": {
+            "zh": "有机质",
+            "en": "Organic matter"
+          },
+          "unit": "g/L",
+          "minimum": "270"
+        },
+        {
+          "id": "npk",
+          "locales": {
+            "zh": "氮磷钾",
+            "en": "N-P-K"
+          },
+          "unit": "g/L",
+          "minimum": "55"
+        },
+        {
+          "id": "insoluble",
+          "locales": {
+            "zh": "水不溶物",
+            "en": "Water-insoluble matter"
+          },
+          "unit": "g/L",
+          "maximum": "50"
+        },
+        {
+          "id": "ph",
+          "locales": {
+            "zh": "pH（1:250 倍稀释）",
+            "en": "pH (1:250 dilution)"
+          },
+          "unit": "pH",
+          "minimum": "3.0",
+          "maximum": "5.0"
+        }
+      ]
+    },
+    {
+      "slug": "organic-water-soluble-absorption-draft",
+      "displayName": "有机水溶肥料 · 抗逆促恢复",
+      "englishDisplayName": "Organic water-soluble fertilizer · Recovery and resilience",
+      "intro": "画册第 10 页有机水溶肥料，页面强调抗逆促恢复、膨果着色、活化土壤并激发多重生理机能，包装规格约 10KG；指标已按画册页面整理。",
+      "englishIntro": "Brochure page 10 presents an organic water-soluble fertilizer positioned around stress recovery, fruit sizing and colour development, soil activation and multiple physiological functions. The pack is shown at about 10 kg; the page description is used as the public summary.",
+      "sourcePages": [
+        10
+      ],
+      "sourcePreviewPath": "/images/flbook-pages/pages-10-11.jpg",
+      "category": "organic-water-soluble",
+      "sourceNote": "画册第 10–11 页（印刷页 05–06）为两个产品；本条仅归属 viewer 第 10 页左侧“抗逆促恢复”款，第 11 页产品已单独标记为 excluded-candidate；图片与原官网 /display/754931.html 的产品卡视觉一致。",
+      "imageStatus": "owner-supplied",
+      "imagePath": "/images/official-site/product-organic-fish-peptide-protein.jpg",
+      "officialImageSource": "http://m.zgkomu.cn/display/754931.html",
+      "contentStatus": "approved",
+      "sourceRelatedPages": [
+        {
+          "page": 11,
+          "role": "excluded-candidate",
+          "note": "第11页是另一款有机水溶肥候选，首期不进入十条展示目录。"
+        }
+      ],
+      "sourceDetailPreviewPath": "/images/flbook-pages/page-10-product.jpg",
+      "claimsVerified": true,
+      "specifications": [
+        {
+          "id": "acid-soluble-protein",
+          "locales": {
+            "zh": "酸溶蛋白",
+            "en": "Acid-soluble protein"
+          },
+          "unit": "g/L",
+          "minimum": "340"
+        },
+        {
+          "id": "npk",
+          "locales": {
+            "zh": "氮磷钾",
+            "en": "N-P-K"
+          },
+          "unit": "g/L",
+          "minimum": "90"
+        },
+        {
+          "id": "amino-acid",
+          "locales": {
+            "zh": "氨基酸",
+            "en": "Amino acids"
+          },
+          "unit": "g/L",
+          "minimum": "80"
+        },
+        {
+          "id": "organic-matter",
+          "locales": {
+            "zh": "有机质",
+            "en": "Organic matter"
+          },
+          "unit": "g/L",
+          "minimum": "220"
+        },
+        {
+          "id": "peptides",
+          "locales": {
+            "zh": "多肽",
+            "en": "Peptides"
+          },
+          "unit": "g/L",
+          "minimum": "150"
+        },
+        {
+          "id": "insoluble",
+          "locales": {
+            "zh": "水不溶物",
+            "en": "Water-insoluble matter"
+          },
+          "unit": "g/L",
+          "maximum": "50"
+        },
+        {
+          "id": "ph",
+          "locales": {
+            "zh": "pH（1:250 倍稀释）",
+            "en": "pH (1:250 dilution)"
+          },
+          "unit": "pH",
+          "minimum": "5.0",
+          "maximum": "7.0"
+        }
+      ]
+    },
+    {
+      "slug": "organic-water-soluble-root-draft",
+      "displayName": "有机水溶肥料 · 根系生长与保水",
+      "englishDisplayName": "Organic water-soluble fertilizer · Root growth and water retention",
+      "intro": "画册第 12 页有机水溶肥料，页面强调有助于根系生长和养分吸收，包装规格约 10KG；指标已按画册页面整理。",
+      "englishIntro": "Brochure page 12 presents an organic water-soluble fertilizer positioned around root growth and nutrient absorption, shown in an approximately 10 kg pack. The description follows the brochure page.",
+      "sourcePages": [
+        12
+      ],
+      "sourcePreviewPath": "/images/flbook-pages/pages-12-13.jpg",
+      "category": "organic-water-soluble",
+      "sourceNote": "画册第 12–13 页（印刷页 07–08）为两个产品；本条仅归属 viewer 第 12 页左侧“有助于根系生长并养分吸收”款，第 13 页产品已单独标记为 excluded-candidate；图片与原官网 /display/754932.html 的产品卡视觉一致。",
+      "imageStatus": "owner-supplied",
+      "imagePath": "/images/official-site/product-organic-fish-peptide-bacteria.jpg",
+      "officialImageSource": "http://m.zgkomu.cn/display/754932.html",
+      "contentStatus": "approved",
+      "sourceRelatedPages": [
+        {
+          "page": 13,
+          "role": "excluded-candidate",
+          "note": "第13页是另一款有机水溶肥候选，首期不进入十条展示目录。"
+        }
+      ],
+      "sourceDetailPreviewPath": "/images/flbook-pages/page-12-product.jpg",
+      "claimsVerified": true,
+      "specifications": [
+        {
+          "id": "calcium-magnesium",
+          "locales": {
+            "zh": "钙镁（Ca+Mg）",
+            "en": "Calcium + magnesium (Ca+Mg)"
+          },
+          "unit": "g/L",
+          "minimum": "100"
+        },
+        {
+          "id": "organic-matter",
+          "locales": {
+            "zh": "有机质",
+            "en": "Organic matter"
+          },
+          "unit": "g/L",
+          "minimum": "150"
+        },
+        {
+          "id": "amino-acid",
+          "locales": {
+            "zh": "氨基酸",
+            "en": "Amino acids"
+          },
+          "unit": "g/L",
+          "minimum": "100"
+        },
+        {
+          "id": "humic-acid",
+          "locales": {
+            "zh": "腐植酸",
+            "en": "Humic acid"
+          },
+          "unit": "g/L",
+          "minimum": "140"
+        },
+        {
+          "id": "peptides",
+          "locales": {
+            "zh": "多肽",
+            "en": "Peptides"
+          },
+          "unit": "g/L",
+          "minimum": "120"
+        },
+        {
+          "id": "insoluble",
+          "locales": {
+            "zh": "水不溶物",
+            "en": "Water-insoluble matter"
+          },
+          "unit": "g/L",
+          "maximum": "50"
+        },
+        {
+          "id": "ph",
+          "locales": {
+            "zh": "pH（1:250 倍稀释）",
+            "en": "pH (1:250 dilution)"
+          },
+          "unit": "pH",
+          "minimum": "5.0",
+          "maximum": "7.0"
+        }
+      ]
+    },
+    {
+      "slug": "suspended-fertilizer-120-60-400-draft",
+      "displayName": "康姆®大量元素水溶肥料 · 悬浮型 120-60-400+TE",
+      "englishDisplayName": "Kangmu suspended water-soluble fertilizer · 120-60-400+TE",
+      "intro": "画册第 14 页大量元素水溶肥料（悬浮型），配方标注 120-60-400+TE，页面卖点为果实膨大、促进着色，包装规格 10KG；数值与适用范围已按画册页面整理。",
+      "englishIntro": "Brochure page 14 presents a Kangmu suspended water-soluble fertilizer marked 120-60-400+TE, positioned for fruit sizing and colour development, with a 10 kg pack. Values and use ranges follow the brochure page.",
+      "sourcePages": [
+        14,
+        15
+      ],
+      "sourcePreviewPath": "/images/flbook-pages/pages-14-15.jpg",
+      "category": "water-soluble",
+      "sourceNote": "画册第 14–15 页（印刷页 09–10）完整跨页；左页为配方与卖点，右页为包装场景；图片与原官网 /display/754918.html 的产品卡视觉一致。",
+      "imageStatus": "owner-supplied",
+      "imagePath": "/images/official-site/product-suspended-120.jpg",
+      "officialImageSource": "http://m.zgkomu.cn/display/754918.html",
+      "contentStatus": "approved",
+      "sourceDetailPreviewPath": "/images/flbook-pages/page-14-product.jpg",
+      "claimsVerified": true,
+      "specifications": [
+        {
+          "id": "npk-total",
+          "locales": {
+            "zh": "氮磷钾总量",
+            "en": "Total N-P-K"
+          },
+          "unit": "g/L",
+          "minimum": "580"
+        },
+        {
+          "id": "nitrogen",
+          "locales": {
+            "zh": "氮（N）",
+            "en": "Nitrogen (N)"
+          },
+          "unit": "g/L",
+          "minimum": "120"
+        },
+        {
+          "id": "phosphate",
+          "locales": {
+            "zh": "磷（P₂O₅）",
+            "en": "Phosphate (P₂O₅)"
+          },
+          "unit": "g/L",
+          "minimum": "60"
+        },
+        {
+          "id": "potassium",
+          "locales": {
+            "zh": "钾（K₂O）",
+            "en": "Potassium (K₂O)"
+          },
+          "unit": "g/L",
+          "minimum": "400"
+        },
+        {
+          "id": "zinc",
+          "locales": {
+            "zh": "锌（Zn）",
+            "en": "Zinc (Zn)"
+          },
+          "unit": "g/L",
+          "minimum": "0.5"
+        },
+        {
+          "id": "manganese",
+          "locales": {
+            "zh": "锰（Mn）",
+            "en": "Manganese (Mn)"
+          },
+          "unit": "g/L",
+          "minimum": "0.5"
+        },
+        {
+          "id": "magnesium",
+          "locales": {
+            "zh": "镁（Mg）",
+            "en": "Magnesium (Mg)"
+          },
+          "unit": "g/L",
+          "minimum": "1"
+        },
+        {
+          "id": "boron",
+          "locales": {
+            "zh": "硼（B）",
+            "en": "Boron (B)"
+          },
+          "unit": "g/L",
+          "minimum": "0.5"
+        },
+        {
+          "id": "insoluble",
+          "locales": {
+            "zh": "水不溶物",
+            "en": "Water-insoluble matter"
+          },
+          "unit": "g/L",
+          "maximum": "10"
+        },
+        {
+          "id": "ph",
+          "locales": {
+            "zh": "pH（1:250 倍稀释）",
+            "en": "pH (1:250 dilution)"
+          },
+          "unit": "pH",
+          "minimum": "3.0",
+          "maximum": "9.0"
+        },
+        {
+          "id": "biuret",
+          "locales": {
+            "zh": "缩二脲",
+            "en": "Biuret"
+          },
+          "unit": "%",
+          "maximum": "0.9"
+        },
+        {
+          "id": "phosphite",
+          "locales": {
+            "zh": "亚磷酸根（HPO₃²⁻）",
+            "en": "Phosphite (HPO₃²⁻)"
+          },
+          "unit": "g/L",
+          "minimum": "15"
+        }
+      ]
+    },
+    {
+      "slug": "suspended-fertilizer-200-150-200-draft",
+      "displayName": "康姆®大量元素水溶肥料 · 悬浮型 200-150-200+TE",
+      "englishDisplayName": "Kangmu suspended water-soluble fertilizer · 200-150-200+TE",
+      "intro": "画册第 16 页大量元素水溶肥料（悬浮型），配方标注 200-150-200+TE，页面卖点为营养均衡、提高促根，包装规格 10KG；数值与适用范围已按画册页面整理。",
+      "englishIntro": "Brochure page 16 presents a Kangmu suspended water-soluble fertilizer marked 200-150-200+TE, positioned around balanced nutrition and root support, with a 10 kg pack. Values and use ranges follow the brochure page.",
+      "sourcePages": [
+        16,
+        17
+      ],
+      "sourcePreviewPath": "/images/flbook-pages/pages-16-17.jpg",
+      "category": "water-soluble",
+      "sourceNote": "画册第 16–17 页（印刷页 11–12）完整跨页；左页为配方与卖点，右页为番茄包装场景；图片与原官网 /display/754919.html 的产品卡视觉一致。",
+      "imageStatus": "owner-supplied",
+      "imagePath": "/images/official-site/product-suspended-200.jpg",
+      "officialImageSource": "http://m.zgkomu.cn/display/754919.html",
+      "contentStatus": "approved",
+      "sourceDetailPreviewPath": "/images/flbook-pages/page-16-product.jpg",
+      "claimsVerified": true,
+      "specifications": [
+        {
+          "id": "npk-total",
+          "locales": {
+            "zh": "氮磷钾总量",
+            "en": "Total N-P-K"
+          },
+          "unit": "g/L",
+          "minimum": "550"
+        },
+        {
+          "id": "nitrogen",
+          "locales": {
+            "zh": "氮（N）",
+            "en": "Nitrogen (N)"
+          },
+          "unit": "g/L",
+          "minimum": "200"
+        },
+        {
+          "id": "phosphate",
+          "locales": {
+            "zh": "磷（P₂O₅）",
+            "en": "Phosphate (P₂O₅)"
+          },
+          "unit": "g/L",
+          "minimum": "150"
+        },
+        {
+          "id": "potassium",
+          "locales": {
+            "zh": "钾（K₂O）",
+            "en": "Potassium (K₂O)"
+          },
+          "unit": "g/L",
+          "minimum": "200"
+        },
+        {
+          "id": "zinc",
+          "locales": {
+            "zh": "锌（Zn）",
+            "en": "Zinc (Zn)"
+          },
+          "unit": "g/L",
+          "minimum": "0.5"
+        },
+        {
+          "id": "manganese",
+          "locales": {
+            "zh": "锰（Mn）",
+            "en": "Manganese (Mn)"
+          },
+          "unit": "g/L",
+          "minimum": "0.5"
+        },
+        {
+          "id": "magnesium",
+          "locales": {
+            "zh": "镁（Mg）",
+            "en": "Magnesium (Mg)"
+          },
+          "unit": "g/L",
+          "minimum": "1"
+        },
+        {
+          "id": "boron",
+          "locales": {
+            "zh": "硼（B）",
+            "en": "Boron (B)"
+          },
+          "unit": "g/L",
+          "minimum": "0.5"
+        },
+        {
+          "id": "insoluble",
+          "locales": {
+            "zh": "水不溶物",
+            "en": "Water-insoluble matter"
+          },
+          "unit": "g/L",
+          "maximum": "10"
+        },
+        {
+          "id": "ph",
+          "locales": {
+            "zh": "pH（1:250 倍稀释）",
+            "en": "pH (1:250 dilution)"
+          },
+          "unit": "pH",
+          "minimum": "3.0",
+          "maximum": "9.0"
+        },
+        {
+          "id": "biuret",
+          "locales": {
+            "zh": "缩二脲",
+            "en": "Biuret"
+          },
+          "unit": "%",
+          "maximum": "0.9"
+        },
+        {
+          "id": "phosphite",
+          "locales": {
+            "zh": "亚磷酸根（HPO₃²⁻）",
+            "en": "Phosphite (HPO₃²⁻)"
+          },
+          "unit": "g/L",
+          "minimum": "15"
+        }
+      ]
+    },
+    {
+      "slug": "massive-element-liquid-quality-draft",
+      "displayName": "黄金屋®大量元素水溶肥料 · 提升产量品质液体型",
+      "englishDisplayName": "Huangjinwu liquid massive-element water-soluble fertilizer · Yield and quality",
+      "intro": "画册第 18 页大量元素水溶肥料，页面卖点为提升产量品质，包装规格 1000mL；配方与用法已按画册页面整理。",
+      "englishIntro": "Brochure page 18 presents a Huangjinwu liquid massive-element water-soluble fertilizer positioned for yield and quality improvement, shown in a 1000 mL pack. Formula and application details follow the brochure page.",
+      "sourcePages": [
+        18
+      ],
+      "sourcePreviewPath": "/images/flbook-pages/pages-18-19.jpg",
+      "category": "water-soluble",
+      "sourceNote": "画册第 18–19 页（印刷页 13–14）为两个产品；本条仅归属 viewer 第 18 页左侧“提升产量品质”款，第 19 页产品已单独标记为 excluded-candidate。",
+      "imageStatus": "owner-supplied",
+      "imagePath": "/images/flbook-pages/page-18-product.jpg",
+      "contentStatus": "approved",
+      "sourceRelatedPages": [
+        {
+          "page": 19,
+          "role": "excluded-candidate",
+          "note": "第19页是另一款强调协调花芽分化的液体肥候选，首期不进入十条展示目录。"
+        }
+      ],
+      "sourceDetailPreviewPath": "/images/flbook-pages/page-18-product.jpg",
+      "claimsVerified": true,
+      "specifications": [
+        {
+          "id": "phosphate",
+          "locales": {
+            "zh": "磷（P₂O₅）",
+            "en": "Phosphate (P₂O₅)"
+          },
+          "unit": "g/L",
+          "minimum": "260"
+        },
+        {
+          "id": "potassium",
+          "locales": {
+            "zh": "钾（K₂O）",
+            "en": "Potassium (K₂O)"
+          },
+          "unit": "g/L",
+          "minimum": "340"
+        },
+        {
+          "id": "insoluble",
+          "locales": {
+            "zh": "水不溶物",
+            "en": "Water-insoluble matter"
+          },
+          "unit": "g/L",
+          "maximum": "10"
+        },
+        {
+          "id": "biuret",
+          "locales": {
+            "zh": "缩二脲",
+            "en": "Biuret"
+          },
+          "unit": "%",
+          "maximum": "0.9"
+        },
+        {
+          "id": "ph",
+          "locales": {
+            "zh": "pH（1:250 倍稀释）",
+            "en": "pH (1:250 dilution)"
+          },
+          "unit": "pH",
+          "minimum": "3.0",
+          "maximum": "9.0"
+        },
+        {
+          "id": "phosphite",
+          "locales": {
+            "zh": "亚磷酸根（HPO₃²⁻）",
+            "en": "Phosphite (HPO₃²⁻)"
+          },
+          "unit": "g/L",
+          "minimum": "450"
+        }
+      ]
+    },
+    {
+      "slug": "medium-element-liquid-draft",
+      "displayName": "黄金屋®中量元素水溶肥料 · 补充钙镁硅液体型",
+      "englishDisplayName": "Huangjinwu liquid secondary-element water-soluble fertilizer · Calcium, magnesium and silicon",
+      "intro": "画册第 20 页中量元素水溶肥料，页面卖点为补充钙镁硅、肥效持久，包装规格 1000mL；配方与用法已按画册页面整理。",
+      "englishIntro": "Brochure page 20 presents a Huangjinwu liquid secondary-element water-soluble fertilizer positioned around calcium, magnesium and silicon supplementation with lasting nutrient effect, shown in a 1000 mL pack. Formula and application details follow the brochure page.",
+      "sourcePages": [
+        20
+      ],
+      "sourcePreviewPath": "/images/flbook-pages/pages-20-21.jpg",
+      "category": "medium-nutrient",
+      "sourceNote": "画册第 20–21 页（印刷页 15–16）为两个产品；本条仅归属 viewer 第 20 页左侧“补充钙镁硅”款，第 21 页产品已单独标记为 excluded-candidate。",
+      "imageStatus": "owner-supplied",
+      "imagePath": "/images/flbook-pages/page-20-product.jpg",
+      "contentStatus": "approved",
+      "sourceRelatedPages": [
+        {
+          "page": 21,
+          "role": "excluded-candidate",
+          "note": "第21页是另一款中量元素液体肥候选，首期不进入十条展示目录。"
+        }
+      ],
+      "sourceDetailPreviewPath": "/images/flbook-pages/page-20-product.jpg",
+      "claimsVerified": true,
+      "specifications": [
+        {
+          "id": "calcium",
+          "locales": {
+            "zh": "钙（Ca）",
+            "en": "Calcium (Ca)"
+          },
+          "unit": "g/L",
+          "minimum": "90"
+        },
+        {
+          "id": "magnesium",
+          "locales": {
+            "zh": "镁（Mg）",
+            "en": "Magnesium (Mg)"
+          },
+          "unit": "g/L",
+          "minimum": "20"
+        },
+        {
+          "id": "silicon",
+          "locales": {
+            "zh": "硅（SiO₂）",
+            "en": "Silicon (SiO₂)"
+          },
+          "unit": "g/L",
+          "minimum": "30"
+        },
+        {
+          "id": "ph",
+          "locales": {
+            "zh": "pH（1:250 倍稀释）",
+            "en": "pH (1:250 dilution)"
+          },
+          "unit": "pH",
+          "minimum": "3.0",
+          "maximum": "5.0"
+        },
+        {
+          "id": "insoluble",
+          "locales": {
+            "zh": "水不溶物",
+            "en": "Water-insoluble matter"
+          },
+          "unit": "g/L",
+          "maximum": "50"
+        },
+        {
+          "id": "phosphite",
+          "locales": {
+            "zh": "亚磷酸根（HPO₃²⁻）",
+            "en": "Phosphite (HPO₃²⁻)"
+          },
+          "unit": "g/L",
+          "minimum": "30"
+        }
+      ]
+    },
+    {
+      "slug": "organic-inorganic-compound-draft",
+      "displayName": "康姆®有机无机复混肥料 · 养分均衡改土型",
+      "englishDisplayName": "Kangmu organic-inorganic compound fertilizer · Balanced nutrition and soil structure",
+      "intro": "画册第 22 页有机无机复混肥料，页面卖点为养分全面均衡、改良土壤结构，包装规格 50KG；配方与宣称已按画册页面整理。",
+      "englishIntro": "Brochure page 22 presents a Kangmu organic-inorganic compound fertilizer positioned around balanced nutrition and improved soil structure, shown in a 50 kg pack. The page description is used as the public summary.",
+      "sourcePages": [
+        22
+      ],
+      "sourcePreviewPath": "/images/flbook-pages/pages-22-23.jpg",
+      "category": "compound",
+      "sourceNote": "画册第 22–23 页（印刷页 17–18）为两个产品；本条仅归属 viewer 第 22 页左侧有机无机复混肥，第 23 页产品已单独标记为 excluded-candidate。",
+      "imageStatus": "owner-supplied",
+      "imagePath": "/images/flbook-pages/page-22-product.jpg",
+      "contentStatus": "approved",
+      "sourceRelatedPages": [
+        {
+          "page": 23,
+          "role": "excluded-candidate",
+          "note": "第23页是另一款高浓度全水溶三元复合肥候选，首期不进入十条展示目录。"
+        }
+      ],
+      "sourceDetailPreviewPath": "/images/flbook-pages/page-22-product.jpg",
+      "claimsVerified": true,
+      "specifications": []
+    }
+  ]
+}

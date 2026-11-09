@@ -1,17 +1,12 @@
 import Link from "next/link";
-import { productCategories } from "../data/products";
-import { englishCategories } from "../data/english-samples";
+import type { CatalogCategory } from "../content/catalog";
 import { CatalogSearchForm } from "./catalog-search-form";
+import { catalogHref } from "../data/catalog-path";
+import { catalogMessages, productCount, type CatalogPageLocale } from "../i18n/catalog-messages";
+import { aboutMessages } from "../i18n/about-messages";
+export { catalogHref } from "../data/catalog-path";
 
-export function catalogHref(locale: "zh" | "en", category: string, query: string, anchor = false) {
-  const params = new URLSearchParams();
-  if (category) params.set("category", category);
-  if (query) params.set("q", query);
-  const suffix = params.toString();
-  return `${locale === "en" ? "/en" : ""}/products${suffix ? `?${suffix}` : ""}${anchor ? "#catalog-results" : ""}`;
-}
-
-export function CatalogControls({ locale, category, query, count }: { locale: "zh" | "en"; category: string; query: string; count: number }) {
-  const en = locale === "en";
-  return <><CatalogSearchForm key={JSON.stringify([locale, category, query])} locale={locale} category={category} query={query}/><nav className="catalog-filters" aria-label={en ? "Product categories" : "产品类别"}><Link href={catalogHref(locale,"",query,true)} aria-current={!category ? "page" : undefined}>{en ? "All" : "全部"}</Link>{productCategories.map(item=><Link key={item.id} href={catalogHref(locale,item.id,query,true)} aria-current={category === item.id ? "page" : undefined}>{en ? englishCategories[item.id] : item.name}</Link>)}</nav><p className="catalog-result-count">{en ? `${count} sample ${count === 1 ? "product" : "products"} found` : `找到 ${count} 条示例产品`}</p></>;
+export function CatalogControls({ locale, category, query, count, categories, sample, basePath }: { locale: CatalogPageLocale; category: string; query: string; count: number; categories: CatalogCategory[]; sample: boolean; basePath?: string }) {
+  const copy = catalogMessages[locale];
+  return <><CatalogSearchForm key={JSON.stringify([locale, category, query])} locale={locale} category={category} query={query} sample={sample} basePath={basePath}/><nav className="catalog-filters" aria-label={copy.categories}><Link href={catalogHref(locale,"",query,true,1,basePath)} aria-current={!category ? "page" : undefined}>{copy.all}</Link>{categories.map(item=><Link key={item.slug} href={catalogHref(locale,item.slug,query,true,1,basePath)} aria-current={category === item.slug ? "page" : undefined}>{item.name ?? aboutMessages[locale].pending}</Link>)}</nav><p className="catalog-result-count">{productCount(locale,count,sample)}</p></>;
 }

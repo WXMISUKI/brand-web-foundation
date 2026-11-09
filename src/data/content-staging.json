@@ -1,0 +1,191 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "approved",
+  "records": {
+    "news": [
+      {
+        "slug": "nutrition-showcase",
+        "kind": "news",
+        "locales": {
+          "en": {
+            "title": "KOMU plant nutrition across growth stages",
+            "summary": "KOMU plant nutrition collection and the brochure-linked product library for growers and buyers.",
+            "body": "KOMU plant nutrition collection and the brochure-linked product library for growers and buyers.\\n\\nOpen the product catalogue to compare the related product pages and contact the team for current documentation."
+          },
+          "zh": {
+            "title": "康姆植物营养覆盖不同生长阶段",
+            "summary": "面向种植者与采购商介绍康姆植物营养产品系列和画册关联产品资料。",
+            "body": "面向种植者与采购商介绍康姆植物营养产品系列和画册关联产品资料。\\n\\n打开产品目录可以查看关联产品页面，并通过联系方式获取最新资料。"
+          }
+        },
+        "publishedOn": "2026-10-28",
+        "image": "/images/official-site/hero-01.jpg",
+        "assetStatus": "authorized-example"
+      },
+      {
+        "slug": "grower-dialogue",
+        "kind": "event",
+        "locales": {
+          "en": {
+            "title": "Planning crop nutrition with growers",
+            "summary": "A practical conversation framework for comparing crop needs, package formats and product documentation.",
+            "body": "A practical conversation framework for comparing crop needs, package formats and product documentation.\\n\\nOpen the product catalogue to compare the related product pages and contact the team for current documentation."
+          },
+          "zh": {
+            "title": "与种植者一起规划作物营养",
+            "summary": "围绕作物需求、包装规格和产品资料，整理一套便于沟通的应用框架。",
+            "body": "围绕作物需求、包装规格和产品资料，整理一套便于沟通的应用框架。\\n\\n打开产品目录可以查看关联产品页面，并通过联系方式获取最新资料。"
+          }
+        },
+        "publishedOn": "2026-09-16",
+        "image": "/images/official-site/hero-02.jpg",
+        "assetStatus": "authorized-example"
+      },
+      {
+        "slug": "catalog-preview",
+        "kind": "news",
+        "locales": {
+          "en": {
+            "title": "The KOMU product catalogue is online",
+            "summary": "The first ten product pages now connect brochure source pages, package images and product descriptions in one catalogue.",
+            "body": "The first ten product pages now connect brochure source pages, package images and product descriptions in one catalogue.\\n\\nOpen the product catalogue to compare the related product pages and contact the team for current documentation."
+          },
+          "zh": {
+            "title": "康姆产品目录已上线",
+            "summary": "首批十条产品页面已关联画册来源页、产品图片和产品说明。",
+            "body": "首批十条产品页面已关联画册来源页、产品图片和产品说明。\\n\\n打开产品目录可以查看关联产品页面，并通过联系方式获取最新资料。"
+          }
+        },
+        "publishedOn": "2026-08-04",
+        "image": "/images/official-site/hero-03.jpg",
+        "assetStatus": "authorized-example"
+      }
+    ],
+    "insights": [
+      {
+        "slug": "plant-nutrition",
+        "topics": [
+          "plant-nutrition"
+        ],
+        "locales": {
+          "en": {
+            "title": "Plant nutrition by growth stage",
+            "summary": "A concise guide to reading crop stages, nutrient roles and product documentation.",
+            "author": "KOMU editorial team",
+            "body": "A concise guide to reading crop stages, nutrient roles and product documentation.\\n\\nUse the linked product pages and contact route to continue the discussion."
+          },
+          "zh": {
+            "title": "按生长阶段理解植物营养",
+            "summary": "从作物阶段、营养作用和产品资料三个角度整理植物营养信息。",
+            "author": "康姆编辑团队",
+            "body": "从作物阶段、营养作用和产品资料三个角度整理植物营养信息。\\n\\n可结合关联产品页面和联系方式继续沟通。"
+          }
+        },
+        "publishedOn": "2026-10-12",
+        "image": "/images/official-site/company-laboratory.jpg",
+        "assetStatus": "authorized-example"
+      },
+      {
+        "slug": "growing-practices",
+        "topics": [
+          "growing-practices",
+          "crop-guides"
+        ],
+        "locales": {
+          "en": {
+            "title": "Growing practices and nutrient planning",
+            "summary": "How to structure a growing practice review before comparing product categories.",
+            "author": "KOMU editorial team",
+            "body": "How to structure a growing practice review before comparing product categories.\\n\\nUse the linked product pages and contact route to continue the discussion."
+          },
+          "zh": {
+            "title": "种植方式与营养规划",
+            "summary": "在比较产品类别之前，如何整理一份清晰的种植方式与营养规划。",
+            "author": "康姆编辑团队",
+            "body": "在比较产品类别之前，如何整理一份清晰的种植方式与营养规划。\\n\\n可结合关联产品页面和联系方式继续沟通。"
+          }
+        },
+        "publishedOn": "2026-10-12",
+        "image": "/images/official-site/company-products.jpg",
+        "assetStatus": "authorized-example"
+      },
+      {
+        "slug": "product-knowledge",
+        "topics": [
+          "product-knowledge",
+          "plant-nutrition"
+        ],
+        "locales": {
+          "en": {
+            "title": "How to read a fertilizer product page",
+            "summary": "A practical explanation of package format, source page references and enquiry preparation.",
+            "author": "KOMU editorial team",
+            "body": "A practical explanation of package format, source page references and enquiry preparation.\\n\\nUse the linked product pages and contact route to continue the discussion."
+          },
+          "zh": {
+            "title": "如何阅读肥料产品页面",
+            "summary": "介绍包装规格、来源页码和咨询准备信息。",
+            "author": "康姆编辑团队",
+            "body": "介绍包装规格、来源页码和咨询准备信息。\\n\\n可结合关联产品页面和联系方式继续沟通。"
+          }
+        },
+        "publishedOn": "2026-10-12",
+        "image": "/images/official-site/technology.jpg",
+        "assetStatus": "authorized-example"
+      }
+    ],
+    "cases": [
+      {
+        "slug": "fruit-growing",
+        "locales": {
+          "en": {
+            "title": "Orchard nutrition planning",
+            "summary": "A structured orchard guide covering seasonal observations, package formats and product documentation.",
+            "body": "A structured orchard guide covering seasonal observations, package formats and product documentation.\\n\\nThis guide is for product discovery and enquiry preparation; local agronomic decisions should follow field conditions."
+          },
+          "zh": {
+            "title": "果园营养规划",
+            "summary": "围绕季节观察、包装规格和产品资料整理果园营养指南。",
+            "body": "围绕季节观察、包装规格和产品资料整理果园营养指南。\\n\\n本指南用于产品了解和咨询准备，具体农艺决策应结合当地种植条件。"
+          }
+        },
+        "image": "/images/official-site/company-research.jpg",
+        "assetStatus": "authorized-example"
+      },
+      {
+        "slug": "greenhouse-growing",
+        "locales": {
+          "en": {
+            "title": "Protected cultivation planning",
+            "summary": "A greenhouse guide for organizing crop conditions, growing stages and product conversations.",
+            "body": "A greenhouse guide for organizing crop conditions, growing stages and product conversations.\\n\\nThis guide is for product discovery and enquiry preparation; local agronomic decisions should follow field conditions."
+          },
+          "zh": {
+            "title": "设施种植规划",
+            "summary": "围绕作物条件、生长阶段和产品沟通整理设施种植指南。",
+            "body": "围绕作物条件、生长阶段和产品沟通整理设施种植指南。\\n\\n本指南用于产品了解和咨询准备，具体农艺决策应结合当地种植条件。"
+          }
+        },
+        "image": "/images/official-site/hero-02.jpg",
+        "assetStatus": "authorized-example"
+      },
+      {
+        "slug": "field-growing",
+        "locales": {
+          "en": {
+            "title": "Field crop nutrition planning",
+            "summary": "A field crop guide for connecting crop stages with brochure-linked plant nutrition products.",
+            "body": "A field crop guide for connecting crop stages with brochure-linked plant nutrition products.\\n\\nThis guide is for product discovery and enquiry preparation; local agronomic decisions should follow field conditions."
+          },
+          "zh": {
+            "title": "大田作物营养规划",
+            "summary": "将作物阶段与画册关联植物营养产品连接起来的大田作物指南。",
+            "body": "将作物阶段与画册关联植物营养产品连接起来的大田作物指南。\\n\\n本指南用于产品了解和咨询准备，具体农艺决策应结合当地种植条件。"
+          }
+        },
+        "image": "/images/official-site/hero-03.jpg",
+        "assetStatus": "authorized-example"
+      }
+    ]
+  }
+}

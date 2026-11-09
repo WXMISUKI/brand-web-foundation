@@ -1,16 +1,18 @@
 import Link from "next/link";
-import { companyHistory } from "../data/company-history";
+import { getCompanyProfile } from "../content/company-profile";
+import { aboutMessages } from "../i18n/about-messages";
+import type { LocaleCode } from "../i18n/locales";
 
-export function AboutContent({ locale }: { locale: "zh" | "en" }) {
-  const en = locale === "en";
-  const cards = en ? ["Products & nutrition", "Research & quality", "Grower services"] : ["产品与营养", "研发与品质", "种植服务"];
+export async function AboutContent({ locale }: { locale: LocaleCode }) {
+  const profile = await getCompanyProfile(locale);
+  const copy = aboutMessages[locale];
   return <main>
-    <div className="about-banner-wrap"><div className="about-banner"><span>{en ? "GROWING TOGETHER · SAMPLE" : "携手生长 · 原型示例"}</span><p>{en ? "Growing together with growers" : "与种植者一起，面向更好的生长"}</p><small>{en ? "Sample image · not owner material" : "示例图片 · 非业主素材"}</small></div></div>
-    <div className="inner about-page"><nav className="crumb" aria-label={en ? "Breadcrumb" : "面包屑导航"}><Link href={en ? "/en" : "/"}>{en ? "Home" : "首页"}</Link> / {en ? "About" : "关于我们"}</nav>
-      <section className="about-introduction"><span className="eyebrow">ABOUT US · {en ? "SAMPLE" : "示例"}</span><h1>{en ? "About the company" : "关于我们"}</h1><p className="about-lead">{en ? "A place for the owner’s reviewed company introduction." : "这里将展示经业主审核的企业介绍。"}</p><p>{en ? "The company profile, capabilities, location and imagery are awaiting owner confirmation. The text and images shown here are placeholders for the prototype." : "企业简介、业务能力、所在地及相关图片均待业主确认。当前文字和图片仅用于原型展示。"}</p></section>
-      <section className="about-themes" aria-labelledby="themes-title"><h2 id="themes-title">{en ? "Our focus" : "我们的关注方向"}</h2><div className="about-theme-grid">{cards.map((card,index)=><article key={card}><span className="about-theme-number">0{index+1}</span><h3>{card}</h3><p>{en ? "Information and supporting materials await confirmation." : "相关介绍与证明资料待业主确认。"}</p></article>)}</div></section>
-      <section className="about-history" aria-labelledby="history-title"><div className="history-heading"><span className="eyebrow">OUR JOURNEY</span><h2 id="history-title">{en ? "Our journey" : "发展历程"}</h2><p>{en ? "Company milestones will be added after the owner confirms the dates and descriptions." : "企业重要节点将在业主确认时间与内容后补充。"}</p></div>{companyHistory.length ? <ol className="history-timeline">{companyHistory.map(milestone => <li key={milestone.id}><span className="history-period">{milestone.period}</span><article className="history-card">{milestone.image && <img src={milestone.image.src} alt={milestone.image.alt[locale] ?? milestone.text[locale]?.title ?? ""} loading="lazy" />}<div><h3>{milestone.text[locale]?.title ?? (en ? "Translation pending" : "待翻译")}</h3><p>{milestone.text[locale]?.description ?? (en ? "Description pending translation." : "介绍待翻译。")}</p></div></article></li>)}</ol> : <div className="history-placeholder"><span aria-hidden="true">●</span><div><strong>{en ? "Milestones pending" : "发展节点待确认"}</strong><p>{en ? "No dates or achievements have been supplied yet." : "目前尚未提供经确认的年份和事件。"}</p></div></div>}</section>
-      <div className="about-contact-link"><Link className="button green" href={en ? "/en/contact" : "/contact"}>{en ? "Contact us" : "联系我们"} <span aria-hidden="true">↗</span></Link></div>
+    <div className="about-banner-wrap"><div className="about-banner company-banner">{profile.banner && <img className="company-banner-image" src={profile.banner.src} alt={profile.banner.alt ?? ""} />}<span>{copy.preview}</span><p>{copy.banner}</p>{!profile.banner && <small>{copy.sampleImage}</small>}</div></div>
+    <div className="inner about-page"><nav className="crumb" aria-label={copy.breadcrumb}><Link href={locale === "es" ? "/es/products" : `/${locale}`}>{locale === "es" ? "Catálogo de productos" : copy.home}</Link> / {copy.about}</nav>
+      <section className="about-introduction"><h1>{profile.title ?? copy.pending}</h1><p className="about-lead">{profile.summary ?? copy.pending}</p><p className="company-description">{profile.description ?? copy.pending}</p></section>
+      <section className="about-themes" aria-labelledby="themes-title"><h2 id="themes-title">{copy.focus}{profile.source === "sample" && ` · ${copy.sample}`}</h2>{profile.focusAreas.length ? <div className="about-theme-grid">{profile.focusAreas.map((area,index)=><article key={area.id}><span className="about-theme-number">{String(index + 1).padStart(2, "0")}</span><h3>{area.title ?? copy.pending}</h3><p>{area.description ?? copy.pending}</p></article>)}</div> : <p>{copy.pending}</p>}</section>
+      <section className="about-history" aria-labelledby="history-title"><div className="history-heading"><span className="eyebrow">{copy.journey}</span><h2 id="history-title">{copy.journey}</h2></div>{profile.milestones.length ? <ol className="history-timeline">{profile.milestones.map(milestone => <li key={milestone.id}><span className="history-period">{milestone.period ?? copy.pending}</span><article className="history-card">{milestone.image && <img src={milestone.image.src} alt={milestone.image.alt ?? milestone.title ?? ""} loading="lazy" />}<div><h3>{milestone.title ?? copy.pending}</h3><p>{milestone.description ?? copy.pending}</p></div></article></li>)}</ol> : <div className="history-placeholder"><span aria-hidden="true">●</span><div><strong>{copy.noMilestones}</strong><p>{copy.contact}</p></div></div>}</section>
+      <div className="about-contact-link"><Link className="button green" href={`/${locale}/contact`}>{copy.contact} <span aria-hidden="true">↗</span></Link></div>
     </div>
   </main>;
 }

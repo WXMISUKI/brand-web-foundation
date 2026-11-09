@@ -1,0 +1,11 @@
+import { completeLocaleMap } from "./locale-fallback.ts";
+
+// French interface copy is a draft; article text is stored separately in the CMS.
+const insightMessagesSource = {
+ en:{title:"Growing insights",intro:"Explore articles on plant nutrition and growing.",search:"Search articles",author:"Author",submit:"Search",note:"Search uses the current language; keywords are not translated when you switch languages.",sample:"SAMPLE TOPIC",summary:"Article summary pending.",empty:"No articles match your search.",all:"View all articles",pages:"Article pages",previous:"Previous",next:"Next",page:"Page",of:"of",sampleArticle:"SAMPLE ARTICLE",body:"Article content or translation pending.",back:"← All insights"},
+ zh:{title:"种植知识",intro:"了解植物营养与种植相关知识。",search:"搜索文章",author:"作者",submit:"搜索",note:"搜索使用当前语言；切换语言时关键词不会自动翻译。",sample:"示例主题",summary:"文章摘要待补充。",empty:"没有找到匹配的文章。",all:"查看全部文章",pages:"文章分页",previous:"上一页",next:"下一页",page:"第",of:"页 / 共",sampleArticle:"示例文章",body:"文章内容或译文待补充。",back:"← 返回种植知识"},
+ fr:{title:"Conseils de culture",intro:"Découvrez des articles sur la nutrition végétale et les cultures.",search:"Rechercher des articles",author:"Auteur",submit:"Rechercher",note:"La recherche utilise la langue courante ; les mots-clés ne sont pas traduits lors du changement de langue.",sample:"SUJET D’EXEMPLE",summary:"Résumé de l’article à compléter.",empty:"Aucun article ne correspond à votre recherche.",all:"Voir tous les articles",pages:"Pages d’articles",previous:"Précédent",next:"Suivant",page:"Page",of:"sur",sampleArticle:"ARTICLE D’EXEMPLE",body:"Contenu ou traduction de l’article à compléter.",back:"← Tous les conseils"},
+ es:{title:"Conocimientos de cultivo",intro:"Explora artículos sobre nutrición vegetal y cultivo.",search:"Buscar artículos",author:"Autor",submit:"Buscar",note:"La búsqueda usa el idioma actual; las palabras clave no se traducen al cambiar de idioma.",sample:"TEMA DE EJEMPLO",summary:"Resumen del artículo pendiente.",empty:"No hay artículos que coincidan con la búsqueda.",all:"Ver todos los artículos",pages:"Páginas de artículos",previous:"Anterior",next:"Siguiente",page:"Página",of:"de",sampleArticle:"ARTÍCULO DE EJEMPLO",body:"Contenido o traducción del artículo pendiente.",back:"← Todos los artículos"},
+};
+
+export const insightMessages = completeLocaleMap(insightMessagesSource);

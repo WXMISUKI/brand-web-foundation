@@ -1,0 +1,19 @@
+import type { LocaleCode } from "./locales";
+
+// Draft interface translations; terminology and layout require review before enabling a locale.
+export type NavigationMessages = { crops: string; products: string; solutions: string; tools: string; corporate: string; insights: string; menu: string; mobileNavigation: string; about: string; contact: string };
+export const navigationMessages: Record<LocaleCode, NavigationMessages> = {
+  en: { crops: "Crop Guide", products: "Products", solutions: "Growing Practice", tools: "Smart Farming", corporate: "Corporate", insights: "Insights", menu: "Menu", mobileNavigation: "Mobile navigation", about: "About", contact: "Contact" },
+  zh: { crops: "作物指南", products: "产品中心", solutions: "种植方案", tools: "智慧农业", corporate: "关于我们", insights: "资讯", menu: "菜单", mobileNavigation: "移动导航", about: "关于我们", contact: "联系我们" },
+  fr: { crops: "Guide des cultures", products: "Produits", solutions: "Pratiques culturales", tools: "Agriculture intelligente", corporate: "Entreprise", insights: "Actualités et conseils", menu: "Menu", mobileNavigation: "Navigation mobile", about: "À propos", contact: "Contact" },
+  he: { crops: "מדריך גידולים", products: "מוצרים", solutions: "שיטות גידול", tools: "חקלאות חכמה", corporate: "החברה", insights: "מידע ותוכן", menu: "תפריט", mobileNavigation: "ניווט לנייד", about: "אודות", contact: "צור קשר" },
+  nl: { crops: "Teeltgids", products: "Producten", solutions: "Teeltmethoden", tools: "Slimme landbouw", corporate: "Bedrijf", insights: "Kennis en nieuws", menu: "Menu", mobileNavigation: "Mobiele navigatie", about: "Over ons", contact: "Contact" },
+  it: { crops: "Guida alle colture", products: "Prodotti", solutions: "Pratiche colturali", tools: "Agricoltura intelligente", corporate: "Azienda", insights: "Notizie e approfondimenti", menu: "Menu", mobileNavigation: "Navigazione mobile", about: "Chi siamo", contact: "Contatti" },
+  es: { crops: "Guía de cultivos", products: "Productos", solutions: "Prácticas de cultivo", tools: "Agricultura inteligente", corporate: "Empresa", insights: "Noticias y conocimientos", menu: "Menú", mobileNavigation: "Navegación móvil", about: "Quiénes somos", contact: "Contacto" },
+  pt: { crops: "Guia de culturas", products: "Produtos", solutions: "Práticas de cultivo", tools: "Agricultura inteligente", corporate: "Empresa", insights: "Notícias e conhecimentos", menu: "Menu", mobileNavigation: "Navegação móvel", about: "Sobre nós", contact: "Contacto" },
+  el: { crops: "Οδηγός καλλιεργειών", products: "Προϊόντα", solutions: "Καλλιεργητικές πρακτικές", tools: "Έξυπνη γεωργία", corporate: "Εταιρεία", insights: "Νέα και γνώσεις", menu: "Μενού", mobileNavigation: "Πλοήγηση κινητού", about: "Σχετικά με εμάς", contact: "Επικοινωνία" },
+  ro: { crops: "Ghidul culturilor", products: "Produse", solutions: "Practici de cultivare", tools: "Agricultură inteligentă", corporate: "Companie", insights: "Știri și informații", menu: "Meniu", mobileNavigation: "Navigare mobilă", about: "Despre noi", contact: "Contact" },
+  ru: { crops: "Руководство по культурам", products: "Продукция", solutions: "Методы выращивания", tools: "Умное земледелие", corporate: "Компания", insights: "Новости и материалы", menu: "Меню", mobileNavigation: "Мобильная навигация", about: "О нас", contact: "Контакты" },
+  th: { crops: "คู่มือพืช", products: "ผลิตภัณฑ์", solutions: "วิธีการเพาะปลูก", tools: "เกษตรอัจฉริยะ", corporate: "บริษัท", insights: "ข่าวสารและความรู้", menu: "เมนู", mobileNavigation: "เมนูมือถือ", about: "เกี่ยวกับเรา", contact: "ติดต่อเรา" },
+  tr: { crops: "Bitki rehberi", products: "Ürünler", solutions: "Yetiştirme yöntemleri", tools: "Akıllı tarım", corporate: "Kurumsal", insights: "Bilgi ve haberler", menu: "Menü", mobileNavigation: "Mobil gezinme", about: "Hakkımızda", contact: "İletişim" },
+};

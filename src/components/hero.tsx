@@ -2,20 +2,13 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { heroMedia } from "../data/hero-media";
+import type { HeroSlide } from "../data/hero-slides";
+import { heroHref } from "../data/hero-link";
+import { heroMessages } from "../i18n/hero-messages";
+import { aboutMessages } from "../i18n/about-messages";
+import type { CatalogPageLocale } from "../i18n/catalog-messages";
 
-const chineseSlides = [
-  { eyebrow: "NURTURE EVERY POSSIBILITY", title: <>用专业营养，<br />陪伴每一次生长。</>, description: "从土壤到作物，探索更适合种植需求的植物营养方案。", href: "/products", action: "探索产品" },
-  { eyebrow: "GROW WITH CARE", title: <>关注作物需求，<br />探索营养方案。</>, description: "了解面向不同种植场景的产品分类与应用。", href: "/#applications", action: "查看方案" },
-  { eyebrow: "ROOTED IN GROWTH", title: <>理解土地，<br />也理解种植者。</>, description: "企业资料与服务内容将在业主确认后更新。", href: "/about", action: "了解我们" },
-];
-const englishSlides = [
-  { eyebrow: "NURTURE EVERY POSSIBILITY", title: <>Nutrition for<br />every stage of growth.</>, description: "Explore sample plant nutrition products and growing applications.", href: "/en/products", action: "Explore products" },
-  { eyebrow: "GROW WITH CARE", title: <>Understanding crops,<br />exploring nutrition.</>, description: "Explore example product categories for growing needs.", href: "/en#applications", action: "Explore solutions" },
-  { eyebrow: "ROOTED IN GROWTH", title: <>Growing together<br />with growers.</>, description: "Company information and services await owner confirmation.", href: "/en/about", action: "About us" },
-];
-
-export function Hero({ locale = "zh" }: { locale?: "zh" | "en" }) {
+export function Hero({ locale, slides }: { locale: CatalogPageLocale; slides: HeroSlide[] }) {
   const [active, setActive] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [hovered, setHovered] = useState(false);
@@ -23,7 +16,6 @@ export function Hero({ locale = "zh" }: { locale?: "zh" | "en" }) {
   const [failedVideo, setFailedVideo] = useState<string | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const playingBeforePointer = useRef(false);
-  const slides = locale === "en" ? englishSlides : chineseSlides;
   useEffect(() => {
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     setPlaying(!motion.matches);
@@ -35,26 +27,27 @@ export function Hero({ locale = "zh" }: { locale?: "zh" | "en" }) {
     return () => { motion.removeEventListener("change", onMotionChange); document.removeEventListener("visibilitychange", onVisibilityChange); };
   }, []);
   useEffect(() => {
-    if (!playing || hovered || !visible) return;
+    if (!playing || hovered || !visible || slides.length < 2) return;
     const timer = window.setInterval(() => setActive(index => (index + 1) % slides.length), 7000);
     return () => window.clearInterval(timer);
   }, [playing, hovered, visible, slides.length]);
-  const slide = slides[active];
-  const media = heroMedia[active];
+  const slide = slides[active % slides.length];
+  const href = heroHref(locale, slide.actionPath);
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    if (playing && !hovered && visible) void video.play().catch(() => { if (video.error) setFailedVideo(media.video ?? null); });
+    if (playing && !hovered && visible) void video.play().catch(() => { if (video.error) setFailedVideo(slide.video ?? null); });
     else video.pause();
-  }, [active, playing, hovered, visible, media.video, failedVideo]);
+  }, [active, playing, hovered, visible, slide.video, failedVideo]);
   const change = (step: number) => setActive((index) => (index + step + slides.length) % slides.length);
-  return <section className="hero" aria-label={locale === "en" ? "Featured topics" : "首页主题轮播"} aria-roledescription={locale === "en" ? "carousel" : "轮播"} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} onFocusCapture={() => setPlaying(false)}>
-    <div className="hero-art" aria-hidden="true" style={{ backgroundImage: `url("${media.image}")` }}>{media.video && media.video !== failedVideo && <video key={media.video} ref={videoRef} className="hero-video" src={media.video} poster={media.image} muted loop playsInline preload="metadata" onError={() => setFailedVideo(media.video ?? null)} />}</div>
+  const copy = heroMessages[locale];
+  return <section className="hero" aria-label={copy.topics} aria-roledescription={copy.carousel} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} onFocusCapture={() => setPlaying(false)}>
+    <div className="hero-art" aria-hidden="true" style={{ backgroundImage: `linear-gradient(90deg, rgba(11, 68, 31, .82), rgba(102, 130, 28, .34)), url("${slide.image}")` }}>{slide.video && slide.video !== failedVideo && <video key={slide.video} ref={videoRef} className="hero-video" src={slide.video} poster={slide.image} muted loop playsInline preload="metadata" onError={() => setFailedVideo(slide.video ?? null)} />}</div>
     <div className="hero-content" aria-live={playing ? "off" : "polite"} aria-atomic="true">
-      <span className="eyebrow light">{slide.eyebrow}</span><h1>{slide.title}</h1><p>{slide.description}</p>
-      <Link className="button white" href={slide.href}>{slide.action} <span aria-hidden="true">↗</span></Link>
+      {slide.eyebrow && <span className="eyebrow light">{slide.eyebrow}</span>}<h1>{slide.title ?? (locale === "en" ? "Translation pending" : locale === "zh" ? "待翻译" : aboutMessages[locale].pending)}</h1>{slide.description && <p>{slide.description}</p>}
+      {href && slide.actionLabel && <Link className="button white" href={href}>{slide.actionLabel} <span aria-hidden="true">↗</span></Link>}
     </div>
-    <div className="hero-controls" aria-label={locale === "en" ? "Carousel controls" : "轮播控制"}><button type="button" className="hero-play" onPointerDown={() => { playingBeforePointer.current = playing; }} onClick={(event) => setPlaying(event.detail > 0 ? !playingBeforePointer.current : !playing)} aria-label={playing ? (locale === "en" ? "Pause rotation" : "暂停轮播") : (locale === "en" ? "Start rotation" : "播放轮播")}>{playing ? "Ⅱ" : "▶"}</button><button type="button" onClick={() => change(-1)} aria-label={locale === "en" ? "Previous slide" : "上一张"}>‹</button><span aria-live={playing ? "off" : "polite"}>{active + 1} / {slides.length}</span><button type="button" onClick={() => change(1)} aria-label={locale === "en" ? "Next slide" : "下一张"}>›</button></div>
-    <span className="hero-note">{locale === "en" ? "Sample copy and image · not owner material" : "示例文案与图片 · 非业主素材"}</span>
+    {slides.length > 1 && <div className="hero-controls" aria-label={copy.controls}><button type="button" className="hero-play" onPointerDown={() => { playingBeforePointer.current = playing; }} onClick={(event) => setPlaying(event.detail > 0 ? !playingBeforePointer.current : !playing)} aria-label={playing ? copy.pause : copy.play}>{playing ? "Ⅱ" : "▶"}</button><button type="button" className="hero-previous" onClick={() => change(-1)} aria-label={copy.previous}>‹</button><span className="hero-slide-count" aria-live={playing ? "off" : "polite"}>{active % slides.length + 1} / {slides.length}</span><button type="button" className="hero-next" onClick={() => change(1)} aria-label={copy.next}>›</button></div>}
+    {(slide.sampleText || slide.sampleImage) && <span className="hero-note">{slide.sampleText ? copy.sampleText : copy.sampleImage}</span>}
   </section>;
 }

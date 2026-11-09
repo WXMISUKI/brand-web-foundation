@@ -1,6 +1,25 @@
 import Link from "next/link";
+import { aboutMessages } from "../i18n/about-messages";
+import { contactMessages } from "../i18n/contact-messages";
+import type { LocaleCode } from "../i18n/locales";
+import type { CompanyProfile } from "../content/company-profile";
+import { siteContact } from "../data/site-contact";
+import { InquiryForm } from "./inquiry-form";
 
-export function ContactContent({ locale }: { locale: "zh" | "en" }) {
-  const en = locale === "en";
-  return <main><div className="about-banner-wrap"><div className="about-banner contact-banner"><span>CONTACT US · {en ? "SAMPLE" : "示例"}</span><h1>{en ? "Contact us" : "联系我们"}</h1><small>{en ? "Sample image · not owner material" : "示例图片 · 非业主素材"}</small></div></div><div className="inner contact-page"><nav className="crumb" aria-label={en ? "Breadcrumb" : "面包屑导航"}><Link href={en ? "/en" : "/"}>{en ? "Home" : "首页"}</Link> / {en ? "Contact" : "联系我们"}</nav><div className="contact-layout"><section className="contact-intro"><span className="eyebrow">LET’S CONNECT</span><h2>{en ? "Tell us about your growing needs" : "期待了解您的种植需求"}</h2><p>{en ? "Company contact details, enquiry channels and response arrangements await owner confirmation." : "企业联系方式、询盘渠道和回复方式将在业主确认后公布。"}</p><div className="contact-details"><h3>{en ? "Contact information" : "联系方式"}</h3><dl><div><dt>{en ? "Email" : "邮箱"}</dt><dd>{en ? "Pending confirmation" : "待确认"}</dd></div><div><dt>{en ? "Phone" : "电话"}</dt><dd>{en ? "Pending confirmation" : "待确认"}</dd></div><div><dt>{en ? "Address" : "地址"}</dt><dd>{en ? "Pending confirmation" : "待确认"}</dd></div></dl></div><Link className="text-link" href={en ? "/en/products" : "/products"}>{en ? "Explore sample products ↗" : "浏览示例产品 ↗"}</Link></section><section className="contact-preview" aria-labelledby="contact-preview-title"><h2 id="contact-preview-title">{en ? "Enquiry form preview" : "询盘表单预览"}</h2><p>{en ? "For layout review only. This form cannot be filled in or sent." : "仅供布局评审，当前表单不可填写或发送。"}</p><form><fieldset disabled><div className="contact-fields"><label>{en ? "Name" : "姓名"}<input type="text" /></label><label>{en ? "Country or region" : "国家或地区"}<input type="text" /></label><label>{en ? "Phone" : "电话"}<input type="tel" /></label><label>{en ? "Email" : "邮箱"}<input type="email" /></label><label>{en ? "Message" : "咨询内容"}<textarea rows={3} /></label></div><button type="submit">{en ? "Send enquiry" : "发送询盘"}</button></fieldset></form><small>{en ? "Fields, privacy notice and recipient require owner approval." : "具体字段、隐私说明和接收方待业主确认。"}</small></section></div></div></main>;
+export function ContactContent({ locale, profile }: { locale: LocaleCode; profile: CompanyProfile }) {
+  const copy = contactMessages[locale], common = aboutMessages[locale], prefix = `/${locale}`;
+  const contact = profile.contact;
+  const email = contact.email ?? siteContact.email;
+  const whatsapp = contact.whatsapp ?? siteContact.whatsapp;
+  const inquiryNote = locale === "zh" ? "询盘会记录给康姆团队处理；邮箱和 WhatsApp 仍可直接联系。" : "Enquiries are recorded for the KOMU team; email and WhatsApp remain available.";
+  const inquiryHeading = locale === "zh" ? "发送询盘" : "Send an enquiry";
+  const inquiryIntro = locale === "zh" ? "请说明关注的产品和目标市场，询盘会记录给康姆团队处理。" : "Share the product and market you are interested in. Your enquiry will be recorded for the KOMU team.";
+  const companyLabel = locale === "zh" ? "企业名称" : locale === "fr" ? "Entreprise" : locale === "es" ? "Empresa" : "Company";
+  return <main><div className="about-banner-wrap"><div className="about-banner contact-banner"><span>{common.contact} · {common.sample}</span><h1>{common.contact}</h1><small>{common.sampleImage}</small></div></div>
+    <div className="inner contact-page"><nav className="crumb" aria-label={common.breadcrumb}><Link href={locale === "es" ? "/es/products" : prefix}>{locale === "es" ? "Catálogo de productos" : common.home}</Link> / {common.contact}</nav>
+      <div className="contact-layout"><section className="contact-intro"><span className="eyebrow">{common.contact}</span><h2>{copy.heading}</h2><p>{copy.intro}</p><div className="contact-details"><h3>{copy.information}</h3><dl><div><dt>{companyLabel}</dt><dd>{contact.companyName ?? common.pending}</dd></div><div><dt>{copy.email}</dt><dd>{contact.email ? <a href={`mailto:${contact.email}`}>{contact.email}</a> : common.pending}</dd></div><div><dt>{copy.phone}</dt><dd>{contact.whatsapp ? <a href={siteContact.whatsappHref} target="_blank" rel="noreferrer">{contact.whatsapp}</a> : common.pending}</dd></div><div><dt>{copy.address}</dt><dd>{contact.address ?? (locale === "zh" ? "地址可按需提供" : "Address available on request")}</dd></div></dl></div><Link className="text-link" href={`${prefix}/products`}>{copy.products} ↗</Link></section>
+        <section className="contact-preview" aria-labelledby="contact-preview-title"><h2 id="contact-preview-title">{inquiryHeading}</h2><p>{inquiryIntro}</p><InquiryForm locale={locale} sourcePath={`${prefix}/contact`} /><div className="contact-actions"><a className="button white" href={`mailto:${email}`}>{email}</a><a className="button white" href={siteContact.whatsappHref} target="_blank" rel="noreferrer">WhatsApp {whatsapp}</a></div><small>{inquiryNote}</small></section>
+      </div>
+    </div>
+  </main>;
 }

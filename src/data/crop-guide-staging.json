@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "approved",
+  "records": [
+    {
+      "slug": "corn",
+      "locales": {
+        "en": {
+          "sections": [
+            "Overview",
+            "Growth stages",
+            "Nutrition guidance",
+            "Related products",
+            "Resources"
+          ],
+          "nav": "Guide sections",
+          "overview": "Plan corn nutrition around local conditions, crop goals and the four main stages of growth.",
+          "stages": "Establishment · vegetative growth · flowering or fruiting · quality and harvest",
+          "stagesText": "Use these stages to structure observations, compare product formats and prepare a focused product conversation.",
+          "nutrition": "Start with soil and water analysis, then compare the nutrient roles and package formats described on the related product pages. Final rates should follow local agronomic advice.",
+          "products": "Open the brochure-linked product pages to compare categories, package information and source pages.",
+          "browse": "Browse all products ↗",
+          "resources": "Product and brochure resources",
+          "resourcesText": "Use the source page references on each product page and contact the KOMU team for current technical documents."
+        },
+        "zh": {
+          "sections": [
+            "作物概览",
+            "生长阶段",
+            "营养管理",
+            "相关产品",
+            "技术资料"
+          ],
+          "nav": "指南章节",
+          "overview": "结合当地种植条件、作物目标和主要生长阶段规划玉米营养。",
+          "stages": "定植与建苗 · 营养生长 · 开花或结果 · 品质与采收",
+          "stagesText": "用四个阶段整理观察记录、比较产品形态，并准备更有针对性的产品沟通。",
+          "nutrition": "先结合土壤和水质分析，再对照关联产品页面中的营养作用和包装形式。具体用量应结合当地农艺建议。",
+          "products": "打开画册关联产品页面，比较产品类别、包装信息和来源页码。",
+          "browse": "浏览全部产品 ↗",
+          "resources": "产品与画册资料",
+          "resourcesText": "可查看产品页面中的来源页码，并通过联系方式向康姆团队获取最新技术资料。"
+        }
+      }
+    },
+    {
+      "slug": "fruit-trees",
+      "locales": {
+        "en": {
+          "sections": [
+            "Overview",
+            "Growth stages",
+            "Nutrition guidance",
+            "Related products",
+            "Resources"
+          ],
+          "nav": "Guide sections",
+          "overview": "Plan fruit crops nutrition around local conditions, crop goals and the four main stages of growth.",
+          "stages": "Establishment · vegetative growth · flowering or fruiting · quality and harvest",
+          "stagesText": "Use these stages to structure observations, compare product formats and prepare a focused product conversation.",
+          "nutrition": "Start with soil and water analysis, then compare the nutrient roles and package formats described on the related product pages. Final rates should follow local agronomic advice.",
+          "products": "Open the brochure-linked product pages to compare categories, package information and source pages.",
+          "browse": "Browse all products ↗",
+          "resources": "Product and brochure resources",
+          "resourcesText": "Use the source page references on each product page and contact the KOMU team for current technical documents."
+        },
+        "zh": {
+          "sections": [
+            "作物概览",
+            "生长阶段",
+            "营养管理",
+            "相关产品",
+            "技术资料"
+          ],
+          "nav": "指南章节",
+          "overview": "结合当地种植条件、作物目标和主要生长阶段规划果树营养。",
+          "stages": "定植与建苗 · 营养生长 · 开花或结果 · 品质与采收",
+          "stagesText": "用四个阶段整理观察记录、比较产品形态，并准备更有针对性的产品沟通。",
+          "nutrition": "先结合土壤和水质分析，再对照关联产品页面中的营养作用和包装形式。具体用量应结合当地农艺建议。",
+          "products": "打开画册关联产品页面，比较产品类别、包装信息和来源页码。",
+          "browse": "浏览全部产品 ↗",
+          "resources": "产品与画册资料",
+          "resourcesText": "可查看产品页面中的来源页码，并通过联系方式向康姆团队获取最新技术资料。"
+        }
+      }
+    },
+    {
+      "slug": "vegetables",
+      "locales": {
+        "en": {
+          "sections": [
+            "Overview",
+            "Growth stages",
+            "Nutrition guidance",
+            "Related products",
+            "Resources"
+          ],
+          "nav": "Guide sections",
+          "overview": "Plan vegetables nutrition around local conditions, crop goals and the four main stages of growth.",
+          "stages": "Establishment · vegetative growth · flowering or fruiting · quality and harvest",
+          "stagesText": "Use these stages to structure observations, compare product formats and prepare a focused product conversation.",
+          "nutrition": "Start with soil and water analysis, then compare the nutrient roles and package formats described on the related product pages. Final rates should follow local agronomic advice.",
+          "products": "Open the brochure-linked product pages to compare categories, package information and source pages.",
+          "browse": "Browse all products ↗",
+          "resources": "Product and brochure resources",
+          "resourcesText": "Use the source page references on each product page and contact the KOMU team for current technical documents."
+        },
+        "zh": {
+          "sections": [
+            "作物概览",
+            "生长阶段",
+            "营养管理",
+            "相关产品",
+            "技术资料"
+          ],
+          "nav": "指南章节",
+          "overview": "结合当地种植条件、作物目标和主要生长阶段规划vegetables营养。",
+          "stages": "定植与建苗 · 营养生长 · 开花或结果 · 品质与采收",
+          "stagesText": "用四个阶段整理观察记录、比较产品形态，并准备更有针对性的产品沟通。",
+          "nutrition": "先结合土壤和水质分析，再对照关联产品页面中的营养作用和包装形式。具体用量应结合当地农艺建议。",
+          "products": "打开画册关联产品页面，比较产品类别、包装信息和来源页码。",
+          "browse": "浏览全部产品 ↗",
+          "resources": "产品与画册资料",
+          "resourcesText": "可查看产品页面中的来源页码，并通过联系方式向康姆团队获取最新技术资料。"
+        }
+      }
+    }
+  ]
+}
