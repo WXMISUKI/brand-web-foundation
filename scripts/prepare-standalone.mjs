@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import { createRequire } from "node:module";
 import path from "node:path";
 
 const inputRoot = process.argv[2] ?? ".next";
@@ -44,6 +45,15 @@ try {
   await check("standalone static directory", targetStatic, "directory");
   await check("standalone public directory", targetPublic, "directory");
   await check("standalone favicon", path.join(targetPublic, "favicon.svg"), "file");
+  const standaloneRequire = createRequire(path.join(standaloneRoot, "server.js"));
+  const sharpEntry = standaloneRequire.resolve("sharp");
+  const standaloneNodeModules = path.join(standaloneRoot, "node_modules");
+  const sharpRelativePath = path.relative(standaloneNodeModules, sharpEntry);
+  if (!sharpRelativePath || sharpRelativePath.startsWith("..") || path.isAbsolute(sharpRelativePath)) {
+    throw new Error(`Sharp resolved outside standalone node_modules: ${sharpEntry}`);
+  }
+  standaloneRequire("sharp");
+  checks.push({ name: "standalone sharp runtime", path: path.relative(process.cwd(), sharpEntry) || sharpEntry });
 
   const result = {
     ok: true,
