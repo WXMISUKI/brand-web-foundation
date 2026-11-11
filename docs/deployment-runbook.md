@@ -30,6 +30,8 @@ npm run bootstrap:admin
 
 ## systemd standalone 发布顺序
 
+2026-11-11 内容修复发布说明：运行中的 standalone 构建为 `aYk82dGusLwksofqMmRJE`，对应的完整构建源在服务器 `/home/ubuntu/haifa-release-content-20261111`。本次为保护服务器原工作目录，只切换了 `.next/standalone`，未覆盖 `/home/ubuntu/haifa-reference-rebuild/src` 或根目录的依赖；**根目录源码不是当前运行版本**。下次构建应先从已核对的当前源准备新的隔离候选，不要直接从旧根目录构建以免回退。部署前备份位于 `/home/ubuntu/haifa-reference-rebuild/.local/backups/content-release-20261111-064507`；其中 `standalone-live` 为本轮发布前版本，`standalone-before-hotfix` 和 `standalone-before-label` 为中间版本。数据库 69 条精确值已更新，恢复数据库前必须评估是否会覆盖后续后台编辑。
+
 当前腾讯云实例使用 systemd 启动 standalone 产物，不使用本仓库的 Docker Compose。每次发布都必须在应用目录执行以下顺序：
 
 ```bash
@@ -52,3 +54,11 @@ curl -fsS http://127.0.0.1:3118/api/ready
 ```
 
 最后从公网 HTML 读取当前版本引用的 `/_next/static/*.css`、`/_next/static/*.js`，分别用 `curl -fI` 验证为 `200`，并验证 `/favicon.svg` 和一个已知媒体 URL 为 `200`。只有这些检查通过才把本次构建视为可发布；失败时按服务器上的上一版发布记录回滚，保留媒体卷，不能重新导入数据库。
+
+发布后可使用仓库内的只读基线审计统一复核：
+
+```bash
+PUBLIC_BASE_URL=https://www.kowloonglobaltrading.com npm run audit:public-baseline
+```
+
+该脚本检查 `/api/ready`、`/api/health`、匿名产品 API 403、13 locale 的 `lang/dir`、robots、sitemap、公开审核字段边界和抽样静态/媒体资源。它只执行 GET 请求，不提交询盘或修改 Payload；通过后仍需单独完成真实浏览器交互和人工内容审校。

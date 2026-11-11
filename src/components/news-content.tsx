@@ -18,6 +18,6 @@ export async function NewsDetail({ locale, slug, basePath }: { locale: CatalogPa
   const copy = newsMessages[locale], common = aboutMessages[locale], path = basePath ?? `/${locale}/news`;
   const item = await getNewsItem(locale, slug);
   if (!item) notFound();
-  const title = item.title ?? (locale === "en" ? "Translation pending" : locale === "zh" ? "待翻译" : common.pending);
+  const title = item.title ?? common.pending;
   return <main><div className="insight-banner"><span>{common.sampleImage}</span></div><article className="inner news-page"><nav className="crumb"><Link href={path}>{copy.title}</Link> / {title}</nav><h1>{title}</h1><time>{item.publishedOn?.slice(0,10) ?? copy.date}</time>{item.image && <img className="news-image" src={item.image.src} alt={item.image.alt ?? title}/>}<RichBody locale={locale} rich={item.richBody} plain={item.body} pending={copy.body}/></article></main>;
 }

@@ -1,0 +1,652 @@
+{
+  "en": [
+    {
+      "id": "products",
+      "name": "Product information",
+      "questions": [
+        {
+          "id": "products-specifications",
+          "question": "Where can I find product specifications?",
+          "answer": "Open a product page to read the brochure-linked description, package information and source page. Ask us for the latest technical sheet by email or WhatsApp."
+        },
+        {
+          "id": "products-documentation",
+          "question": "How can I request product documentation?",
+          "answer": "Send the product name and your market to leon@kowloonglobaltrading.com or WhatsApp +852 9074 0009."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "Growing applications",
+      "questions": [
+        {
+          "id": "applications-choose-products",
+          "question": "How do I choose products for a growing application?",
+          "answer": "Start with the crop and growing method, then compare the brochure-linked product descriptions and package formats."
+        },
+        {
+          "id": "applications-application-guidance",
+          "question": "Where can I find application guidance?",
+          "answer": "Open a crop guide from the Growing Practice menu, then use the product links and contact details to plan the next conversation."
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "name": "Purchasing and support",
+      "questions": [
+        {
+          "id": "orders-enquiry",
+          "question": "How can I make a product enquiry?",
+          "answer": "Use the contact page or email leon@kowloonglobaltrading.com with the product and market you are interested in."
+        },
+        {
+          "id": "orders-distributor",
+          "question": "How can I discuss distribution?",
+          "answer": "Contact Anhui Kangmu International Fertilizer Co., Ltd. by email or WhatsApp and include your market and channel profile."
+        }
+      ]
+    }
+  ],
+  "zh": [
+    {
+      "id": "products",
+      "name": "产品信息",
+      "questions": [
+        {
+          "id": "products-specifications",
+          "question": "在哪里可以查看产品规格？",
+          "answer": "打开产品详情可以查看画册关联说明、包装信息和来源页；如需最新技术资料，可通过邮箱或 WhatsApp 联系我们。"
+        },
+        {
+          "id": "products-documentation",
+          "question": "如何获取产品资料？",
+          "answer": "请将产品名称和目标市场发送至 leon@kowloonglobaltrading.com，或通过 WhatsApp +852 9074 0009 联系。"
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "种植应用",
+      "questions": [
+        {
+          "id": "applications-choose-products",
+          "question": "如何为种植场景选择产品？",
+          "answer": "可以先选择作物和种植方式，再对照画册关联的产品说明和包装规格。"
+        },
+        {
+          "id": "applications-application-guidance",
+          "question": "在哪里可以查看应用指导？",
+          "answer": "从种植方案菜单打开作物指南，再结合产品链接和联系方式安排后续沟通。"
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "name": "采购与服务",
+      "questions": [
+        {
+          "id": "orders-enquiry",
+          "question": "如何咨询产品？",
+          "answer": "可以进入联系页面，或发送产品名称和目标市场至 leon@kowloonglobaltrading.com。"
+        },
+        {
+          "id": "orders-distributor",
+          "question": "如何洽谈经销合作？",
+          "answer": "请通过邮箱或 WhatsApp 联系安徽康坶国际化肥股份有限公司，并说明所在市场和渠道情况。"
+        }
+      ]
+    }
+  ],
+  "es": [
+    {
+      "id": "products",
+      "name": "Información sobre productos",
+      "questions": [
+        {
+          "id": "products-specifications",
+          "question": "¿Dónde puedo consultar las especificaciones del producto?",
+          "answer": "Abra la página del producto para consultar la descripción vinculada al folleto, la información del envase y la página de origen. Solicite la ficha técnica más reciente por correo electrónico o WhatsApp."
+        },
+        {
+          "id": "products-documentation",
+          "question": "¿Cómo puedo solicitar documentación del producto?",
+          "answer": "Envíe el nombre del producto y su mercado a leon@kowloonglobaltrading.com o por WhatsApp al +852 9074 0009."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "Aplicaciones de cultivo",
+      "questions": [
+        {
+          "id": "applications-choose-products",
+          "question": "¿Cómo elijo productos para una aplicación de cultivo?",
+          "answer": "Empiece por el cultivo y el método de producción; después compare las descripciones vinculadas al folleto y los formatos de envase."
+        },
+        {
+          "id": "applications-application-guidance",
+          "question": "¿Dónde puedo encontrar orientación de aplicación?",
+          "answer": "Abra una guía de cultivo desde el menú de prácticas de cultivo y utilice los enlaces de productos y los datos de contacto para continuar la conversación."
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "name": "Compras y asistencia",
+      "questions": [
+        {
+          "id": "orders-enquiry",
+          "question": "¿Cómo puedo realizar una consulta sobre un producto?",
+          "answer": "Utilice la página de contacto o escriba a leon@kowloonglobaltrading.com e indique el producto y el mercado que le interesan."
+        },
+        {
+          "id": "orders-distributor",
+          "question": "¿Cómo puedo hablar sobre la distribución?",
+          "answer": "Póngase en contacto con Anhui Kangmu International Fertilizer Co., Ltd. por correo electrónico o WhatsApp e incluya información sobre su mercado y sus canales."
+        }
+      ]
+    }
+  ],
+  "fr": [
+    {
+      "id": "products",
+      "name": "Informations sur les produits",
+      "questions": [
+        {
+          "id": "products-specifications",
+          "question": "Où puis-je consulter les spécifications du produit ?",
+          "answer": "Consultez la page du produit pour lire la description liée à la brochure, les informations sur l’emballage et la page source. Demandez la fiche technique la plus récente par e-mail ou WhatsApp."
+        },
+        {
+          "id": "products-documentation",
+          "question": "Comment demander la documentation d’un produit ?",
+          "answer": "Envoyez le nom du produit et votre marché à leon@kowloonglobaltrading.com ou par WhatsApp au +852 9074 0009."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "Applications culturales",
+      "questions": [
+        {
+          "id": "applications-choose-products",
+          "question": "Comment choisir des produits pour une culture donnée ?",
+          "answer": "Commencez par la culture et le mode de production, puis comparez les descriptions liées à la brochure et les formats d’emballage."
+        },
+        {
+          "id": "applications-application-guidance",
+          "question": "Où trouver des conseils d’utilisation ?",
+          "answer": "Ouvrez un guide des cultures dans le menu « Pratiques culturales », puis utilisez les liens produits et les coordonnées pour poursuivre l’échange."
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "name": "Achats et assistance",
+      "questions": [
+        {
+          "id": "orders-enquiry",
+          "question": "Comment poser une question sur un produit ?",
+          "answer": "Utilisez la page de contact ou écrivez à leon@kowloonglobaltrading.com en indiquant le produit et le marché qui vous intéressent."
+        },
+        {
+          "id": "orders-distributor",
+          "question": "Comment discuter d’un partenariat de distribution ?",
+          "answer": "Contactez Anhui Kangmu International Fertilizer Co., Ltd. par e-mail ou WhatsApp en précisant votre marché et votre profil de distribution."
+        }
+      ]
+    }
+  ],
+  "pt": [
+    {
+      "id": "products",
+      "name": "Informações sobre produtos",
+      "questions": [
+        {
+          "id": "products-specifications",
+          "question": "Onde posso consultar as especificações do produto?",
+          "answer": "Aceda à página do produto para consultar a descrição associada à brochura, as informações da embalagem e a página de origem. Peça a ficha técnica mais recente por e-mail ou WhatsApp."
+        },
+        {
+          "id": "products-documentation",
+          "question": "Como posso solicitar a documentação do produto?",
+          "answer": "Envie o nome do produto e o seu mercado para leon@kowloonglobaltrading.com ou pelo WhatsApp +852 9074 0009."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "Aplicações de cultivo",
+      "questions": [
+        {
+          "id": "applications-choose-products",
+          "question": "Como escolher produtos para uma aplicação de cultivo?",
+          "answer": "Comece pela cultura e pelo método de cultivo; depois compare as descrições associadas à brochura e os formatos de embalagem."
+        },
+        {
+          "id": "applications-application-guidance",
+          "question": "Onde posso encontrar orientações de utilização?",
+          "answer": "Abra um guia de culturas no menu de práticas de cultivo e utilize as ligações para os produtos e os contactos para continuar a conversa."
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "name": "Compras e apoio",
+      "questions": [
+        {
+          "id": "orders-enquiry",
+          "question": "Como posso fazer uma consulta sobre um produto?",
+          "answer": "Utilize a página de contacto ou envie um e-mail para leon@kowloonglobaltrading.com, indicando o produto e o mercado do seu interesse."
+        },
+        {
+          "id": "orders-distributor",
+          "question": "Como posso conversar sobre distribuição?",
+          "answer": "Contacte a Anhui Kangmu International Fertilizer Co., Ltd. por e-mail ou WhatsApp e indique o seu mercado e o perfil dos seus canais."
+        }
+      ]
+    }
+  ],
+  "ru": [
+    {
+      "id": "products",
+      "name": "Информация о продукции",
+      "questions": [
+        {
+          "id": "products-specifications",
+          "question": "Где можно посмотреть характеристики продукта?",
+          "answer": "Откройте страницу продукта, чтобы ознакомиться с описанием по брошюре, сведениями об упаковке и страницей-источником. Запросите актуальный технический лист по электронной почте или WhatsApp."
+        },
+        {
+          "id": "products-documentation",
+          "question": "Как запросить документацию на продукцию?",
+          "answer": "Отправьте название продукта и ваш рынок на leon@kowloonglobaltrading.com или в WhatsApp по номеру +852 9074 0009."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "Применение при выращивании",
+      "questions": [
+        {
+          "id": "applications-choose-products",
+          "question": "Как выбрать продукты для конкретной культуры или способа выращивания?",
+          "answer": "Сначала определите культуру и способ выращивания, затем сравните описания продуктов по брошюре и варианты упаковки."
+        },
+        {
+          "id": "applications-application-guidance",
+          "question": "Где можно найти рекомендации по применению?",
+          "answer": "Откройте руководство по культуре в разделе «Методы выращивания», затем используйте ссылки на продукты и контакты, чтобы продолжить обсуждение."
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "name": "Покупка и поддержка",
+      "questions": [
+        {
+          "id": "orders-enquiry",
+          "question": "Как задать вопрос о продукте?",
+          "answer": "Воспользуйтесь страницей контактов или напишите на leon@kowloonglobaltrading.com, указав интересующий продукт и рынок."
+        },
+        {
+          "id": "orders-distributor",
+          "question": "Как обсудить дистрибуцию продукции?",
+          "answer": "Свяжитесь с Anhui Kangmu International Fertilizer Co., Ltd. по электронной почте или WhatsApp и укажите ваш рынок и профиль каналов сбыта."
+        }
+      ]
+    }
+  ],
+  "it": [
+    {
+      "id": "products",
+      "name": "Informazioni sui prodotti",
+      "questions": [
+        {
+          "id": "products-specifications",
+          "question": "Dove posso trovare le specifiche del prodotto?",
+          "answer": "Apri una pagina prodotto per leggere la descrizione collegata alla brochure, le informazioni sulla confezione e la pagina fonte. Richiedi la scheda tecnica più recente via e-mail o WhatsApp."
+        },
+        {
+          "id": "products-documentation",
+          "question": "Come posso richiedere la documentazione del prodotto?",
+          "answer": "Invia il nome del prodotto e il tuo mercato a leon@kowloonglobaltrading.com oppure tramite WhatsApp al numero +852 9074 0009."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "Applicazioni per la coltivazione",
+      "questions": [
+        {
+          "id": "applications-choose-products",
+          "question": "Come scelgo i prodotti per un'applicazione colturale?",
+          "answer": "Parti dalla coltura e dal metodo di coltivazione, poi confronta le descrizioni dei prodotti collegate alla brochure e i formati delle confezioni."
+        },
+        {
+          "id": "applications-application-guidance",
+          "question": "Dove posso trovare indicazioni per l'applicazione?",
+          "answer": "Apri una guida colturale dal menu Growing Practice, poi usa i link ai prodotti e i contatti per pianificare il prossimo confronto."
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "name": "Acquisti e supporto",
+      "questions": [
+        {
+          "id": "orders-enquiry",
+          "question": "Come posso inviare una richiesta su un prodotto?",
+          "answer": "Usa la pagina dei contatti oppure scrivi a leon@kowloonglobaltrading.com indicando il prodotto e il mercato di interesse."
+        },
+        {
+          "id": "orders-distributor",
+          "question": "Come posso discutere della distribuzione?",
+          "answer": "Contatta Anhui Kangmu International Fertilizer Co., Ltd. via e-mail o WhatsApp e indica il tuo mercato e il profilo dei tuoi canali."
+        }
+      ]
+    }
+  ],
+  "tr": [
+    {
+      "id": "products",
+      "name": "Ürün bilgileri",
+      "questions": [
+        {
+          "id": "products-specifications",
+          "question": "Ürün özelliklerini nerede bulabilirim?",
+          "answer": "Broşürle bağlantılı açıklamayı, ambalaj bilgilerini ve kaynak sayfasını görmek için bir ürün sayfasını açın. En güncel teknik föyü e-posta veya WhatsApp ile isteyin."
+        },
+        {
+          "id": "products-documentation",
+          "question": "Ürün belgelerini nasıl talep edebilirim?",
+          "answer": "Ürün adını ve pazarınızı leon@kowloonglobaltrading.com adresine veya +852 9074 0009 numaralı WhatsApp hattına gönderin."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "Yetiştirme uygulamaları",
+      "questions": [
+        {
+          "id": "applications-choose-products",
+          "question": "Bir yetiştirme uygulaması için ürünleri nasıl seçerim?",
+          "answer": "Önce ürünü ve yetiştirme yöntemini belirleyin, ardından broşür bağlantılı ürün açıklamalarını ve ambalaj biçimlerini karşılaştırın."
+        },
+        {
+          "id": "applications-application-guidance",
+          "question": "Uygulama bilgilerini nerede bulabilirim?",
+          "answer": "Growing Practice menüsünden bir ürün rehberi açın; ardından sonraki görüşmeyi planlamak için ürün bağlantılarını ve iletişim bilgilerini kullanın."
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "name": "Satın alma ve destek",
+      "questions": [
+        {
+          "id": "orders-enquiry",
+          "question": "Bir ürün hakkında nasıl talep oluşturabilirim?",
+          "answer": "İletişim sayfasını kullanın veya ilgilendiğiniz ürünü ve pazarı belirterek leon@kowloonglobaltrading.com adresine yazın."
+        },
+        {
+          "id": "orders-distributor",
+          "question": "Dağıtımı nasıl görüşebilirim?",
+          "answer": "Anhui Kangmu International Fertilizer Co., Ltd. ile e-posta veya WhatsApp üzerinden iletişime geçin; pazarınızı ve kanal profilinizi ekleyin."
+        }
+      ]
+    }
+  ],
+  "th": [
+    {
+      "id": "products",
+      "name": "ข้อมูลผลิตภัณฑ์",
+      "questions": [
+        {
+          "id": "products-specifications",
+          "question": "ฉันจะดูข้อมูลจำเพาะของผลิตภัณฑ์ได้ที่ไหน",
+          "answer": "เปิดหน้าผลิตภัณฑ์เพื่อดูคำอธิบายที่เชื่อมโยงกับโบรชัวร์ ข้อมูลบรรจุภัณฑ์ และหน้าแหล่งที่มา ขอเอกสารข้อมูลทางเทคนิคล่าสุดทางอีเมลหรือ WhatsApp"
+        },
+        {
+          "id": "products-documentation",
+          "question": "ฉันจะขอเอกสารผลิตภัณฑ์ได้อย่างไร",
+          "answer": "ส่งชื่อผลิตภัณฑ์และตลาดของคุณไปที่ leon@kowloonglobaltrading.com หรือ WhatsApp +852 9074 0009"
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "การใช้งานสำหรับการเพาะปลูก",
+      "questions": [
+        {
+          "id": "applications-choose-products",
+          "question": "ฉันจะเลือกผลิตภัณฑ์สำหรับการใช้งานกับพืชอย่างไร",
+          "answer": "เริ่มจากชนิดพืชและวิธีการเพาะปลูก จากนั้นเปรียบเทียบคำอธิบายผลิตภัณฑ์ที่เชื่อมโยงกับโบรชัวร์และรูปแบบบรรจุภัณฑ์"
+        },
+        {
+          "id": "applications-application-guidance",
+          "question": "ฉันจะหาคำแนะนำการใช้งานได้ที่ไหน",
+          "answer": "เปิดคู่มือพืชจากเมนู Growing Practice แล้วใช้ลิงก์ผลิตภัณฑ์และข้อมูลติดต่อเพื่อสนทนาต่อ"
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "name": "การสั่งซื้อและการสนับสนุน",
+      "questions": [
+        {
+          "id": "orders-enquiry",
+          "question": "ฉันจะสอบถามเกี่ยวกับผลิตภัณฑ์ได้อย่างไร",
+          "answer": "ใช้หน้าติดต่อหรือเขียนไปที่ leon@kowloonglobaltrading.com พร้อมระบุผลิตภัณฑ์และตลาดที่สนใจ"
+        },
+        {
+          "id": "orders-distributor",
+          "question": "ฉันจะพูดคุยเรื่องการจัดจำหน่ายได้อย่างไร",
+          "answer": "ติดต่อ Anhui Kangmu International Fertilizer Co., Ltd. ทางอีเมลหรือ WhatsApp พร้อมระบุตลาดและลักษณะช่องทางของคุณ"
+        }
+      ]
+    }
+  ],
+  "nl": [
+    {
+      "id": "products",
+      "name": "Productinformatie",
+      "questions": [
+        {
+          "id": "products-specifications",
+          "question": "Waar kan ik de productspecificaties vinden?",
+          "answer": "Open de productpagina om de aan de brochure gekoppelde beschrijving, verpakkingsinformatie en bronpagina te bekijken. Vraag het meest recente technische gegevensblad aan via e-mail of WhatsApp."
+        },
+        {
+          "id": "products-documentation",
+          "question": "Hoe kan ik productdocumentatie aanvragen?",
+          "answer": "Stuur de productnaam en uw markt naar leon@kowloonglobaltrading.com of via WhatsApp op +852 9074 0009."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "Toepassingen voor teelt",
+      "questions": [
+        {
+          "id": "applications-choose-products",
+          "question": "Hoe kies ik producten voor een teelttoepassing?",
+          "answer": "Begin met het gewas en de teeltmethode en vergelijk daarna de aan de brochure gekoppelde productbeschrijvingen en verpakkingsformaten."
+        },
+        {
+          "id": "applications-application-guidance",
+          "question": "Waar kan ik toepassingsinformatie vinden?",
+          "answer": "Open een teelthandleiding via het menu Growing Practice en gebruik daarna de productlinks en contactgegevens om het gesprek voort te zetten."
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "name": "Aankoop en ondersteuning",
+      "questions": [
+        {
+          "id": "orders-enquiry",
+          "question": "Hoe kan ik een vraag over een product stellen?",
+          "answer": "Gebruik de contactpagina of schrijf naar leon@kowloonglobaltrading.com en vermeld het product en de markt waarin u geïnteresseerd bent."
+        },
+        {
+          "id": "orders-distributor",
+          "question": "Hoe kan ik distributie bespreken?",
+          "answer": "Neem per e-mail of WhatsApp contact op met Anhui Kangmu International Fertilizer Co., Ltd. en vermeld uw markt en het profiel van uw kanalen."
+        }
+      ]
+    }
+  ],
+  "ro": [
+    {
+      "id": "products",
+      "name": "Informații despre produse",
+      "questions": [
+        {
+          "id": "products-specifications",
+          "question": "Unde pot găsi specificațiile produsului?",
+          "answer": "Deschideți pagina produsului pentru a consulta descrierea asociată broșurii, informațiile despre ambalaj și pagina sursă. Solicitați cea mai recentă fișă tehnică prin e-mail sau WhatsApp."
+        },
+        {
+          "id": "products-documentation",
+          "question": "Cum pot solicita documentația produsului?",
+          "answer": "Trimiteți numele produsului și piața dumneavoastră la leon@kowloonglobaltrading.com sau prin WhatsApp la +852 9074 0009."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "Aplicații pentru cultivare",
+      "questions": [
+        {
+          "id": "applications-choose-products",
+          "question": "Cum aleg produsele pentru o aplicație de cultivare?",
+          "answer": "Începeți cu cultura și metoda de cultivare, apoi comparați descrierile produselor asociate broșurii și formatele de ambalaj."
+        },
+        {
+          "id": "applications-application-guidance",
+          "question": "Unde pot găsi îndrumări de utilizare?",
+          "answer": "Deschideți un ghid pentru culturi din meniul Growing Practice, apoi folosiți linkurile produselor și datele de contact pentru a continua discuția."
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "name": "Achiziții și asistență",
+      "questions": [
+        {
+          "id": "orders-enquiry",
+          "question": "Cum pot trimite o întrebare despre un produs?",
+          "answer": "Folosiți pagina de contact sau scrieți la leon@kowloonglobaltrading.com, indicând produsul și piața de interes."
+        },
+        {
+          "id": "orders-distributor",
+          "question": "Cum pot discuta despre distribuție?",
+          "answer": "Contactați Anhui Kangmu International Fertilizer Co., Ltd. prin e-mail sau WhatsApp și indicați piața și profilul canalelor dumneavoastră."
+        }
+      ]
+    }
+  ],
+  "el": [
+    {
+      "id": "products",
+      "name": "Πληροφορίες προϊόντων",
+      "questions": [
+        {
+          "id": "products-specifications",
+          "question": "Πού μπορώ να βρω τις προδιαγραφές του προϊόντος;",
+          "answer": "Ανοίξτε τη σελίδα του προϊόντος για να δείτε την περιγραφή που συνδέεται με το φυλλάδιο, τις πληροφορίες συσκευασίας και τη σελίδα πηγής. Ζητήστε το πιο πρόσφατο τεχνικό δελτίο μέσω email ή WhatsApp."
+        },
+        {
+          "id": "products-documentation",
+          "question": "Πώς μπορώ να ζητήσω την τεκμηρίωση του προϊόντος;",
+          "answer": "Στείλτε το όνομα του προϊόντος και την αγορά σας στο leon@kowloonglobaltrading.com ή μέσω WhatsApp στο +852 9074 0009."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "Εφαρμογές καλλιέργειας",
+      "questions": [
+        {
+          "id": "applications-choose-products",
+          "question": "Πώς επιλέγω προϊόντα για μια εφαρμογή καλλιέργειας;",
+          "answer": "Ξεκινήστε από την καλλιέργεια και τη μέθοδο παραγωγής και στη συνέχεια συγκρίνετε τις περιγραφές προϊόντων που συνδέονται με το φυλλάδιο και τις μορφές συσκευασίας."
+        },
+        {
+          "id": "applications-application-guidance",
+          "question": "Πού μπορώ να βρω οδηγίες εφαρμογής;",
+          "answer": "Ανοίξτε έναν οδηγό καλλιέργειας από το μενού Growing Practice και χρησιμοποιήστε τους συνδέσμους προϊόντων και τα στοιχεία επικοινωνίας για να συνεχίσετε τη συζήτηση."
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "name": "Αγορές και υποστήριξη",
+      "questions": [
+        {
+          "id": "orders-enquiry",
+          "question": "Πώς μπορώ να υποβάλω ερώτημα για ένα προϊόν;",
+          "answer": "Χρησιμοποιήστε τη σελίδα επικοινωνίας ή γράψτε στο leon@kowloonglobaltrading.com, αναφέροντας το προϊόν και την αγορά που σας ενδιαφέρει."
+        },
+        {
+          "id": "orders-distributor",
+          "question": "Πώς μπορώ να συζητήσω για τη διανομή;",
+          "answer": "Επικοινωνήστε με την Anhui Kangmu International Fertilizer Co., Ltd. μέσω email ή WhatsApp και αναφέρετε την αγορά σας και το προφίλ των καναλιών σας."
+        }
+      ]
+    }
+  ],
+  "he": [
+    {
+      "id": "products",
+      "name": "מידע על מוצרים",
+      "questions": [
+        {
+          "id": "products-specifications",
+          "question": "היכן אפשר למצוא את מפרטי המוצר?",
+          "answer": "פתחו את דף המוצר כדי לעיין בתיאור המקושר לחוברת, במידע על האריזה ובדף המקור. בקשו את דף הנתונים הטכני העדכני ביותר בדוא״ל או ב-WhatsApp."
+        },
+        {
+          "id": "products-documentation",
+          "question": "כיצד אפשר לבקש תיעוד מוצר?",
+          "answer": "שלחו את שם המוצר ואת השוק שלכם אל leon@kowloonglobaltrading.com או ב-WhatsApp למספר +852 9074 0009."
+        }
+      ]
+    },
+    {
+      "id": "applications",
+      "name": "יישומי גידול",
+      "questions": [
+        {
+          "id": "applications-choose-products",
+          "question": "כיצד בוחרים מוצרים ליישום גידול?",
+          "answer": "התחילו מהגידול ומהשיטה החקלאית, ולאחר מכן השוו בין תיאורי המוצרים המקושרים לחוברת ובין פורמטי האריזה."
+        },
+        {
+          "id": "applications-application-guidance",
+          "question": "היכן אפשר למצוא הנחיות יישום?",
+          "answer": "פתחו מדריך גידול מתפריט Growing Practice והשתמשו בקישורי המוצרים ובפרטי הקשר כדי להמשיך את השיחה."
+        }
+      ]
+    },
+    {
+      "id": "orders",
+      "name": "רכישה ותמיכה",
+      "questions": [
+        {
+          "id": "orders-enquiry",
+          "question": "כיצד אפשר לשלוח שאלה על מוצר?",
+          "answer": "השתמשו בדף הקשר או כתבו אל leon@kowloonglobaltrading.com וציינו את המוצר ואת השוק שמעניינים אתכם."
+        },
+        {
+          "id": "orders-distributor",
+          "question": "כיצד אפשר לדון בהפצה?",
+          "answer": "צרו קשר עם Anhui Kangmu International Fertilizer Co., Ltd. בדוא״ל או ב-WhatsApp וציינו את השוק שלכם ואת פרופיל הערוצים שלכם."
+        }
+      ]
+    }
+  ]
+}

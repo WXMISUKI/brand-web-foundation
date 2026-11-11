@@ -22,6 +22,6 @@ export async function CaseDetail({ locale, slug, basePath }: { locale: CatalogPa
   const item = await getCase(locale, slug);
   if (!item) notFound();
   const copy = caseMessages[locale], common = aboutMessages[locale], path = basePath ?? `/${locale}/cases`;
-  const title = item.title ?? (locale === "en" ? "Translation pending" : locale === "zh" ? "待翻译" : common.pending);
+  const title = item.title ?? common.pending;
   return <main><div className="insight-banner"><span>{common.sampleImage}</span></div><article className="inner case-page"><nav className="crumb" aria-label={common.breadcrumb}><Link href={path}>{copy.title}</Link> / {title}</nav>{item.sample && <span className="eyebrow">{copy.sampleDetail}</span>}<h1>{title}</h1><p>{item.summary ?? copy.summary}</p>{item.image && <img className="case-detail-image" src={item.image.src} alt={item.image.alt ?? ""}/>}<section><h2>{copy.information}</h2><RichBody locale={locale} rich={item.richBody} plain={item.body} pending={copy.body}/></section><Link className="text-link" href={path}>{copy.back}</Link></article></main>;
 }

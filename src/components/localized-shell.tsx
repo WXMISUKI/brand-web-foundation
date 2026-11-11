@@ -6,7 +6,8 @@ import { getLocale, isPublicLocale, type LocaleCode, type PublicLocale } from ".
 import type { CatalogUiLocale } from "../i18n/catalog-messages";
 import type { CatalogPageLocale } from "../i18n/catalog-messages";
 import { DesktopQuickLinks } from "./desktop-quick-links";
-import { HomeNewsletter } from "./home-newsletter";
+import { sharedUiMessages } from "../i18n/shared-ui-messages";
+import { ContactCallout } from "./home-newsletter";
 
 export function previewLocale(code: string): PublicLocale {
   if (isPublicLocale(code)) return code;
@@ -58,6 +59,6 @@ export function readyCatalogLocale(code: string): CatalogPageLocale {
 }
 
 export function LocalizedShell({ locale, alternatePath, children, previewAllLocales = false }: { locale: CatalogPageLocale; alternatePath: string; children: ReactNode; previewAllLocales?: boolean }) {
-  const skip = locale === "zh" ? "跳至主要内容" : locale === "fr" ? "Aller au contenu principal" : locale === "es" ? "Ir al contenido principal" : "Skip to main content";
-  return <><a className="skip-link" href="#main-content">{skip}</a><SiteHeader locale={locale} alternatePath={alternatePath} previewAllLocales={previewAllLocales}/><div id="main-content" tabIndex={-1}>{children}</div><HomeNewsletter locale={locale}/><SiteFooter locale={locale}/><DesktopQuickLinks locale={locale}/></>;
+  const skip = sharedUiMessages[locale].skip;
+  return <><a className="skip-link" href="#main-content">{skip}</a><SiteHeader locale={locale} alternatePath={alternatePath} previewAllLocales={previewAllLocales}/><div id="main-content" tabIndex={-1}>{children}</div><ContactCallout locale={locale}/><SiteFooter locale={locale}/><DesktopQuickLinks locale={locale}/></>;
 }

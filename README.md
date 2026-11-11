@@ -1,6 +1,6 @@
 # KOMU 化肥导购网站
 
-项目使用 Next.js、React、Payload 和 PostgreSQL 构建，参考 [Haifa](https://www.haifa-group.com/) 的页面结构，产品资料来自业主提供的 [FLBOOK 画册](https://flbook.com.cn/c/LTc82gQQM3)。当前生产站已部署到 `https://www.kowloonglobaltrading.com`，但正式 claims/译文、询盘启用和 noindex 解除仍受阶段门禁控制，页面继续保持 `noindex`。
+项目使用 Next.js、React、Payload 和 PostgreSQL 构建，以 [Haifa](https://www.haifa-group.com/) 为结构与交互参考，品牌和业务资料属于安徽康母国际化肥股份有限公司；产品资料来源见业主提供的 [FLBOOK 画册](https://flbook.com.cn/c/LTc82gQQM3)。生产站为 `https://www.kowloonglobaltrading.com`。截至 2026-11-09，13 个语言 URL 已公开、noindex 已解除、询盘写入 Payload 已启用；邮件通知未配置，缺少人工译文的 CMS 字段回退英文。当前生产状态和限制见 [HANDOFF](HANDOFF.md) 与[阶段闸门](docs/current-stage-gate-2026-11-09.md)。
 
 ## 本地运行
 
@@ -21,27 +21,30 @@ npm run dev
 
 ## 页面与内容
 
-`/` 重定向至英文首页 `/en`；中文首页为 `/zh`，旧中文产品、方案、企业、联系和 FAQ 地址有临时跳转。中英文可浏览主要原型页面；法语及部分西班牙语页面仅在 `CMS_EVAL=1` 且非生产模式下作为开发预览；同一模式下首页、`/about`、`/products`、产品详情、`/faq`、`/contact`、`/search`、新闻、知识、案例、方案/作物指南以及资源页面已提供 13 种语言的业务预览切片，其余语言业务页面仍未开放。后台配置了 13 种内容语言，不代表前台 13 种语言已完成。
+`/` 重定向至英文首页 `/en`；中文首页为 `/zh`，13 个已配置语言均有公开 URL。后台内容主要提供英中版本；未完成的 CMS 译文使用英文源回退，因此路由已公开不代表 13 种语言的业务文案均已翻译或审校。相关 locale 和 SEO 范围以当前阶段闸门为准。
 
-后台已配置产品、分类、媒体、新闻、知识文章、案例、FAQ、企业介绍和首页内容；部分功能已通过隔离数据验证，具体范围以记录为准。知识文章、新闻与案例支持富文本；真实产品资料、证书、视频及询盘接收方案仍待业主提供或确认。安全数据表申请和订阅表单目前为禁用的预览。
+后台已配置产品、分类、媒体、新闻、知识文章、案例、FAQ、企业介绍和首页内容；知识文章、新闻与案例支持富文本。10 条 FLBOOK 产品已获批准；21 条官网候选产品仍待业主审核，不能据此推断型号、包装或 claims。询盘当前写入 Payload，处理通知方案仍待确定；安全数据表申请和订阅表单为预览功能。
 
 ## 检查与项目资料
 
 `npm run typecheck` 检查类型。生产回归使用：
+
+本地 UI 一键验收先运行 `npx playwright install chromium`（首次），随后运行 `npm run test:ui`。该命令自动启动隔离示例站并执行浏览器交互与页面矩阵；覆盖范围和结果查看方式见[自动化 UI 验收方案](docs/automated-ui-acceptance-2026-11-11.md)。
 
 ```sh
 PREVIEW_URL=https://www.kowloonglobaltrading.com npm run test:smoke
 PREVIEW_URL=https://www.kowloonglobaltrading.com npm run test:seo
 npm run check:locale
 npm run audit:production-products
+npm run audit:public-baseline
 npm run check:p2-release
 ```
 
-冒烟测试覆盖有限路由及基本行为，不代替浏览器交互、视觉、生产部署或真实资料验收；`check:p2-release` 在正式内容未审核前预期返回 `ready:false`。
+冒烟测试覆盖有限路由及基本行为，不代替浏览器交互、视觉、生产部署或真实资料验收。`audit:public-baseline` 只执行 GET 请求，检查公网 health/readiness、匿名 API 边界、13 locale SSR、robots/sitemap、公开审核字段和抽样静态资源；运行时设置 `PUBLIC_BASE_URL`。`check:p2-release` 检查本地 FLBOOK 内容门禁；2026-11-09 当前结果为 `ready:true`，不代表官方候选已审核或生产数据库已被该命令修改。
 
 - [项目规格](docs/spec.md)和[参考页面映射](docs/reference-route-map.md)：范围、路由与实现位置。
 - [页面对照](docs/page-comparison.md)和[参考研究](docs/reference-research.md)：观察、已验证事项及差异。
 - [资料收集模板](docs/owner-templates/README.md)和[产品字段对照](docs/product-content-mapping.md)：真实资料准备与当前模型限制。
 - [多语言计划](docs/locale-routing-proposal.md)和[后台与多语言记录](docs/cms-translation-assessment.md)：语言、CMS 和迁移进展。
 
-上线前仍需确认询盘渠道、隐私/反垃圾、正式 claims、证书、最终译文和解除 noindex 的授权窗口，并针对最终版本完成数据、功能、视觉、设备与部署验收。历史构建和隔离数据库测试不能替代最终验收；当前真实状态以 [HANDOFF](HANDOFF.md) 和 [上线验收矩阵](docs/launch-acceptance-matrix.md) 为准。
+后续事项包括官方候选产品审核、询盘通知和隐私/反垃圾运营规则、人工译文及备份恢复演练。历史验收文件是阶段快照；当前状态以 [HANDOFF](HANDOFF.md)、[阶段闸门](docs/current-stage-gate-2026-11-09.md) 和 [P3 发布决策](docs/p3-release-decision-2026-11-09.md) 为准。

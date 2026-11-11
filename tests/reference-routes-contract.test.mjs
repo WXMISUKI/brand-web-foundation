@@ -33,8 +33,8 @@ test("known series detail has products and invalid series remains 404", async ()
   assert.equal((await get(routeBase, "/en/products/series/unknown-series")).status, 404);
 });
 
-test("preview locale can read the new routes while production keeps it closed", async () => {
-  assert.equal((await get(publicBase, "/he/products/series")).status, 404);
+test("released locale can read the new routes on public and evaluation instances", async () => {
+  assert.equal((await get(publicBase, "/he/products/series")).status, 200);
   assert.equal((await get(evalBase, "/he/products/series")).status, 200);
   assert.equal((await get(evalBase, "/he/solutions")).status, 200);
 });

@@ -5,6 +5,20 @@ import { fileURLToPath } from "node:url";
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourcePath = path.join(root, "src", "data", "flbook-import.json");
 const source = JSON.parse(fs.readFileSync(sourcePath, "utf8"));
+const phase1 = JSON.parse(fs.readFileSync(path.join(root, "src", "data", "flbook-localizations-phase1.json"), "utf8"));
+const phase2 = JSON.parse(fs.readFileSync(path.join(root, "src", "data", "flbook-localizations-phase2-it.json"), "utf8"));
+const phase3 = JSON.parse(fs.readFileSync(path.join(root, "src", "data", "flbook-localizations-phase3-tr.json"), "utf8"));
+const phase4 = JSON.parse(fs.readFileSync(path.join(root, "src", "data", "flbook-localizations-phase4-th.json"), "utf8"));
+const phase5 = JSON.parse(fs.readFileSync(path.join(root, "src", "data", "flbook-localizations-phase5-nl.json"), "utf8"));
+const phase6 = JSON.parse(fs.readFileSync(path.join(root, "src", "data", "flbook-localizations-phase6-ro.json"), "utf8"));
+const phase7 = JSON.parse(fs.readFileSync(path.join(root, "src", "data", "flbook-localizations-phase7-el.json"), "utf8"));
+const phase8 = JSON.parse(fs.readFileSync(path.join(root, "src", "data", "flbook-localizations-phase8-he.json"), "utf8"));
+const localizationSources = [phase1, phase2, phase3, phase4, phase5, phase6, phase7, phase8];
+const localizationLocales = [...new Set(localizationSources.flatMap(source => source.locales))];
+const productLocalizations = (slug) => Object.assign({}, ...localizationSources.map(source => source.products[slug] ?? {}));
+const localizedValue = (source, value) => typeof value === "string" ? { [source.locales[0]]: value } : (value ?? {});
+const specificationLabels = (id) => Object.assign({}, ...localizationSources.map(source => localizedValue(source, source.specificationLabels[id])));
+const categoryNames = Object.fromEntries(Object.keys(phase1.categoryNames).map((slug) => [slug, Object.assign({}, ...localizationSources.map(source => localizedValue(source, source.categoryNames?.[slug])))]));
 const allowedCategories = new Set(["medium-nutrient", "water-soluble", "organic-water-soluble", "compound"]);
 const errors = [];
 const displayNames = new Set();
@@ -27,6 +41,10 @@ for (const [index, product] of (source.products ?? []).entries()) {
   englishDisplayNames.add(product.englishDisplayName);
   if (!product.intro) errors.push(`${prefix}.intro is required`);
   if (!product.englishIntro) errors.push(`${prefix}.englishIntro is required`);
+  const translations = productLocalizations(product.slug);
+  for (const locale of localizationLocales) {
+    if (!translations?.[locale]?.name || !translations?.[locale]?.intro) errors.push(`${prefix}.${locale} name and source-based intro are required`);
+  }
   if (!allowedCategories.has(product.category)) errors.push(`${prefix}.category is not mapped`);
   if (!Array.isArray(product.sourcePages) || product.sourcePages.length === 0 || product.sourcePages.some((page) => !Number.isInteger(page) || page < 1 || page > source.source.viewerPages)) errors.push(`${prefix}.sourcePages must contain valid viewer page numbers`);
   const firstSourcePage = product.sourcePages?.[0];
@@ -50,7 +68,11 @@ for (const [index, product] of (source.products ?? []).entries()) {
   if (!Array.isArray(product.specifications)) errors.push(`${prefix}.specifications must be an array`);
   for (const [specIndex, spec] of (product.specifications ?? []).entries()) {
     if (!spec?.id || !spec.locales?.zh || !spec.locales?.en || !spec.unit || (!spec.typical && !spec.minimum && !spec.maximum)) errors.push(`${prefix}.specifications[${specIndex}] must include bilingual label, unit and a value`);
+    for (const locale of localizationLocales) if (!specificationLabels(spec.id)[locale]) errors.push(`${prefix}.specifications[${specIndex}] is missing ${locale} label`);
   }
+}
+for (const category of ["water-soluble", "medium-elements", "compound"]) {
+  for (const locale of localizationLocales) if (!categoryNames[category]?.[locale]) errors.push(`category ${category} is missing ${locale} translation`);
 }
 
 if (errors.length) {

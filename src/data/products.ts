@@ -53,8 +53,8 @@ const flbookProducts: Product[] = flbookProductDrafts.map((draft, index) => ({
   media: {
     src: draft.imagePath,
     alt: {
-      zh: `${draft.displayName}，图片来自官方产品页，文字来源于业主提供的 FLBOOK 第 ${draft.sourcePages.join("、")} 页`,
-      en: `${draft.englishDisplayName}, official product image; text sourced from owner-provided FLBOOK pages ${draft.sourcePages.join(", ")}`,
+      zh: draft.displayName,
+      en: draft.englishDisplayName,
     },
   },
   sourcePages: draft.sourcePages,

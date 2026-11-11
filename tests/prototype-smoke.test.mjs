@@ -77,7 +77,8 @@ test("category filters and language links preserve the selected category", async
 
 test("search uses current-language product text", async () => {
   const matching = visibleText(await page("/en/products?q=water-soluble"));
-  assert.match(matching, /9\s*products found/);
+  const count = Number(matching.match(/(\d+)\s*products found/)?.[1] ?? 0);
+  assert.ok(count >= 18, `expected published FLBOOK plus official candidate products, got ${count}`);
   const noMatch = visibleText(await page(`/en/products?q=${encodeURIComponent("unmatchedxyz")}`));
   assert.match(noMatch, /No matching products found/);
 });

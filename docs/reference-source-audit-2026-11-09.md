@@ -3,6 +3,8 @@
 日期：2026-11-09  
 范围：KOMU/安徽康母参考站 `https://www.kowloonglobaltrading.com` 生产站、业主提供的 FLBOOK 浏览链接、Haifa 公开网页参考站。
 
+> 当前状态说明：本文记录来源—页面—交互—发布门禁审计，不覆盖后续 2026-11-10 UI 收口和公网基线复核；生产当前状态以 `HANDOFF.md`、`docs/current-stage-gate-2026-11-09.md` 和可重复 `npm run audit:public-baseline` 为准。
+
 ## 资料口径
 
 本轮产品事实只来自业主提供的 FLBOOK 浏览链接：

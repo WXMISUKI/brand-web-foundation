@@ -2,6 +2,8 @@
 
 日期：2026-11-09
 
+> 范围说明：本文是 P2 参数来源历史证据，不代表当前询盘、SEO 或生产发布状态；当前发布口径以 `HANDOFF.md` 和 `docs/current-stage-gate-2026-11-09.md` 为准。
+
 状态：**PASS-SCOPED**，正式 claims 仍为 `owner-review`。
 
 ## 来源与范围

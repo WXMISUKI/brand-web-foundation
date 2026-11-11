@@ -4,9 +4,17 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import type { HeroSlide } from "../data/hero-slides";
 import { heroHref } from "../data/hero-link";
+import { heroMediaForLocale } from "../data/hero-media-locale.mjs";
 import { heroMessages } from "../i18n/hero-messages";
 import { aboutMessages } from "../i18n/about-messages";
 import type { CatalogPageLocale } from "../i18n/catalog-messages";
+
+const cleanHeroImage = (image: string) => {
+  if (/hero-01\.jpg(?:$|[?#])/.test(image)) return "/images/official-site/company-research.jpg";
+  if (/hero-02\.jpg(?:$|[?#])/.test(image)) return "/images/official-site/company-laboratory.jpg";
+  if (/hero-03\.jpg(?:$|[?#])/.test(image)) return "/images/official-site/technology.jpg";
+  return image;
+};
 
 export function Hero({ locale, slides }: { locale: CatalogPageLocale; slides: HeroSlide[] }) {
   const [active, setActive] = useState(0);
@@ -32,6 +40,7 @@ export function Hero({ locale, slides }: { locale: CatalogPageLocale; slides: He
     return () => window.clearInterval(timer);
   }, [playing, hovered, visible, slides.length]);
   const slide = slides[active % slides.length];
+  const image = heroMediaForLocale(locale, cleanHeroImage(slide.image));
   const href = heroHref(locale, slide.actionPath);
   useEffect(() => {
     const video = videoRef.current;
@@ -42,9 +51,9 @@ export function Hero({ locale, slides }: { locale: CatalogPageLocale; slides: He
   const change = (step: number) => setActive((index) => (index + step + slides.length) % slides.length);
   const copy = heroMessages[locale];
   return <section className="hero" aria-label={copy.topics} aria-roledescription={copy.carousel} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} onFocusCapture={() => setPlaying(false)}>
-    <div className="hero-art" aria-hidden="true" style={{ backgroundImage: `linear-gradient(90deg, rgba(11, 68, 31, .82), rgba(102, 130, 28, .34)), url("${slide.image}")` }}>{slide.video && slide.video !== failedVideo && <video key={slide.video} ref={videoRef} className="hero-video" src={slide.video} poster={slide.image} muted loop playsInline preload="metadata" onError={() => setFailedVideo(slide.video ?? null)} />}</div>
+    <div className="hero-art" aria-hidden="true" style={{ backgroundImage: `linear-gradient(90deg, rgba(11, 68, 31, .82), rgba(102, 130, 28, .34)), url("${image}")` }}>{slide.video && slide.video !== failedVideo && <video key={slide.video} ref={videoRef} className="hero-video" src={slide.video} poster={image} muted loop playsInline preload="metadata" onError={() => setFailedVideo(slide.video ?? null)} />}</div>
     <div className="hero-content" aria-live={playing ? "off" : "polite"} aria-atomic="true">
-      {slide.eyebrow && <span className="eyebrow light">{slide.eyebrow}</span>}<h1>{slide.title ?? (locale === "en" ? "Translation pending" : locale === "zh" ? "待翻译" : aboutMessages[locale].pending)}</h1>{slide.description && <p>{slide.description}</p>}
+      {slide.eyebrow && <span className="eyebrow light">{slide.eyebrow}</span>}<h1>{slide.title ?? aboutMessages[locale].pending}</h1>{slide.description && <p>{slide.description}</p>}
       {href && slide.actionLabel && <Link className="button white" href={href}>{slide.actionLabel} <span aria-hidden="true">↗</span></Link>}
     </div>
     {slides.length > 1 && <div className="hero-controls" aria-label={copy.controls}><button type="button" className="hero-play" onPointerDown={() => { playingBeforePointer.current = playing; }} onClick={(event) => setPlaying(event.detail > 0 ? !playingBeforePointer.current : !playing)} aria-label={playing ? copy.pause : copy.play}>{playing ? "Ⅱ" : "▶"}</button><button type="button" className="hero-previous" onClick={() => change(-1)} aria-label={copy.previous}>‹</button><span className="hero-slide-count" aria-live={playing ? "off" : "polite"}>{active % slides.length + 1} / {slides.length}</span><button type="button" className="hero-next" onClick={() => change(1)} aria-label={copy.next}>›</button></div>}

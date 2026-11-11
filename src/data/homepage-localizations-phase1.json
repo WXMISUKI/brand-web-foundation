@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "approved",
+  "source": {
+    "kind": "authorized-example",
+    "locales": ["en", "zh"],
+    "note": "AI-drafted translations are based only on the existing homepage-staging.json en/zh source text. No new claims, review fields or media provenance are added; owner and language review remain required."
+  },
+  "locales": ["es", "fr", "pt", "ru"],
+  "slides": {
+    "es": [
+      {"eyebrow":"NUTRE CADA POSIBILIDAD","title":"Nutrición para cada etapa del crecimiento.","description":"Explore los productos de nutrición vegetal de KOMU y las rutas de aplicación para cultivos.","actionLabel":"Explorar productos","actionPath":"/products","imageKey":"hero-field"},
+      {"eyebrow":"CRECER CON CUIDADO","title":"Comprenda los cultivos y planifique la nutrición.","description":"Compare las categorías de productos y los entornos de cultivo en una sola guía.","actionLabel":"Explorar soluciones","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"eyebrow":"ARRAIGADOS EN EL CRECIMIENTO","title":"Crecer con cuidado práctico.","description":"Conozca Anhui Kangmu International Fertilizer Co., Ltd. y su colección de productos.","actionLabel":"Sobre nosotros","actionPath":"/about","imageKey":"hero-orchard"}
+    ],
+    "fr": [
+      {"eyebrow":"NOURRIR CHAQUE POSSIBILITÉ","title":"Une nutrition pour chaque étape de la croissance.","description":"Découvrez les produits de nutrition végétale KOMU et les voies d’application pour les cultures.","actionLabel":"Découvrir les produits","actionPath":"/products","imageKey":"hero-field"},
+      {"eyebrow":"GRANDIR AVEC SOIN","title":"Comprendre les cultures pour planifier la nutrition.","description":"Comparez les catégories de produits et les environnements de culture dans un même guide.","actionLabel":"Découvrir les solutions","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"eyebrow":"ANCRÉS DANS LA CROISSANCE","title":"Cultiver avec un soin concret.","description":"Découvrez Anhui Kangmu International Fertilizer Co., Ltd. et sa collection de produits.","actionLabel":"À propos de nous","actionPath":"/about","imageKey":"hero-orchard"}
+    ],
+    "pt": [
+      {"eyebrow":"NUTRIR CADA POSSIBILIDADE","title":"Nutrição para cada fase do crescimento.","description":"Explore os produtos de nutrição vegetal da KOMU e os caminhos de aplicação para as culturas.","actionLabel":"Explorar produtos","actionPath":"/products","imageKey":"hero-field"},
+      {"eyebrow":"CRESCER COM CUIDADO","title":"Compreender as culturas para planear a nutrição.","description":"Compare as categorias de produtos e os ambientes de cultivo num único guia.","actionLabel":"Explorar soluções","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"eyebrow":"ENRAIZADOS NO CRESCIMENTO","title":"Crescer com cuidado prático.","description":"Conheça a Anhui Kangmu International Fertilizer Co., Ltd. e a sua coleção de produtos.","actionLabel":"Sobre nós","actionPath":"/about","imageKey":"hero-orchard"}
+    ],
+    "ru": [
+      {"eyebrow":"ПИТАНИЕ ДЛЯ КАЖДОЙ ВОЗМОЖНОСТИ","title":"Питание для каждого этапа роста.","description":"Изучите продукты для питания растений KOMU и варианты применения для культур.","actionLabel":"Открыть продукты","actionPath":"/products","imageKey":"hero-field"},
+      {"eyebrow":"РАСТИ С ЗАБОТОЙ","title":"Понимайте культуры и планируйте питание.","description":"Сравнивайте категории продуктов и условия выращивания в одном руководстве.","actionLabel":"Открыть решения","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"eyebrow":"ОСНОВА РОСТА","title":"Выращивание с практичной заботой.","description":"Узнайте об Anhui Kangmu International Fertilizer Co., Ltd. и её коллекции продуктов.","actionLabel":"О компании","actionPath":"/about","imageKey":"hero-orchard"}
+    ]
+  },
+  "featured": {
+    "es": [
+      {"title":"Catálogo de productos","description":"Explore el catálogo y la información de productos KOMU.","actionLabel":"Explorar productos","actionPath":"/products","imageKey":"hero-field"},
+      {"title":"Aplicaciones de cultivo","description":"Explore rutas de cultivos y prácticas de cultivo para descubrir productos.","actionLabel":"Explorar soluciones","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"title":"Perfil de la empresa","description":"Conozca Anhui Kangmu International Fertilizer Co., Ltd. y la nutrición vegetal KOMU.","actionLabel":"Sobre nosotros","actionPath":"/about","imageKey":"hero-orchard"}
+    ],
+    "fr": [
+      {"title":"Catalogue de produits","description":"Découvrez le catalogue et les informations sur les produits KOMU.","actionLabel":"Découvrir les produits","actionPath":"/products","imageKey":"hero-field"},
+      {"title":"Applications culturales","description":"Explorez les parcours par culture et par mode de production pour découvrir les produits.","actionLabel":"Découvrir les solutions","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"title":"Profil de l’entreprise","description":"Découvrez Anhui Kangmu International Fertilizer Co., Ltd. et la nutrition végétale KOMU.","actionLabel":"À propos de nous","actionPath":"/about","imageKey":"hero-orchard"}
+    ],
+    "pt": [
+      {"title":"Catálogo de produtos","description":"Explore o catálogo e as informações dos produtos KOMU.","actionLabel":"Explorar produtos","actionPath":"/products","imageKey":"hero-field"},
+      {"title":"Aplicações de cultivo","description":"Explore percursos por cultura e método de cultivo para descobrir produtos.","actionLabel":"Explorar soluções","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"title":"Perfil da empresa","description":"Conheça a Anhui Kangmu International Fertilizer Co., Ltd. e a nutrição vegetal KOMU.","actionLabel":"Sobre nós","actionPath":"/about","imageKey":"hero-orchard"}
+    ],
+    "ru": [
+      {"title":"Каталог продуктов","description":"Изучите каталог и информацию о продукции KOMU.","actionLabel":"Открыть продукты","actionPath":"/products","imageKey":"hero-field"},
+      {"title":"Применение при выращивании","description":"Изучите варианты по культурам и способам выращивания для поиска продуктов.","actionLabel":"Открыть решения","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"title":"Профиль компании","description":"Узнайте об Anhui Kangmu International Fertilizer Co., Ltd. и питании растений KOMU.","actionLabel":"О компании","actionPath":"/about","imageKey":"hero-orchard"}
+    ]
+  }
+}

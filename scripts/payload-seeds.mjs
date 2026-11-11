@@ -1,37 +1,21 @@
 // Safe owner-review seeds for an empty Payload database. Replace these values
 // through the admin after the owner supplies final brand copy and media.
-export const homepageSeedMedia = [
-  { key: "hero-field", path: "public/images/official-site/hero-01.jpg", alt: { en: "Official KOMU crop nutrition banner", zh: "康姆官方作物营养横幅" } },
-  { key: "hero-greenhouse", path: "public/images/official-site/hero-02.jpg", alt: { en: "Official KOMU crop quality banner", zh: "康姆官方作物品质横幅" } },
-  { key: "hero-orchard", path: "public/images/official-site/hero-03.jpg", alt: { en: "Official KOMU plant nutrition banner", zh: "康姆官方植物营养横幅" } },
-  { key: "company-banner", path: "public/images/official-site/company-products.jpg", alt: { en: "Official KOMU product display", zh: "康姆官方产品展示" } },
-];
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
+const homepageStaging = JSON.parse(fs.readFileSync(path.join(root, "src", "data", "homepage-staging.json"), "utf8"));
+const homepagePhase1 = JSON.parse(fs.readFileSync(path.join(root, "src", "data", "homepage-localizations-phase1.json"), "utf8"));
+const homepagePhase2 = JSON.parse(fs.readFileSync(path.join(root, "src", "data", "homepage-localizations-phase2.json"), "utf8"));
+const homepagePhase3 = JSON.parse(fs.readFileSync(path.join(root, "src", "data", "homepage-localizations-phase3.json"), "utf8"));
+export const homepageSeedMedia = homepageStaging.media;
 export const homepageSeeds = {
-  en: {
-    slides: [
-      { eyebrow: "NURTURE EVERY POSSIBILITY", title: "Nutrition for every stage of growth.", description: "Explore KOMU plant nutrition products and crop application routes.", actionLabel: "Explore products", actionPath: "/products", imageKey: "hero-field" },
-      { eyebrow: "GROW WITH CARE", title: "Understand crops, plan nutrition.", description: "Compare product categories and growing environments in one guide.", actionLabel: "Explore solutions", actionPath: "/solutions/greenhouse", imageKey: "hero-greenhouse" },
-      { eyebrow: "ROOTED IN GROWTH", title: "Growing with practical care.", description: "Meet Anhui Kangmu International Fertilizer Co., Ltd. and its product collection.", actionLabel: "About us", actionPath: "/about", imageKey: "hero-orchard" },
-    ],
-    featured: [
-      { title: "Product catalogue", description: "Browse ten products transcribed from the owner-provided brochure.", actionLabel: "Explore products", actionPath: "/products", imageKey: "hero-field" },
-      { title: "Growing applications", description: "Explore crop and growing practice routes for product discovery.", actionLabel: "Explore solutions", actionPath: "/solutions/greenhouse", imageKey: "hero-greenhouse" },
-      { title: "Company profile", description: "Learn about Anhui Kangmu International Fertilizer Co., Ltd. and KOMU plant nutrition.", actionLabel: "About us", actionPath: "/about", imageKey: "hero-orchard" },
-    ],
-  },
-  zh: {
-    slides: [
-      { eyebrow: "NURTURE EVERY POSSIBILITY", title: "用专业营养，陪伴每一次生长。", description: "探索康姆植物营养产品与作物应用路径。", actionLabel: "探索产品", actionPath: "/products", imageKey: "hero-field" },
-      { eyebrow: "GROW WITH CARE", title: "关注作物需求，规划营养方案。", description: "从作物与种植方式出发，了解产品分类。", actionLabel: "查看方案", actionPath: "/solutions/greenhouse", imageKey: "hero-greenhouse" },
-      { eyebrow: "ROOTED IN GROWTH", title: "理解土地，也理解种植者。", description: "了解安徽康母国际化肥股份有限公司与康姆产品系列。", actionLabel: "了解我们", actionPath: "/about", imageKey: "hero-orchard" },
-    ],
-    featured: [
-      { title: "产品目录", description: "浏览根据业主画册整理的十条产品资料。", actionLabel: "探索产品", actionPath: "/products", imageKey: "hero-field" },
-      { title: "种植应用", description: "按作物与种植方式进入营养应用指南。", actionLabel: "查看方案", actionPath: "/solutions/greenhouse", imageKey: "hero-greenhouse" },
-      { title: "关于我们", description: "了解安徽康母国际化肥股份有限公司与康姆产品系列。", actionLabel: "了解我们", actionPath: "/about", imageKey: "hero-orchard" },
-    ],
-  },
+  en: { slides: homepageStaging.slides.en, featured: homepageStaging.featured.en },
+  zh: { slides: homepageStaging.slides.zh, featured: homepageStaging.featured.zh },
+  ...Object.fromEntries(homepagePhase1.locales.map(locale => [locale, { slides: homepagePhase1.slides[locale], featured: homepagePhase1.featured[locale] }])),
+  ...Object.fromEntries(homepagePhase2.locales.map(locale => [locale, { slides: homepagePhase2.slides[locale], featured: homepagePhase2.featured[locale] }])),
+  ...Object.fromEntries(homepagePhase3.locales.map(locale => [locale, { slides: homepagePhase3.slides[locale], featured: homepagePhase3.featured[locale] }])),
 };
 
 export const companySeeds = {
@@ -81,7 +65,7 @@ export const faqSeeds = [
     name: { en: "Purchasing and support", zh: "采购与服务" },
     questions: [
       { slug: "enquiry", question: { en: "How can I make a product enquiry?", zh: "如何咨询产品？" }, answer: { en: "Use the contact page or email leon@kowloonglobaltrading.com with the product and market you are interested in.", zh: "可以进入联系页面，或发送产品名称和目标市场至 leon@kowloonglobaltrading.com。" } },
-      { slug: "distributor", question: { en: "How can I discuss distribution?", zh: "如何洽谈经销合作？" }, answer: { en: "Contact Anhui Kangmu International Fertilizer Co., Ltd. by email or WhatsApp and include your market and channel profile.", zh: "请通过邮箱或 WhatsApp 联系安徽康母国际化肥股份有限公司，并说明所在市场和渠道情况。" } },
+      { slug: "distributor", question: { en: "How can I discuss distribution?", zh: "如何洽谈经销合作？" }, answer: { en: "Contact Anhui Kangmu International Fertilizer Co., Ltd. by email or WhatsApp and include your market and channel profile.", zh: "请通过邮箱或 WhatsApp 联系安徽康坶国际化肥股份有限公司，并说明所在市场和渠道情况。" } },
     ],
   },
 ];

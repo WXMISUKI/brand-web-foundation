@@ -1,6 +1,6 @@
 # 参考页面与本地实现映射
 
-更新：2026-11-06。此表用于逐页对照，不代表视觉或功能已验收；参考地址仅用于研究，业主素材与信息仍待提供。`{locale}` 中英文可访问，法语仅隔离开发预览，其余语言尚未开放。
+更新：2026-11-06。此表用于逐页对照，不代表视觉或功能已验收；参考地址仅用于研究，业主素材与信息仍待提供。本文是历史映射快照，不能用于判断当前语言开放状态；当前 13 locale 发布口径以 `HANDOFF.md` 和当前阶段闸门为准。
 
 | 参考页面 | 本地页面 | 主要实现文件 | 当前边界 |
 | --- | --- | --- | --- |
@@ -15,7 +15,7 @@
 | [企业介绍](https://www.haifa-group.com/about-us-0) | `/{locale}/about` | `src/components/about-content.tsx`、`src/content/company-profile.ts` | 企业简介、重点及历程可读取后台；真实资料和完整视觉待核对。 |
 | [常见问题](https://www.haifa-group.com/faq) | `/{locale}/faq` | `src/components/faq-content.tsx`、`src/content/faq.ts` | 分类及内容可读取后台；业务问答和完整对照待完成。 |
 | [新闻与活动](https://www.haifa-group.com/news-events) | `/{locale}/news` | `src/components/news-content.tsx`、`src/content/news.ts` | News/Events 筛选与双语详情已接入；正式新闻资料和完整分页仍需内容审核。 |
-| [联系](https://www.haifa-group.com/contact-us-1) | `/{locale}/contact` | `src/components/contact-content.tsx`、`src/content/company-profile.ts` | 邮箱和 WhatsApp 直达已接入；站内询盘保持关闭，收件与隐私链路未启用。 |
+| [联系](https://www.haifa-group.com/contact-us-1) | `/{locale}/contact` | `src/components/contact-content.tsx`、`src/content/company-profile.ts` | 邮箱和 WhatsApp 直达已接入；当前站内询盘写入 Payload，通知与隐私留存规则仍受治理闸门约束。 |
 | [安全数据表申请](https://www.haifa-group.com/products/sds-request) | `/{locale}/sds-request` | `src/components/product-resources.tsx` | 表单及上传禁用，无申请接收服务。 |
 | [质量保证](https://www.haifa-group.com/quality-assurance) | `/{locale}/quality-assurance` | `src/components/product-resources.tsx` | 质量流程和证书均为待确认占位，无证书下载。 |
 | [可持续发展战略示例](https://www.haifa-group.com/precision-impact/strategy) | `/{locale}/sustainability` | `src/components/sustainability-content.tsx` | 中英文专题预览，法语仅隔离开发；有桌面直达入口，内容、图片及参考站多级专题菜单待完善。 |

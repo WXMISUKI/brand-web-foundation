@@ -6,7 +6,7 @@ const previewBase = process.env.PREVIEW_EVAL_URL || "http://localhost:3123";
 const publicBase = process.env.PREVIEW_URL || "http://localhost:3118";
 const slug = "medium-element-granular-draft";
 
-test("CMS_EVAL exposes product catalog and detail for all configured locales", async () => {
+test("released product catalog and detail expose all configured locales", async () => {
   for (const locale of locales) {
     const catalogResponse = await fetch(new URL(`/${locale.code}/products`, previewBase));
     assert.equal(catalogResponse.status, 200, `${locale.code}/products`);
@@ -23,7 +23,7 @@ test("CMS_EVAL exposes product catalog and detail for all configured locales", a
   }
 });
 
-test("product preview remains isolated from ordinary development", async () => {
-  assert.equal((await fetch(new URL("/he/products", publicBase))).status, 404);
+test("released product pages remain open on the public instance", async () => {
+  assert.equal((await fetch(new URL("/he/products", publicBase))).status, 200);
   assert.equal((await fetch(new URL(`/en/products/${slug}`, publicBase))).status, 200);
 });

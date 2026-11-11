@@ -14,7 +14,7 @@ export function LanguageMenu({ locale, alternatePath, mobile = false, frenchPrev
   return <details className={mobile ? "language-menu language-menu-mobile" : "language-menu"} ref={ref}
     onKeyDown={event => { if (event.key === "Escape" && ref.current?.open) { event.stopPropagation(); close(); ref.current.querySelector("summary")?.focus(); } }}
     onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget as Node | null)) close(); }}>
-    <summary aria-label={copy.language}>{current.label}<span aria-hidden="true">⌄</span></summary>
+    <summary aria-label={copy.language}><span className="language-menu-label">{current.label}</span><svg className="language-menu-chevron" aria-hidden="true" viewBox="0 0 12 12" fill="none"><path d="m2.5 4.5 3.5 3.5 3.5-3.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg></summary>
     <ul aria-label={copy.languages}>
       {locales.map(item => <li key={item.code} lang={item.htmlLang} dir={item.direction}>
         {item.code === locale ? <span aria-current="page">{item.label}</span> : isPublicLocale(item.code) || (item.code === "fr" && frenchPreview) || (item.code === "es" && spanishPreview) || previewAllLocales ? <Link href={alternatePath.replace(/^\/(?:en|he|nl|fr|it|es|pt|el|zh|ro|ru|th|tr)(?=\/|\?|#|$)/, `/${item.code}`)} hrefLang={item.htmlLang} onClick={close}>{item.label}</Link> : <span className="language-pending">{item.label} <small lang={current.htmlLang}>{copy.pending}</small></span>}

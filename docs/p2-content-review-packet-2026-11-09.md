@@ -2,13 +2,13 @@
 
 日期：2026-11-09  
 来源：[业主提供的 FLBOOK 画册](https://flbook.com.cn/c/LTc82gQQM3)  
-当前状态：**WAITING-EXTERNAL**
+状态：**历史审核快照，已被 2026-11-09 后续生产审核取代**
 
-本清单用于逐条确认正式发布资料。当前所有产品继续保持 `owner-review`、`claimsVerified=false`；勾选审核项不会自动写入生产数据库，需要在 Payload 后台逐条回读后再执行受控更新。
+本清单记录正式发布前的逐项确认要求。2026-11-09 后续业主授权与生产回读已将 10 条 FLBOOK 产品更新为 `approved` / `claimsVerified=true`；当前生产状态以 `docs/current-stage-gate-2026-11-09.md` 和 `docs/p3-release-decision-2026-11-09.md` 为准。下方旧状态、旧门禁结论仅保留审计历史，不可作为当前状态使用。
 
-2026-11-09 已修复生产历史导入遗漏的审核/来源元数据：管理员视图下 10 条产品现在均有 `owner-review`、`claimsVerified=false`、素材状态、来源页和双语 counterpart；修复前备份为 `payload-2026-11-08T20-20-27-070Z.dump`。这次修复没有覆盖名称、简介、规格或后台人工字段。
+2026-11-09 较早记录：曾修复生产历史导入遗漏的审核/来源元数据，10 条产品当时保持 `owner-review`、`claimsVerified=false`；随后又按业主授权完成正式审核。修复前备份为 `payload-2026-11-08T20-20-27-070Z.dump`，本条是历史过程记录。
 
-2026-11-09 官方来源补充：7 条与原官网产品卡视觉一致的图片已写入 Payload 媒体；对应原官网详情页已追加到产品 `sourceNote`，文字和规格仍以 FLBOOK 页码为主。此次更新前备份为 `payload-2026-11-08T23-51-33-342Z.dump`，更新后仍保持 10 条 `owner-review`、0 条 `claimsVerified=true`。
+2026-11-09 官方来源补充：7 条与原官网产品卡视觉一致的图片已写入 Payload 媒体；对应原官网详情页已追加到产品 `sourceNote`，文字和规格仍以 FLBOOK 页码为主。此次更新前备份为 `payload-2026-11-08T23-51-33-342Z.dump`。该次操作后曾保持审核态，后续授权与审核见当前阶段闸门。
 
 ## 逐产品清单
 
@@ -46,4 +46,4 @@
 
 ## 发布门禁关系
 
-`npm run check:p2-release` 当前应返回 `ready:false`，直到正式审核完成。即使该检查通过，仍需完成 P3 询盘收件、隐私、反垃圾、正式语言和 noindex 决策；它不会自动启用询盘或解除 noindex。
+历史门禁说明：当时 `npm run check:p2-release` 预期为 `ready:false`。当前工作区该命令返回 `ready:true`，生产审计也回读到 10 条 FLBOOK 已批准；官方候选、非英语人工译文和邮件/工单通知仍分别按当前阶段闸门跟踪。

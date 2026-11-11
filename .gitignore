@@ -6,3 +6,6 @@ node_modules/
 *.tsbuildinfo
 .codegraph/
 .local/
+.playwright-cli/
+test-results/
+output/

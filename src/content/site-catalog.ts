@@ -4,7 +4,7 @@ import { products } from "../data/products";
 import { englishProducts } from "../data/english-samples";
 import { englishCategories, productCategories } from "../data/categories";
 import type { Catalog, CatalogCategory, CatalogLocale, CatalogProduct, CatalogOverviewData, CatalogResults } from "./catalog";
-import { publicProductIntro } from "../lib/public-content";
+import { publicProductDetail, publicProductIntro } from "../lib/public-content";
 
 function sampleCategories(locale: CatalogLocale): CatalogCategory[] {
   return productCategories.map(item => ({ slug: item.id, name: locale === "en" ? englishCategories[item.id] : locale === "zh" ? item.name : null }));
@@ -23,9 +23,9 @@ function sampleCatalog(locale: CatalogLocale): Catalog {
         slug: item.slug,
         category: categories.find(category => category.slug === item.categoryId) ?? null,
         name: locale === "en" ? translated?.name ?? null : locale === "zh" ? item.name : null,
-        intro: publicProductIntro(locale === "en" ? translated?.intro ?? null : locale === "zh" ? item.intro : null),
+        intro: publicProductIntro(locale === "en" ? translated?.intro ?? null : locale === "zh" ? item.intro : null, locale),
         media: item.media?.src ? { src: item.media.src, alt: sampleLocale ? item.media.alt[sampleLocale] ?? null : null } : null,
-        details: { materials: details?.materials ?? null, packaging: details?.packaging ?? null, uses: details?.uses ?? null, instructions: details?.instructions ?? null },
+        details: { materials: publicProductDetail(details?.materials, locale), packaging: publicProductDetail(details?.packaging, locale), uses: publicProductDetail(details?.uses, locale), instructions: publicProductDetail(details?.instructions, locale) },
         specifications: (item.specifications ?? []).map(spec => ({ id: spec.id, label: sampleLocale ? spec.label[sampleLocale] ?? null : null, unit: spec.unit ?? null, typical: spec.typical ?? null, minimum: spec.minimum ?? null, maximum: spec.maximum ?? null })),
         provenance: {
           sourcePages: item.sourcePages ?? [],

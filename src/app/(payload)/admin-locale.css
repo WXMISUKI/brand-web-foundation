@@ -1,0 +1,4 @@
+/* Payload's locale provider briefly has no code immediately after login. */
+button.popup-button:has(> .localizer-button:not([data-locale])) {
+  visibility: hidden;
+}

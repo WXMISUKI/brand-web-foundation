@@ -1,0 +1,95 @@
+{
+  "locales": ["nl"],
+  "products": {
+    "medium-element-granular-draft": {
+      "nl": {
+        "name": "Niet-wateroplosbare meststof met secundaire nutriënten · Ca-Mg-Si-Zn",
+        "intro": "De brochurepagina's 6–7 presenteren een niet-wateroplosbare meststof met secundaire nutriënten, gericht op de aanvoer van Ca, Mg, Si en Zn, ondersteuning van fotosynthese, beworteling, weerbaarheid tegen stress en waterbeheer in de bodem. Verpakking en formule volgen de brochurepagina."
+      }
+    },
+    "organic-water-soluble-growth-draft": {
+      "nl": {
+        "name": "Organische wateroplosbare meststof · groei, bladkwaliteit en beworteling",
+        "intro": "Brochurepagina 8 presenteert een organische wateroplosbare meststof voor groei, bladuiterlijk en beworteling, met een positionering rond fosfiet en een verpakking van ongeveer 20 kg. De beschrijving volgt de brochurepagina."
+      }
+    },
+    "organic-water-soluble-quality-draft": {
+      "nl": {
+        "name": "Organische wateroplosbare meststof · groei, bladontwikkeling en beworteling",
+        "intro": "Pagina 9 toont een tweede organische wateroplosbare meststof, gericht op groei, bladontwikkeling en beworteling, met een verpakking van ongeveer 20 kg. De beschrijving volgt de brochurepagina."
+      }
+    },
+    "organic-water-soluble-absorption-draft": {
+      "nl": {
+        "name": "Organische wateroplosbare meststof · herstel en weerbaarheid",
+        "intro": "Brochurepagina 10 presenteert een organische wateroplosbare meststof, gericht op herstel na stress, vruchtgrootte en -kleur, bodemactivatie en verschillende fysiologische functies. De verpakking wordt getoond als ongeveer 10 kg; de openbare samenvatting volgt de paginabeschrijving."
+      }
+    },
+    "organic-water-soluble-root-draft": {
+      "nl": {
+        "name": "Organische wateroplosbare meststof · wortelgroei en waterretentie",
+        "intro": "Brochurepagina 12 presenteert een organische wateroplosbare meststof, gericht op wortelgroei en opname van nutriënten, getoond in een verpakking van ongeveer 10 kg. De beschrijving volgt de brochurepagina."
+      }
+    },
+    "suspended-fertilizer-120-60-400-draft": {
+      "nl": {
+        "name": "Kangmu wateroplosbare suspensiemeststof · 120-60-400+TE",
+        "intro": "Brochurepagina 14 presenteert een Kangmu wateroplosbare suspensiemeststof met de aangegeven formule 120-60-400+TE, gericht op vruchtgrootte en -kleur, met een verpakking van 10 kg. Waarden en gebruiksintervallen volgen de brochurepagina."
+      }
+    },
+    "suspended-fertilizer-200-150-200-draft": {
+      "nl": {
+        "name": "Kangmu wateroplosbare suspensiemeststof · 200-150-200+TE",
+        "intro": "Brochurepagina 16 presenteert een Kangmu wateroplosbare suspensiemeststof met de aangegeven formule 200-150-200+TE, gericht op evenwichtige voeding en ondersteuning van de wortels, met een verpakking van 10 kg. Waarden en gebruiksintervallen volgen de brochurepagina."
+      }
+    },
+    "massive-element-liquid-quality-draft": {
+      "nl": {
+        "name": "Vloeibare wateroplosbare macronutriëntenmeststof Huangjinwu · opbrengst en kwaliteit",
+        "intro": "Brochurepagina 18 presenteert een vloeibare wateroplosbare macronutriëntenmeststof van Huangjinwu, gericht op opbrengst en kwaliteit, getoond in een verpakking van 1000 ml. Formule en gebruiksdetails volgen de brochurepagina."
+      }
+    },
+    "medium-element-liquid-draft": {
+      "nl": {
+        "name": "Vloeibare wateroplosbare meststof met secundaire nutriënten Huangjinwu · calcium, magnesium en silicium",
+        "intro": "Brochurepagina 20 presenteert een vloeibare wateroplosbare meststof met secundaire nutriënten van Huangjinwu. De beschrijving noemt calcium, magnesium, silicium en langdurige beschikbaarheid; de verpakking wordt aangegeven als 1000 ml. Raadpleeg de bron voor de gepubliceerde gegevens."
+      }
+    },
+    "organic-inorganic-compound-draft": {
+      "nl": {
+        "name": "Organisch-anorganische samengestelde meststof Kangmu · evenwichtige voeding en bodemstructuur",
+        "intro": "Brochurepagina 22 presenteert een organisch-anorganische samengestelde meststof van Kangmu, gericht op evenwichtige voeding en verbetering van de bodemstructuur, getoond in een verpakking van 50 kg. De openbare samenvatting volgt de paginabeschrijving."
+      }
+    }
+  },
+  "specificationLabels": {
+    "calcium-magnesium": "Calcium + magnesium (Ca+Mg)",
+    "calcium": "Calcium (Ca)",
+    "magnesium": "Magnesium (Mg)",
+    "zinc": "Zink (Zn)",
+    "boron": "Boor (B)",
+    "silicon": "Silicium (SiO₂)",
+    "humic-acid": "Huminezuur",
+    "organic-matter": "Organische stof",
+    "moisture": "Vocht (H₂O)",
+    "phosphite": "Fosfiet (HPO₃²⁻)",
+    "ph": "pH (verdunning 1:250)",
+    "particle-size-pass-rate": "Doorlaatpercentage naar deeltjesgrootte (1.00 mm–4.75 mm)",
+    "acid-soluble-protein": "Zuur-oplosbaar eiwit",
+    "peptides": "Peptiden",
+    "npk": "N-P-K",
+    "insoluble": "In water onoplosbare stof",
+    "amino-acid": "Aminozuren",
+    "npk-total": "Totaal N-P-K",
+    "nitrogen": "Stikstof (N)",
+    "phosphate": "Fosfaat (P₂O₅)",
+    "potassium": "Kalium (K₂O)",
+    "manganese": "Mangaan (Mn)",
+    "biuret": "Biuret"
+  },
+  "categoryNames": {
+    "water-soluble": "Wateroplosbare meststoffen",
+    "medium-elements": "Secundaire nutriënten",
+    "compound": "Samengestelde meststoffen"
+  }
+}

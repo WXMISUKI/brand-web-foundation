@@ -2,18 +2,19 @@
 import { useEffect, useRef, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import { solutionLabel, solutions, spanishSolutionLabels } from "../data/solutions";
-import { solutionImages } from "../data/section-media";
+import { englishSolutionImages, solutionImages } from "../data/section-media";
 import { homeProductMessages } from "../i18n/home-product-messages";
 import { frenchSolutionLabels } from "../i18n/navigation-detail";
 import { aboutMessages } from "../i18n/about-messages";
 import type { CatalogPageLocale } from "../i18n/catalog-messages";
+
 export function Interest({ locale = "zh", products, sample }: { locale?: CatalogPageLocale; products: { slug: string; name: string | null; image: string | null }[]; sample: boolean }) {
   const [active, setActive] = useState(0);
   const grid = useRef<HTMLDivElement>(null);
   const [edges, setEdges] = useState({ start: true, end: true, overflow: false });
   const copy = homeProductMessages[locale];
   const prefix = `/${locale}`;
-  const solutionEntries = (group: "method" | "crop") => solutions.filter(s => s.group === group).map(s => ({ name: locale === "es" ? spanishSolutionLabels[s.slug] : locale === "fr" ? frenchSolutionLabels[s.slug] : solutionLabel(locale, s), href: `${prefix}/solutions/${s.slug}`, image: solutionImages[s.slug] }));
+  const solutionEntries = (group: "method" | "crop") => solutions.filter(s => s.group === group).map(s => ({ name: locale === "es" ? spanishSolutionLabels[s.slug] : locale === "fr" ? frenchSolutionLabels[s.slug] : solutionLabel(locale, s), href: `${prefix}/solutions/${s.slug}`, image: englishSolutionImages[s.slug] ?? solutionImages[s.slug] }));
   const categories = [
     { name: copy.crops, entries: solutionEntries("crop") },
     { name: copy.methods, entries: solutionEntries("method") },

@@ -10,10 +10,10 @@ export async function HomeProducts({ locale }: { locale: CatalogPageLocale }) {
   const copy = homeProductMessages[locale], catalog = catalogMessages[locale], common = aboutMessages[locale];
   const { products, source } = await getSiteHighlights(locale, 10);
   return <section className="home-products" aria-labelledby="home-products-title">
-    <div className="home-products-heading"><span className="eyebrow">{copy.ourProducts}{source === "sample" && ` · ${common.sample}`}</span><h2 id="home-products-title">{copy.ourProducts}</h2><p>{source === "sample" ? copy.sampleNote : copy.contentNote}</p></div>
+    <div className="home-products-heading"><span className="eyebrow">{copy.ourProducts}{source === "sample" && ` · ${common.sample}`}</span><h2 id="home-products-title">{copy.ourProducts}</h2><p>{copy.contentNote}</p></div>
     {products.length === 0 && <p className="interest-empty">{copy.emptyProducts}</p>}
     <ProductRail locale={locale} sample={source === "sample"}>{products.map((product,index) => {
-      const name = product.name ?? (locale === "en" ? "Translation pending" : locale === "zh" ? "待翻译" : common.pending);
+      const name = product.name ?? common.pending;
       return <Link className="home-product-card" key={product.slug} href={`/${locale}/products/${encodeURIComponent(product.slug)}`}><h3>{name}</h3><p>{product.intro ?? catalog.missing}</p><ProductVisual number={String(index+1).padStart(2,"0")} media={product.media ? { src: product.media.src, alt: { [locale]: product.media.alt ?? "" } } : undefined} locale={locale} productName={name} /><span className="home-product-link">{catalog.details} ↗</span></Link>;
     })}</ProductRail>
     <div className="home-products-more"><Link className="text-link" href={`/${locale}/products`}>{copy.allProducts}</Link></div>

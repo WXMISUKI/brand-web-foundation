@@ -88,3 +88,77 @@
 - 富文本内部链接只能指向存在且已开放的本地化实体。
 - 参考站只用于学习布局和交互；品牌、文字、图片和视频必须使用业主授权或明确标记的示例。
 - 每项视觉结论必须绑定视口和状态；一次截图不能证明整站完成。
+
+## 2026-11-10 正式验收闸门方案
+
+本轮验收只针对当前生产实例 `https://www.kowloonglobaltrading.com`，严格区分“生产已部署证据”和“工作区/隔离 Payload 草稿证据”。每个闸门单独记录 `PASS-SCOPED`、`PARTIAL`、`FAIL` 或 `WAITING-EXTERNAL`；只有 G0–G6 的必测项全部通过，G7 才能形成整体通过结论。
+
+### G0：发布基线冻结
+
+**验收内容：**记录生产 build ID、依赖版本、实际部署提交、数据库与媒体备份目录、服务状态、当前真实资料清单和当前未部署工作区差异。
+
+**通过标准：**发布信息可追溯；10 条 FLBOOK 正式资料、已授权公司/技术媒体和 Hero 热修复证据可回读；21 条官方候选明确保持 `owner-review`，不被误记为正式核验。
+
+**证据：**`docs/current-stage-gate-2026-11-09.md`、生产 health/readiness、备份清单、Hero 生产截图。
+
+### G1：静态契约与内容边界
+
+**验收内容：**运行 `typecheck`、`check:locale`、UI/component locale coverage、内容/作物指南/homepage validators、RTL CSS、route contracts、官方候选合同和公网基线。
+
+**通过标准：**所有自动门禁通过；route contract 必须在对应隔离实例启动后执行；测试环境连接失败只能记录为 `NOT-RUN`，不能误报为产品失败。
+
+**证据：**命令输出归档到 `output/acceptance/<run-id>/`，保留失败命令和环境变量边界。
+
+### G2：生产 HTTP/SSR 语言矩阵
+
+**验收内容：**13 locale × 14 个固定页面切片：首页、About、Products、Products Series、Solutions、Contact、FAQ、Search、News、Insights、Smart Farming、Sustainability、Quality Assurance、SDS Request；产品详情和方案详情从生产页面抽取稳定 slug 后追加。
+
+**每页检查：**HTTP 200、`lang/dir`、canonical/hreflang、robots/index、关键本地化链接、无内部审核字段、抽样 CSS/JS/favicon/媒体响应 200。
+
+**通过标准：**全部固定切片通过；动态详情若来源不存在则明确记录 `NOT-AVAILABLE`，不能用首页通过替代详情通过。
+
+### G3：真实浏览器内容矩阵
+
+**验收内容：**至少 390×844、768×844、1280×720、1440×900 四个视口；13 locale 首页，`en/zh/he` 覆盖全部关键页面切片，其他 locale 覆盖首页和产品/联系代表路径。
+
+**每页检查：**console 无 error/warning、broken image 为 0、root/body `scrollWidth <= viewport`、`lang/dir` 正确、无 `译文暂未提供`/`Information unavailable`/内部审核标记、语言切换可回到同一路径。
+
+**证据：**代表性语言全量截图；失败页面必留截图、DOM 摘要和 console/network 日志。懒加载图片必须滚动进入视口后再判定。
+
+### G4：组件几何与遮挡矩阵
+
+**验收内容：**Hero、Header、桌面/移动菜单、语言菜单、Footer、移动底栏、兴趣卡、产品卡、规格表、富文本、Contact/询盘表单。
+
+**自动检查：**可见元素 bounding box 不得越出 viewport；元素之间不得发生非预期重叠；fixed 底栏不得遮挡最后一屏内容；表格仅允许在声明的滚动容器内横向滚动；断点切换不得产生跳变遮挡。
+
+**人工检查：**`en/zh/he/ru/th/el` 代表性长文案截图逐张复核，特别检查 RTL、化学式、单位、标题换行和图片比例。
+
+### G5：真实材料与媒体审计
+
+**验收内容：**生产媒体 URL、自然尺寸、加载状态、alt、来源/授权、审核状态；Hero 不得再使用带中文横幅的 `hero-01/02/03` 作为封面背景；产品详情必须保留真实来源页码和媒体关系。
+
+**通过标准：**10 条 FLBOOK 正式资料及已授权媒体回读通过；未知规格/claims 不得被自动补全；21 条候选继续展示但保持审核标记和未核验边界。
+
+### G6：交互与可访问性
+
+**验收内容：**菜单展开/关闭、Escape、焦点返回、语言切换、筛选、搜索、FAQ、产品详情、规格表、Contact 表单禁用/提交边界、移动底栏、键盘访问和基础可访问名称。
+
+**通过标准：**关键交互无 console 错误、路由和查询参数保持、匿名 API 边界不被绕过；真实提交只在明确授权的验收环境执行，生产询盘仍按人工处理策略记录。
+
+### G7：发布结论与回归
+
+**验收内容：**health/readiness、匿名 API 403、13 locale、关键 smoke、SEO、静态资源、回滚点和证据索引。
+
+**结论规则：**只有所有必测项通过才记整体 `PASS`；否则按闸门输出 `PASS-SCOPED`/`PARTIAL`/`WAITING-EXTERNAL`，并列出阻断项、责任人和下一步。任何单次截图、局部浏览器检查或隔离 Payload 预览都不得扩大为全站完成。
+
+## 执行顺序与检查点
+
+1. G0：冻结当前生产基线和真实资料边界。
+2. G1：运行自动契约；若失败先修复或标记环境性 `NOT-RUN`。
+3. **Checkpoint A：**G0/G1 证据完整后才进入生产 HTTP 矩阵。
+4. G2：运行 13 locale × 固定页面切片 HTTP/SSR 矩阵。
+5. G3/G4：按优先级先做 `en/zh/he` 全量，再做其他语言代表页；失败项单独形成修复任务。
+6. G5/G6：复核真实资料、媒体和关键交互。
+7. **Checkpoint B：**所有失败项有修复或明确外部阻断后，运行 G7 回归并生成最终报告。
+
+正式验收脚本和测试若能稳定复用，应作为仓库正式资产保留；一次性调试脚本和临时截图在报告生成后删除。

@@ -16,7 +16,7 @@ export function FaqContent({ locale, data, query = "", questionId = "", preview 
     <div className="faq-body">
       <nav className="faq-breadcrumb" aria-label={common.breadcrumb}><Link href={locale === "es" ? "/es/products" : prefix}>{locale === "es" ? "Catálogo de productos" : common.home}</Link> / {copy.title}</nav>
       <h1>{copy.title}</h1>
-      <p className="faq-intro">{data.source === "sample" ? copy.sample : copy.intro}</p>
+      <p className="faq-intro">{copy.intro}</p>
       {active ? <div className="faq-layout"><nav className="faq-categories" aria-label={copy.categories}>{data.groups.map(group => <button key={group.id} type="button" aria-pressed={group.id === active.id} onClick={() => setActiveId(group.id)}>{group.name ?? common.pending}</button>)}</nav>
         <div className="faq-list" key={active.id}>{active.questions.length ? active.questions.map(item => <details key={item.id} open={item.id === questionId ? true : undefined}><summary>{item.question ?? common.pending}</summary><div><p className="news-body">{item.answer ?? common.pending}</p><Link href={`${prefix}/contact`}>{common.contact} ↗</Link></div></details>) : <p>{copy.empty}</p>}</div>
       </div> : <p>{query ? copy.noMatch : copy.empty}</p>}

@@ -25,7 +25,7 @@ const report = {
   specificationRows: source.products.reduce((total, product) => total + (product.specifications?.length ?? 0), 0),
   ownerReviewCount: source.products.filter(product => product.contentStatus === "owner-review").length,
   claimsVerifiedCount: source.products.filter(product => product.claimsVerified === true).length,
-  warnings: ["Locales without an approved translation use the English source copy through the documented fallback."],
+  warnings: ["Localized CMS content is Codex self-reviewed and production-backfilled; professional mother-tongue/legal/agronomic certification is not evidenced."],
   blockers: gateBlockers,
 };
 console.log(JSON.stringify(report, null, 2));

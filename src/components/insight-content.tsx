@@ -27,7 +27,7 @@ export async function InsightDetail({ locale, slug, basePath }: { locale: Catalo
   const item = await getInsight(locale, slug);
   if (!item) notFound();
   const copy = insightMessages[locale], common = aboutMessages[locale], path = basePath ?? `/${locale}/insights`;
-  const title = item.title ?? (locale === "en" ? "Translation pending" : locale === "zh" ? "待翻译" : common.pending);
+  const title = item.title ?? common.pending;
   return <main><div className="insight-banner"><span>{common.sampleImage}</span></div><article className="inner insight-page">
     <nav className="crumb" aria-label={common.breadcrumb}><Link href={path}>{copy.title}</Link> / {title}</nav>
     <h1>{title}</h1>

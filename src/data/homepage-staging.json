@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "approved",
+  "source": {
+    "kind": "authorized-example",
+    "locales": ["en", "zh"],
+    "note": "Homepage seed content and media are staging examples from the current owner-provided site assets. Only en and zh are authored; other configured locales must remain explicit missing translations."
+  },
+  "media": [
+    {
+      "key": "hero-field",
+      "path": "public/images/official-site/hero-01.jpg",
+      "alt": {"en": "Official KOMU crop nutrition banner", "zh": "康姆官方作物营养横幅"},
+      "assetStatus": "authorized-example"
+    },
+    {
+      "key": "hero-greenhouse",
+      "path": "public/images/official-site/hero-02.jpg",
+      "alt": {"en": "Official KOMU crop quality banner", "zh": "康姆官方作物品质横幅"},
+      "assetStatus": "authorized-example"
+    },
+    {
+      "key": "hero-orchard",
+      "path": "public/images/official-site/hero-03.jpg",
+      "alt": {"en": "Official KOMU plant nutrition banner", "zh": "康姆官方植物营养横幅"},
+      "assetStatus": "authorized-example"
+    },
+    {
+      "key": "company-banner",
+      "path": "public/images/official-site/company-products.jpg",
+      "alt": {"en": "Official KOMU product display", "zh": "康姆官方产品展示"},
+      "assetStatus": "authorized-example"
+    }
+  ],
+  "slides": {
+    "en": [
+      {"eyebrow": "NURTURE EVERY POSSIBILITY", "title": "Nutrition for every stage of growth.", "description": "Explore KOMU plant nutrition products and crop application routes.", "actionLabel": "Explore products", "actionPath": "/products", "imageKey": "hero-field"},
+      {"eyebrow": "GROW WITH CARE", "title": "Understand crops, plan nutrition.", "description": "Compare product categories and growing environments in one guide.", "actionLabel": "Explore solutions", "actionPath": "/solutions/greenhouse", "imageKey": "hero-greenhouse"},
+      {"eyebrow": "ROOTED IN GROWTH", "title": "Growing with practical care.", "description": "Meet Anhui Kangmu International Fertilizer Co., Ltd. and its product collection.", "actionLabel": "About us", "actionPath": "/about", "imageKey": "hero-orchard"}
+    ],
+    "zh": [
+      {"eyebrow": "NURTURE EVERY POSSIBILITY", "title": "用专业营养，陪伴每一次生长。", "description": "探索康姆植物营养产品与作物应用路径。", "actionLabel": "探索产品", "actionPath": "/products", "imageKey": "hero-field"},
+      {"eyebrow": "GROW WITH CARE", "title": "关注作物需求，规划营养方案。", "description": "从作物与种植方式出发，了解产品分类。", "actionLabel": "查看方案", "actionPath": "/solutions/greenhouse", "imageKey": "hero-greenhouse"},
+      {"eyebrow": "ROOTED IN GROWTH", "title": "理解土地，也理解种植者。", "description": "了解安徽康坶国际化肥股份有限公司与康姆产品系列。", "actionLabel": "了解我们", "actionPath": "/about", "imageKey": "hero-orchard"}
+    ]
+  },
+  "featured": {
+    "en": [
+      {"title": "Product catalogue", "description": "Explore the KOMU product catalogue and product information.", "actionLabel": "Explore products", "actionPath": "/products", "imageKey": "hero-field"},
+      {"title": "Growing applications", "description": "Explore crop and growing practice routes for product discovery.", "actionLabel": "Explore solutions", "actionPath": "/solutions/greenhouse", "imageKey": "hero-greenhouse"},
+      {"title": "Company profile", "description": "Learn about Anhui Kangmu International Fertilizer Co., Ltd. and KOMU plant nutrition.", "actionLabel": "About us", "actionPath": "/about", "imageKey": "hero-orchard"}
+    ],
+    "zh": [
+      {"title": "产品目录", "description": "浏览康姆产品目录和产品资料。", "actionLabel": "探索产品", "actionPath": "/products", "imageKey": "hero-field"},
+      {"title": "种植应用", "description": "按作物与种植方式进入营养应用指南。", "actionLabel": "查看方案", "actionPath": "/solutions/greenhouse", "imageKey": "hero-greenhouse"},
+      {"title": "关于我们", "description": "了解安徽康坶国际化肥股份有限公司与康姆产品系列。", "actionLabel": "了解我们", "actionPath": "/about", "imageKey": "hero-orchard"}
+    ]
+  }
+}

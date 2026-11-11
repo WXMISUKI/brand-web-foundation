@@ -8,6 +8,9 @@ import { defaultLocale, locales } from "./i18n/locales.ts";
 import { indexRichBody, readLegacyBody } from "./content/rich-text.ts";
 import { heroHref } from "./data/hero-link.ts";
 import { migrations } from "./migrations/index.ts";
+import { zh } from "@payloadcms/translations/languages/zh";
+import { en } from "@payloadcms/translations/languages/en";
+import { adminLocaleLabel, localizeAdminCollection, localizeAdminGlobal } from "./admin/payload-labels.ts";
 
 const authenticated = ({ req }: { req: { user?: unknown } }) => Boolean(req.user);
 const contentAccess = { read: () => true, create: authenticated, update: authenticated, delete: authenticated };
@@ -224,9 +227,10 @@ if (database === "postgres" && !process.env.DATABASE_URL) throw new Error("DATAB
 export default buildConfig({
   secret,
   admin: { user: "users", importMap: { baseDir: path.resolve(process.cwd(), "src") } },
-  collections: [Users, Inquiries, Media, Categories, Products, News, Insights, Cases, CropGuides, FaqGroups, Faqs],
-  globals: [CompanyProfile, Homepage],
-  localization: { locales: locales.map(locale => locale.code), defaultLocale, fallback: false },
+  i18n: { fallbackLanguage: "zh", supportedLanguages: { zh, en } },
+  collections: [Users, Inquiries, Media, Categories, Products, News, Insights, Cases, CropGuides, FaqGroups, Faqs].map(localizeAdminCollection),
+  globals: [CompanyProfile, Homepage].map(localizeAdminGlobal),
+  localization: { locales: locales.map(locale => ({ code: locale.code, label: adminLocaleLabel(locale.code, locale.label), rtl: locale.direction === "rtl" })), defaultLocale, fallback: false },
   db: database === "postgres" ? postgresAdapter({ pool: { connectionString: process.env.DATABASE_URL! }, migrationDir: path.resolve(process.cwd(), "src", "migrations"), prodMigrations: migrations }) : sqliteAdapter({ client: { url: process.env.PAYLOAD_SQLITE_URL || "file:./.local/payload.sqlite" } }),
   editor: lexicalEditor({ features: ({ defaultFeatures }) => [...defaultFeatures.filter(feature => feature.key !== "link"), LinkFeature({ enabledCollections: ["products", "categories", "insights", "cases", "news"] })] }), sharp,
   typescript: { outputFile: path.resolve(process.cwd(), "src/payload-types.ts") },

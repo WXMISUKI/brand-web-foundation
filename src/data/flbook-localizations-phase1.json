@@ -1,0 +1,95 @@
+{
+  "locales": ["es", "fr", "pt", "ru"],
+  "categoryNames": {
+    "water-soluble": {"es":"Hidrosolubles","fr":"Hydrosolubles","pt":"Hidrossolúveis","ru":"Водорастворимые"},
+    "medium-elements": {"es":"Nutrientes secundarios","fr":"Éléments nutritifs secondaires","pt":"Nutrientes secundários","ru":"Вторичные элементы питания"},
+    "compound": {"es":"Fertilizantes compuestos","fr":"Engrais composés","pt":"Fertilizantes compostos","ru":"Комплексные удобрения"}
+  },
+  "products": {
+    "medium-element-granular-draft": {
+      "es": {"name":"Fertilizante granulado de nutrientes secundarios no soluble en agua · Ca-Mg-Si-Zn","intro":"El folleto, páginas 6–7, presenta un fertilizante granulado no soluble en agua con calcio, magnesio, silicio y zinc. La página describe sus características y su envase; consulte la fuente para ver los valores y el formato indicados."},
+      "fr": {"name":"Engrais granulé non soluble dans l’eau à éléments nutritifs secondaires · Ca-Mg-Si-Zn","intro":"Les pages 6–7 de la brochure présentent un engrais granulé non soluble dans l’eau contenant du calcium, du magnésium, du silicium et du zinc. La page décrit ses caractéristiques et son emballage ; consultez la source pour les valeurs et le format indiqués."},
+      "pt": {"name":"Fertilizante granulado não solúvel em água com nutrientes secundários · Ca-Mg-Si-Zn","intro":"As páginas 6–7 da brochura apresentam um fertilizante granulado não solúvel em água com cálcio, magnésio, silício e zinco. A página descreve as suas características e embalagem; consulte a fonte para os valores e o formato indicados."},
+      "ru": {"name":"Гранулированное водонерастворимое удобрение со вторичными элементами питания · Ca-Mg-Si-Zn","intro":"На страницах 6–7 брошюры представлен гранулированный водонерастворимый продукт с кальцием, магнием, кремнием и цинком. В брошюре описаны его характеристики и упаковка; указанные значения и формат следует сверять с источником."}
+    },
+    "organic-water-soluble-growth-draft": {
+      "es": {"name":"Fertilizante orgánico hidrosoluble · crecimiento, hojas y raíces","intro":"La página 8 del folleto presenta un fertilizante orgánico hidrosoluble y lo describe con términos relacionados con el crecimiento, las hojas y el enraizamiento. El envase se indica como de aproximadamente 20 kg; consulte la página de origen para conocer los datos publicados."},
+      "fr": {"name":"Engrais organique hydrosoluble · croissance, feuillage et enracinement","intro":"La page 8 de la brochure présente un engrais organique hydrosoluble décrit par des termes liés à la croissance, au feuillage et à l’enracinement. L’emballage est indiqué à environ 20 kg ; consultez la page source pour les données publiées."},
+      "pt": {"name":"Fertilizante orgânico hidrossolúvel · crescimento, folhas e enraizamento","intro":"A página 8 da brochura apresenta um fertilizante orgânico hidrossolúvel descrito com termos relacionados com crescimento, folhas e enraizamento. A embalagem é indicada como aproximadamente 20 kg; consulte a página de origem para os dados publicados."},
+      "ru": {"name":"Органическое водорастворимое удобрение · рост, листва и укоренение","intro":"На странице 8 брошюры представлен органический водорастворимый продукт; в описании используются формулировки о росте, листве и укоренении. Указана упаковка около 20 кг; опубликованные данные см. на странице-источнике."}
+    },
+    "organic-water-soluble-quality-draft": {
+      "es": {"name":"Fertilizante orgánico hidrosoluble · crecimiento, follaje y raíces","intro":"La página 9 del folleto presenta otro fertilizante orgánico hidrosoluble con términos relacionados con el crecimiento, el desarrollo foliar y el enraizamiento. El envase se indica como de aproximadamente 20 kg; consulte la página de origen para los datos publicados."},
+      "fr": {"name":"Engrais organique hydrosoluble · croissance, feuillage et enracinement","intro":"La page 9 de la brochure présente un autre engrais organique hydrosoluble décrit par des termes liés à la croissance, au développement du feuillage et à l’enracinement. L’emballage est indiqué à environ 20 kg ; consultez la page source pour les données publiées."},
+      "pt": {"name":"Fertilizante orgânico hidrossolúvel · crescimento, folhagem e enraizamento","intro":"A página 9 da brochura apresenta outro fertilizante orgânico hidrossolúvel descrito com termos relacionados com crescimento, desenvolvimento foliar e enraizamento. A embalagem é indicada como aproximadamente 20 kg; consulte a página de origem para os dados publicados."},
+      "ru": {"name":"Органическое водорастворимое удобрение · рост, листва и укоренение","intro":"На странице 9 брошюры представлен другой органический водорастворимый продукт; в описании используются формулировки о росте, развитии листвы и укоренении. Указана упаковка около 20 кг; опубликованные данные см. на странице-источнике."}
+    },
+    "organic-water-soluble-absorption-draft": {
+      "es": {"name":"Fertilizante orgánico hidrosoluble · recuperación y resistencia","intro":"La página 10 del folleto presenta un fertilizante orgánico hidrosoluble y describe su posicionamiento en torno a la recuperación, el desarrollo del fruto, la coloración y el suelo. El envase se indica como de aproximadamente 10 kg; consulte la página de origen para los datos publicados."},
+      "fr": {"name":"Engrais organique hydrosoluble · récupération et résilience","intro":"La page 10 de la brochure présente un engrais organique hydrosoluble positionné autour de la récupération, du développement du fruit, de la coloration et du sol. L’emballage est indiqué à environ 10 kg ; consultez la page source pour les données publiées."},
+      "pt": {"name":"Fertilizante orgânico hidrossolúvel · recuperação e resistência","intro":"A página 10 da brochura apresenta um fertilizante orgânico hidrossolúvel com posicionamento relacionado com recuperação, desenvolvimento do fruto, coloração e solo. A embalagem é indicada como aproximadamente 10 kg; consulte a página de origem para os dados publicados."},
+      "ru": {"name":"Органическое водорастворимое удобрение · восстановление и устойчивость","intro":"На странице 10 брошюры представлен органический водорастворимый продукт с описанием, связанным с восстановлением, развитием плодов, окрашиванием и почвой. Указана упаковка около 10 кг; опубликованные данные см. на странице-источнике."}
+    },
+    "organic-water-soluble-root-draft": {
+      "es": {"name":"Fertilizante orgánico hidrosoluble · raíces y retención de agua","intro":"La página 12 del folleto presenta un fertilizante orgánico hidrosoluble descrito en relación con el crecimiento de las raíces y la absorción de nutrientes. El envase se indica como de aproximadamente 10 kg; consulte la página de origen para los datos publicados."},
+      "fr": {"name":"Engrais organique hydrosoluble · racines et rétention d’eau","intro":"La page 12 de la brochure présente un engrais organique hydrosoluble décrit en lien avec la croissance des racines et l’absorption des nutriments. L’emballage est indiqué à environ 10 kg ; consultez la page source pour les données publiées."},
+      "pt": {"name":"Fertilizante orgânico hidrossolúvel · raízes e retenção de água","intro":"A página 12 da brochura apresenta um fertilizante orgânico hidrossolúvel descrito em relação ao crescimento das raízes e à absorção de nutrientes. A embalagem é indicada como aproximadamente 10 kg; consulte a página de origem para os dados publicados."},
+      "ru": {"name":"Органическое водорастворимое удобрение · развитие корней и удержание влаги","intro":"На странице 12 брошюры представлен органический водорастворимый продукт, описание которого связано с ростом корней и усвоением питательных веществ. Указана упаковка около 10 кг; опубликованные данные см. на странице-источнике."}
+    },
+    "suspended-fertilizer-120-60-400-draft": {
+      "es": {"name":"Fertilizante hidrosoluble en suspensión KOMU · 120-60-400+TE","intro":"La página 14 del folleto presenta un fertilizante hidrosoluble en suspensión KOMU con la fórmula indicada 120-60-400+TE. La página menciona el desarrollo y la coloración del fruto; el envase se indica como 10 kg. Consulte la fuente para el alcance y los valores publicados."},
+      "fr": {"name":"Engrais hydrosoluble en suspension KOMU · 120-60-400+TE","intro":"La page 14 de la brochure présente un engrais hydrosoluble en suspension KOMU portant la formule indiquée 120-60-400+TE. La page mentionne le développement et la coloration des fruits ; l’emballage est indiqué à 10 kg. Consultez la source pour la portée et les valeurs publiées."},
+      "pt": {"name":"Fertilizante hidrossolúvel em suspensão KOMU · 120-60-400+TE","intro":"A página 14 da brochura apresenta um fertilizante hidrossolúvel em suspensão KOMU com a fórmula indicada 120-60-400+TE. A página menciona o desenvolvimento e a coloração dos frutos; a embalagem é indicada como 10 kg. Consulte a fonte para o âmbito e os valores publicados."},
+      "ru": {"name":"Суспензионное водорастворимое удобрение KOMU · 120-60-400+TE","intro":"На странице 14 брошюры представлен суспензионный водорастворимый продукт KOMU с указанной формулой 120-60-400+TE. На странице упоминаются развитие и окрашивание плодов; масса упаковки указана как 10 кг. Область применения и значения сверяйте с источником."}
+    },
+    "suspended-fertilizer-200-150-200-draft": {
+      "es": {"name":"Fertilizante hidrosoluble en suspensión KOMU · 200-150-200+TE","intro":"La página 16 del folleto presenta un fertilizante hidrosoluble en suspensión KOMU con la fórmula indicada 200-150-200+TE. La página describe un posicionamiento de nutrición equilibrada y desarrollo radicular; el envase se indica como 10 kg. Consulte la fuente para los datos publicados."},
+      "fr": {"name":"Engrais hydrosoluble en suspension KOMU · 200-150-200+TE","intro":"La page 16 de la brochure présente un engrais hydrosoluble en suspension KOMU portant la formule indiquée 200-150-200+TE. La page décrit un positionnement axé sur l’équilibre nutritif et le développement racinaire ; l’emballage est indiqué à 10 kg. Consultez la source pour les données publiées."},
+      "pt": {"name":"Fertilizante hidrossolúvel em suspensão KOMU · 200-150-200+TE","intro":"A página 16 da brochura apresenta um fertilizante hidrossolúvel em suspensão KOMU com a fórmula indicada 200-150-200+TE. A página descreve um posicionamento de nutrição equilibrada e desenvolvimento radicular; a embalagem é indicada como 10 kg. Consulte a fonte para os dados publicados."},
+      "ru": {"name":"Суспензионное водорастворимое удобрение KOMU · 200-150-200+TE","intro":"На странице 16 брошюры представлен суспензионный водорастворимый продукт KOMU с указанной формулой 200-150-200+TE. В описании говорится о сбалансированном питании и развитии корней; масса упаковки указана как 10 кг. Опубликованные данные см. в источнике."}
+    },
+    "massive-element-liquid-quality-draft": {
+      "es": {"name":"Fertilizante líquido hidrosoluble de macroelementos Huangjinwu · rendimiento y calidad","intro":"La página 18 del folleto presenta un fertilizante líquido hidrosoluble de macroelementos Huangjinwu. La descripción destaca el rendimiento y la calidad; el envase se indica como 1000 ml. Consulte la página de origen para la composición y el uso publicados."},
+      "fr": {"name":"Engrais liquide hydrosoluble à macroéléments Huangjinwu · rendement et qualité","intro":"La page 18 de la brochure présente un engrais liquide hydrosoluble à macroéléments Huangjinwu. La description met en avant le rendement et la qualité ; l’emballage est indiqué à 1 000 ml. Consultez la page source pour la composition et l’usage publiés."},
+      "pt": {"name":"Fertilizante líquido hidrossolúvel de macronutrientes Huangjinwu · produção e qualidade","intro":"A página 18 da brochura apresenta um fertilizante líquido hidrossolúvel de macronutrientes Huangjinwu. A descrição destaca produção e qualidade; a embalagem é indicada como 1000 ml. Consulte a página de origem para a composição e utilização publicadas."},
+      "ru": {"name":"Жидкое водорастворимое удобрение Huangjinwu с макроэлементами · урожайность и качество","intro":"На странице 18 брошюры представлен жидкий водорастворимый продукт Huangjinwu с макроэлементами. В описании говорится об урожайности и качестве; объем упаковки указан как 1000 мл. Состав и применение см. на странице-источнике."}
+    },
+    "medium-element-liquid-draft": {
+      "es": {"name":"Fertilizante líquido hidrosoluble de nutrientes secundarios Huangjinwu · calcio, magnesio y silicio","intro":"La página 20 del folleto presenta un fertilizante líquido hidrosoluble de nutrientes secundarios Huangjinwu. La descripción menciona calcio, magnesio, silicio y una disponibilidad prolongada; el envase se indica como 1000 ml. Consulte la fuente para los datos publicados."},
+      "fr": {"name":"Engrais liquide hydrosoluble à éléments secondaires Huangjinwu · calcium, magnésium et silicium","intro":"La page 20 de la brochure présente un engrais liquide hydrosoluble à éléments secondaires Huangjinwu. La description mentionne le calcium, le magnésium, le silicium et une disponibilité prolongée ; l’emballage est indiqué à 1 000 ml. Consultez la source pour les données publiées."},
+      "pt": {"name":"Fertilizante líquido hidrossolúvel com nutrientes secundários Huangjinwu · cálcio, magnésio e silício","intro":"A página 20 da brochura apresenta um fertilizante líquido hidrossolúvel com nutrientes secundários Huangjinwu. A descrição menciona cálcio, magnésio, silício e efeito prolongado; a embalagem é indicada como 1000 ml. Consulte a fonte para os dados publicados."},
+      "ru": {"name":"Жидкое водорастворимое удобрение Huangjinwu со вторичными элементами · кальций, магний и кремний","intro":"На странице 20 брошюры представлен жидкий водорастворимый продукт Huangjinwu со вторичными элементами. В описании упоминаются кальций, магний, кремний и длительное действие; объем упаковки указан как 1000 мл. Опубликованные данные см. в источнике."}
+    },
+    "organic-inorganic-compound-draft": {
+      "es": {"name":"Fertilizante compuesto orgánico-inorgánico KOMU · nutrición equilibrada y estructura del suelo","intro":"La página 22 del folleto presenta un fertilizante compuesto orgánico-inorgánico KOMU. La descripción se refiere al equilibrio de nutrientes y a la estructura del suelo; el envase se indica como 50 kg. La página no proporciona una tabla cuantitativa fiable; no se añaden valores de composición."},
+      "fr": {"name":"Engrais composé organique-minéral KOMU · nutrition équilibrée et structure du sol","intro":"La page 22 de la brochure présente un engrais composé organique-minéral KOMU. La description évoque l’équilibre nutritif et la structure du sol ; l’emballage est indiqué à 50 kg. La page ne fournit pas de tableau quantitatif fiable ; aucune valeur de composition n’est ajoutée."},
+      "pt": {"name":"Fertilizante composto orgânico-mineral KOMU · nutrição equilibrada e estrutura do solo","intro":"A página 22 da brochura apresenta um fertilizante composto orgânico-mineral KOMU. A descrição refere o equilíbrio de nutrientes e a estrutura do solo; a embalagem é indicada como 50 kg. A página não fornece uma tabela quantitativa fiável; não são acrescentados valores de composição."},
+      "ru": {"name":"Органоминеральное комплексное удобрение KOMU · сбалансированное питание и структура почвы","intro":"На странице 22 брошюры представлен органоминеральный комплексный продукт KOMU. В описании говорится о сбалансированном питании и структуре почвы; масса упаковки указана как 50 кг. На странице нет надежной количественной таблицы, поэтому значения состава не добавляются."}
+    }
+  },
+  "specificationLabels": {
+    "calcium-magnesium":{"es":"Calcio + magnesio (Ca+Mg)","fr":"Calcium + magnésium (Ca+Mg)","pt":"Cálcio + magnésio (Ca+Mg)","ru":"Кальций + магний (Ca+Mg)"},
+    "calcium":{"es":"Calcio (Ca)","fr":"Calcium (Ca)","pt":"Cálcio (Ca)","ru":"Кальций (Ca)"},
+    "magnesium":{"es":"Magnesio (Mg)","fr":"Magnésium (Mg)","pt":"Magnésio (Mg)","ru":"Магний (Mg)"},
+    "zinc":{"es":"Zinc (Zn)","fr":"Zinc (Zn)","pt":"Zinco (Zn)","ru":"Цинк (Zn)"},
+    "boron":{"es":"Boro (B)","fr":"Bore (B)","pt":"Boro (B)","ru":"Бор (B)"},
+    "silicon":{"es":"Silicio (SiO₂)","fr":"Silicium (SiO₂)","pt":"Silício (SiO₂)","ru":"Кремний (SiO₂)"},
+    "humic-acid":{"es":"Ácido húmico","fr":"Acide humique","pt":"Ácido húmico","ru":"Гуминовая кислота"},
+    "organic-matter":{"es":"Materia orgánica","fr":"Matière organique","pt":"Matéria orgânica","ru":"Органическое вещество"},
+    "moisture":{"es":"Humedad (H₂O)","fr":"Humidité (H₂O)","pt":"Humidade (H₂O)","ru":"Влажность (H₂O)"},
+    "phosphite":{"es":"Fosfito (HPO₃²⁻)","fr":"Phosphite (HPO₃²⁻)","pt":"Fosfito (HPO₃²⁻)","ru":"Фосфит (HPO₃²⁻)"},
+    "ph":{"es":"pH (dilución 1:250)","fr":"pH (dilution 1:250)","pt":"pH (diluição 1:250)","ru":"pH (разведение 1:250)"},
+    "particle-size-pass-rate":{"es":"Tasa de paso por tamaño de partícula (1.00 mm–4.75 mm)","fr":"Taux de passage granulométrique (1.00 mm–4.75 mm)","pt":"Taxa de passagem por granulometria (1.00 mm–4.75 mm)","ru":"Проход через сито по размеру частиц (1.00 mm–4.75 mm)"},
+    "acid-soluble-protein":{"es":"Proteína soluble en ácido","fr":"Protéines solubles dans l’acide","pt":"Proteína solúvel em ácido","ru":"Кислоторимый белок"},
+    "peptides":{"es":"Péptidos","fr":"Peptides","pt":"Péptidos","ru":"Пептиды"},
+    "npk":{"es":"N-P-K","fr":"N-P-K","pt":"N-P-K","ru":"N-P-K"},
+    "insoluble":{"es":"Materia insoluble en agua","fr":"Matières insolubles dans l’eau","pt":"Matéria insolúvel em água","ru":"Нерастворимые в воде вещества"},
+    "amino-acid":{"es":"Aminoácidos","fr":"Acides aminés","pt":"Aminoácidos","ru":"Аминокислоты"},
+    "npk-total":{"es":"N-P-K total","fr":"N-P-K total","pt":"N-P-K total","ru":"Общее содержание N-P-K"},
+    "nitrogen":{"es":"Nitrógeno (N)","fr":"Azote (N)","pt":"Azoto (N)","ru":"Азот (N)"},
+    "phosphate":{"es":"Fosfato (P₂O₅)","fr":"Phosphate (P₂O₅)","pt":"Fosfato (P₂O₅)","ru":"Фосфат (P₂O₅)"},
+    "potassium":{"es":"Potasio (K₂O)","fr":"Potassium (K₂O)","pt":"Potássio (K₂O)","ru":"Калий (K₂O)"},
+    "manganese":{"es":"Manganeso (Mn)","fr":"Manganèse (Mn)","pt":"Manganês (Mn)","ru":"Марганец (Mn)"},
+    "biuret":{"es":"Biuret","fr":"Biuret","pt":"Biureto","ru":"Биурет"}
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "locales": ["nl"],
+  "company": {
+    "nl": {
+      "title": "Over Anhui Kangmu International Fertilizer Co., Ltd.",
+      "summary": "Onderzoek, ontwikkeling, productie en verkoop vanuit Bengbu, Anhui",
+      "description": "De officiële bedrijfswebsite beschrijft Anhui Kangmu als een particuliere technologieonderneming in het industriepark Huai Shang in Bengbu die onderzoek, ontwikkeling, productie en verkoop van meststoffen combineert. De bronpagina vermeldt dat het bedrijf in 2014 is opgericht; operationele cijfers moeten nog worden geverifieerd.",
+      "address": "District Huai Shang, stad Bengbu, Anhui, China · ten oosten van Jinhuai Road en ten zuiden van Kaiyuan Avenue",
+      "focusAreas": [
+        {"title":"Onderzoek en ontwikkeling","description":"Het officiële bedrijfsprofiel beschrijft een onderneming die onderzoek, ontwikkeling, productie en verkoop combineert."},
+        {"title":"Productcentrum","description":"Het officiële productcentrum vermeldt KOMU-meststofcategorieën en afzonderlijke productpagina's; modellen en verpakkingen moeten nog worden gecontroleerd."},
+        {"title":"Kerntechnologie","description":"De officiële website heeft een afzonderlijke sectie over kerntechnologie; technische claims blijven onder beoordeling van de eigenaar."}
+      ]
+    }
+  },
+  "faq": {
+    "products": {
+      "nl": {
+        "name": "Productinformatie",
+        "questions": {
+          "specifications": {"question":"Waar kan ik de productspecificaties vinden?","answer":"Open de productpagina om de aan de brochure gekoppelde beschrijving, verpakkingsinformatie en bronpagina te bekijken. Vraag het meest recente technische gegevensblad aan via e-mail of WhatsApp."},
+          "documentation": {"question":"Hoe kan ik productdocumentatie aanvragen?","answer":"Stuur de productnaam en uw markt naar leon@kowloonglobaltrading.com of via WhatsApp op +852 9074 0009."}
+        }
+      }
+    },
+    "applications": {
+      "nl": {
+        "name": "Toepassingen voor teelt",
+        "questions": {
+          "choose-products": {"question":"Hoe kies ik producten voor een teelttoepassing?","answer":"Begin met het gewas en de teeltmethode en vergelijk daarna de aan de brochure gekoppelde productbeschrijvingen en verpakkingsformaten."},
+          "application-guidance": {"question":"Waar kan ik toepassingsinformatie vinden?","answer":"Open een teelthandleiding via het menu Growing Practice en gebruik daarna de productlinks en contactgegevens om het gesprek voort te zetten."}
+        }
+      }
+    },
+    "orders": {
+      "nl": {
+        "name": "Aankoop en ondersteuning",
+        "questions": {
+          "enquiry": {"question":"Hoe kan ik een vraag over een product stellen?","answer":"Gebruik de contactpagina of schrijf naar leon@kowloonglobaltrading.com en vermeld het product en de markt waarin u geïnteresseerd bent."},
+          "distributor": {"question":"Hoe kan ik distributie bespreken?","answer":"Neem per e-mail of WhatsApp contact op met Anhui Kangmu International Fertilizer Co., Ltd. en vermeld uw markt en het profiel van uw kanalen."}
+        }
+      }
+    }
+  }
+}

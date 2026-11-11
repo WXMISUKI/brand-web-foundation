@@ -7,7 +7,7 @@ export async function AboutContent({ locale }: { locale: LocaleCode }) {
   const profile = await getCompanyProfile(locale);
   const copy = aboutMessages[locale];
   return <main>
-    <div className="about-banner-wrap"><div className="about-banner company-banner">{profile.banner && <img className="company-banner-image" src={profile.banner.src} alt={profile.banner.alt ?? ""} />}<span>{copy.preview}</span><p>{copy.banner}</p>{!profile.banner && <small>{copy.sampleImage}</small>}</div></div>
+    <div className="about-banner-wrap"><div className="about-banner company-banner">{profile.banner && <img className="company-banner-image" src={profile.banner.src} alt={profile.banner.alt ?? ""} />}<span>KOMU</span><p>{copy.banner}</p>{!profile.banner && <small>{copy.sampleImage}</small>}</div></div>
     <div className="inner about-page"><nav className="crumb" aria-label={copy.breadcrumb}><Link href={locale === "es" ? "/es/products" : `/${locale}`}>{locale === "es" ? "Catálogo de productos" : copy.home}</Link> / {copy.about}</nav>
       <section className="about-introduction"><h1>{profile.title ?? copy.pending}</h1><p className="about-lead">{profile.summary ?? copy.pending}</p><p className="company-description">{profile.description ?? copy.pending}</p></section>
       <section className="about-themes" aria-labelledby="themes-title"><h2 id="themes-title">{copy.focus}{profile.source === "sample" && ` · ${copy.sample}`}</h2>{profile.focusAreas.length ? <div className="about-theme-grid">{profile.focusAreas.map((area,index)=><article key={area.id}><span className="about-theme-number">{String(index + 1).padStart(2, "0")}</span><h3>{area.title ?? copy.pending}</h3><p>{area.description ?? copy.pending}</p></article>)}</div> : <p>{copy.pending}</p>}</section>

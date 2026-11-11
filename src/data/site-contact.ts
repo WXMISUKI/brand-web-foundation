@@ -13,7 +13,7 @@ export type SiteContact = {
 export const siteContact: SiteContact = {
   companyName: {
     en: "Anhui Kangmu International Fertilizer Co., Ltd.",
-    zh: "安徽康母国际化肥股份有限公司",
+    zh: "安徽康坶国际化肥股份有限公司",
   },
   email: "leon@kowloonglobaltrading.com",
   whatsapp: "+852 9074 0009",

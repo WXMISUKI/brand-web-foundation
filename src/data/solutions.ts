@@ -1,3 +1,4 @@
+import { solutionNameSlugs, solutionNames } from "../i18n/solution-names";
 // Illustrative navigation only; product associations and advice require owner review.
 export const solutions = [
   { slug: "open-field", group: "method", zh: "大田种植", en: "Open field" },
@@ -29,7 +30,8 @@ export const solutions = [
 
 export function solutionLabel(locale: import("../i18n/locales").LocaleCode, solution: (typeof solutions)[number]) {
   if (locale === "zh") return solution.zh;
-  return solution.en;
+  const index = solutionNameSlugs.indexOf(solution.slug);
+  return solutionNames[locale]?.[index] ?? solution.en;
 }
 
 export const spanishSolutionLabels: Record<(typeof solutions)[number]["slug"], string> = {

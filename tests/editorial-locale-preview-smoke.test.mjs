@@ -12,7 +12,7 @@ const entries = {
 };
 assert.ok(entries[kind], `unsupported editorial preview path: ${kind}`);
 
-test(`CMS_EVAL exposes ${kind} list and detail for all configured locales`, async () => {
+test(`released ${kind} list and detail expose all configured locales`, async () => {
   for (const locale of locales) {
     for (const path of [entries[kind].list, entries[kind].detail]) {
       const response = await fetch(new URL(`/${locale.code}/${path}`, previewBase));
@@ -25,6 +25,6 @@ test(`CMS_EVAL exposes ${kind} list and detail for all configured locales`, asyn
   }
 });
 
-test("editorial preview remains closed outside CMS_EVAL", async () => {
-  assert.equal((await fetch(new URL(`/he/${entries[kind].list}`, publicBase))).status, 404, kind);
+test("released editorial pages remain open on the public instance", async () => {
+  assert.equal((await fetch(new URL(`/he/${entries[kind].list}`, publicBase))).status, 200, kind);
 });

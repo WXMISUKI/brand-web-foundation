@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "approved",
+  "source": {
+    "kind": "authorized-example",
+    "locales": ["en", "zh"],
+    "note": "AI-drafted translations are based only on the existing homepage-staging.json en/zh source text. No new claims, review fields or media provenance are added; owner and language review remain required."
+  },
+  "locales": ["nl", "ro", "el", "he"],
+  "slides": {
+    "nl": [
+      {"eyebrow":"ELKE MOGELIJKHEID VOEDEN","title":"Voeding voor elke groeifase.","description":"Ontdek de KOMU-producten voor plantenvoeding en toepassingsroutes voor gewassen.","actionLabel":"Producten ontdekken","actionPath":"/products","imageKey":"hero-field"},
+      {"eyebrow":"MET ZORG GROEIEN","title":"Begrijp gewassen en plan de voeding.","description":"Vergelijk productcategorieën en teeltomgevingen in één gids.","actionLabel":"Oplossingen ontdekken","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"eyebrow":"GEWORTELD IN GROEI","title":"Groeien met praktische zorg.","description":"Maak kennis met Anhui Kangmu International Fertilizer Co., Ltd. en de productcollectie.","actionLabel":"Over ons","actionPath":"/about","imageKey":"hero-orchard"}
+    ],
+    "ro": [
+      {"eyebrow":"HRĂNIȚI FIECARE POSIBILITATE","title":"Nutriție pentru fiecare etapă a creșterii.","description":"Descoperiți produsele KOMU pentru nutriția plantelor și căile de aplicare pentru culturi.","actionLabel":"Explorați produsele","actionPath":"/products","imageKey":"hero-field"},
+      {"eyebrow":"CREȘTERE CU GRIJĂ","title":"Înțelegeți culturile și planificați nutriția.","description":"Comparați categoriile de produse și mediile de cultivare într-un singur ghid.","actionLabel":"Explorați soluțiile","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"eyebrow":"ÎNRĂDĂCINAȚI ÎN CREȘTERE","title":"Cultivați cu grijă practică.","description":"Descoperiți Anhui Kangmu International Fertilizer Co., Ltd. și colecția sa de produse.","actionLabel":"Despre noi","actionPath":"/about","imageKey":"hero-orchard"}
+    ],
+    "el": [
+      {"eyebrow":"ΘΡΕΨΤΕ ΚΑΘΕ ΔΥΝΑΤΟΤΗΤΑ","title":"Θρέψη για κάθε στάδιο ανάπτυξης.","description":"Εξερευνήστε τα προϊόντα φυτικής θρέψης KOMU και τις διαδρομές εφαρμογής για τις καλλιέργειες.","actionLabel":"Εξερεύνηση προϊόντων","actionPath":"/products","imageKey":"hero-field"},
+      {"eyebrow":"ΑΝΑΠΤΥΞΗ ΜΕ ΦΡΟΝΤΙΔΑ","title":"Κατανοήστε τις καλλιέργειες και σχεδιάστε τη θρέψη.","description":"Συγκρίνετε κατηγορίες προϊόντων και περιβάλλοντα καλλιέργειας σε έναν οδηγό.","actionLabel":"Εξερεύνηση λύσεων","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"eyebrow":"ΡΙΖΩΜΕΝΟΙ ΣΤΗΝ ΑΝΑΠΤΥΞΗ","title":"Καλλιέργεια με πρακτική φροντίδα.","description":"Γνωρίστε την Anhui Kangmu International Fertilizer Co., Ltd. και τη συλλογή προϊόντων της.","actionLabel":"Σχετικά με εμάς","actionPath":"/about","imageKey":"hero-orchard"}
+    ],
+    "he": [
+      {"eyebrow":"מזינים כל אפשרות","title":"הזנה לכל שלב של הצמיחה.","description":"גלו את מוצרי הזנת הצמחים של KOMU ואת מסלולי היישום לגידולים.","actionLabel":"לגלות מוצרים","actionPath":"/products","imageKey":"hero-field"},
+      {"eyebrow":"לצמוח בתשומת לב","title":"להבין גידולים ולתכנן הזנה.","description":"השוו בין קטגוריות מוצרים וסביבות גידול במדריך אחד.","actionLabel":"לגלות פתרונות","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"eyebrow":"שורש הצמיחה","title":"לגדל בתשומת לב מעשית.","description":"הכירו את Anhui Kangmu International Fertilizer Co., Ltd. ואת אוסף המוצרים שלה.","actionLabel":"אודותינו","actionPath":"/about","imageKey":"hero-orchard"}
+    ]
+  },
+  "featured": {
+    "nl": [
+      {"title":"Productcatalogus","description":"Bekijk de KOMU-productcatalogus en productinformatie.","actionLabel":"Producten ontdekken","actionPath":"/products","imageKey":"hero-field"},
+      {"title":"Teelttoepassingen","description":"Verken routes voor gewassen en teeltmethoden om producten te vinden.","actionLabel":"Oplossingen ontdekken","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"title":"Bedrijfsprofiel","description":"Lees meer over Anhui Kangmu International Fertilizer Co., Ltd. en KOMU-plantenvoeding.","actionLabel":"Over ons","actionPath":"/about","imageKey":"hero-orchard"}
+    ],
+    "ro": [
+      {"title":"Catalog de produse","description":"Descoperiți catalogul și informațiile despre produsele KOMU.","actionLabel":"Explorați produsele","actionPath":"/products","imageKey":"hero-field"},
+      {"title":"Aplicații pentru cultivare","description":"Explorați trasee pentru culturi și metode de cultivare pentru descoperirea produselor.","actionLabel":"Explorați soluțiile","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"title":"Profilul companiei","description":"Aflați despre Anhui Kangmu International Fertilizer Co., Ltd. și nutriția vegetală KOMU.","actionLabel":"Despre noi","actionPath":"/about","imageKey":"hero-orchard"}
+    ],
+    "el": [
+      {"title":"Κατάλογος προϊόντων","description":"Δείτε τον κατάλογο και τις πληροφορίες προϊόντων KOMU.","actionLabel":"Εξερεύνηση προϊόντων","actionPath":"/products","imageKey":"hero-field"},
+      {"title":"Εφαρμογές καλλιέργειας","description":"Εξερευνήστε διαδρομές ανά καλλιέργεια και μέθοδο για να ανακαλύψετε προϊόντα.","actionLabel":"Εξερεύνηση λύσεων","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"title":"Εταιρικό προφίλ","description":"Γνωρίστε την Anhui Kangmu International Fertilizer Co., Ltd. και τη φυτική θρέψη KOMU.","actionLabel":"Σχετικά με εμάς","actionPath":"/about","imageKey":"hero-orchard"}
+    ],
+    "he": [
+      {"title":"קטלוג מוצרים","description":"גלו את קטלוג המוצרים של KOMU ואת פרטי המוצרים.","actionLabel":"לגלות מוצרים","actionPath":"/products","imageKey":"hero-field"},
+      {"title":"יישומי גידול","description":"גלו מסלולים לפי גידול ושיטת גידול כדי למצוא מוצרים.","actionLabel":"לגלות פתרונות","actionPath":"/solutions/greenhouse","imageKey":"hero-greenhouse"},
+      {"title":"פרופיל החברה","description":"למדו על Anhui Kangmu International Fertilizer Co., Ltd. ועל הזנת הצמחים של KOMU.","actionLabel":"אודותינו","actionPath":"/about","imageKey":"hero-orchard"}
+    ]
+  }
+}

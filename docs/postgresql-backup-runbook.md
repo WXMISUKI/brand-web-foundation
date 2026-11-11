@@ -35,3 +35,15 @@ npm run migration:create -- add_descriptive_name
 ```
 
 迁移生成器以 `src/migrations` 最新 snapshot 为基线，生成 TypeScript migration 和 JSON snapshot；提交前必须审阅 SQL，部署时由 PostgreSQL adapter 按顺序执行。当前已生成并接入 `20261108_005020_sync_current_schema`，覆盖询盘、作物指南、产品来源字段和相关关系表。
+
+## 联合备份入口
+
+仓库提供 `scripts/backup-bundle.mjs` 将 PostgreSQL custom dump 与媒体 manifest 绑定在同一备份目录。它会依次执行数据库和媒体备份，写入 `backup-status.json`；任一步失败都以非零退出，并对错误中的 `DATABASE_URL` 做脱敏。
+
+```bash
+DATABASE_URL=postgresql://user:password@host:5432/fertilizer \\
+PAYLOAD_MEDIA_DIR=/var/lib/fertilizer/media \\
+node scripts/backup-bundle.mjs /var/backups/haifa/bundle-YYYYMMDD
+```
+
+该入口只提供可供 cron/systemd timer/外部调度器调用的原子动作，不决定频率、保留、异地、加密或告警接收人。生产排程实施前仍需完成 `docs/ops-continuity-governance-2026-11-10.md` 的 O1 决策。

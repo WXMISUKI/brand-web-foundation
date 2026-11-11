@@ -12,7 +12,7 @@ await fs.mkdir(path.dirname(output), { recursive: true });
 const command = process.env.PG_DUMP_BIN || "pg_dump";
 const args = ["--format=custom", "--no-owner", "--no-privileges", "--file", output, databaseUrl];
 const exitCode = await new Promise((resolve, reject) => {
-  const child = spawn(command, args, { stdio: ["ignore", "ignore", "pipe"], windowsHide: true });
+  const child = spawn(command, args, { stdio: ["ignore", "ignore", "pipe"], windowsHide: true, shell: process.platform === "win32" && /\.(?:cmd|bat)$/i.test(command) });
   let errorText = "";
   child.stderr.on("data", chunk => { errorText += chunk.toString(); });
   child.on("error", reject);

@@ -4,6 +4,8 @@
 
 本清单只记录原官网产品中心的官方名称、详情 URL 和图片 URL，不会自动写入 Payload。额外型号必须先确认型号、包装、规格、停产状态和最终译文。
 
+逐条决策请使用 [官方候选产品决策矩阵](official-candidate-decision-matrix-2026-11-10.md)；名称或图片相同不代表可以自动合并。
+
 ## 重复名称冲突（3 组）
 
 - **有机水溶肥料-多肽**：[http://m.zgkomu.cn/display/754921.html](http://m.zgkomu.cn/display/754921.html)、[http://m.zgkomu.cn/display/754922.html](http://m.zgkomu.cn/display/754922.html)

@@ -6,6 +6,7 @@ import { MobileMenu } from "./mobile-menu";
 import { LanguageMenu } from "./language-menu";
 import { SearchLink } from "./search-link";
 import { hasPreviewCounterpart } from "../i18n/preview-routes";
+import { SiteHeaderScroll } from "./site-header-scroll";
 
 export function SiteHeader({ locale, alternatePath, previewAllLocales = false }: { locale: CatalogPageLocale; alternatePath: string; previewAllLocales?: boolean }) {
   const copy = navigationDetail[locale];
@@ -15,18 +16,17 @@ export function SiteHeader({ locale, alternatePath, previewAllLocales = false }:
   const previewBanner = process.env.SHOW_PREVIEW_BANNER === "1" ? <div className="preview">{preview}{locale === "es" && " · Solo disponible en desarrollo"}</div> : null;
   const signatureLinks = <>
     <Link className="header-signature-link" href={`/${locale}/about#company-focus`}>COMPASSion</Link>
-    <Link className="header-signature-link" href={`/${locale}/sustainability`}>Precision <span>IMPACT</span></Link>
   </>;
   const mobileHeaderTools = <div className="mobile-header-tools"><LanguageMenu locale={locale} alternatePath={alternatePath} frenchPreview={frenchPreview} spanishPreview={spanishPreview} previewAllLocales={previewAllLocales}/><SearchLink locale={locale}/></div>;
-  if (locale === "es") return <>{previewBanner}<header className="header"><nav className="nav left" aria-label={copy.main}><NavigationMenu locale={locale} kind="crops"/><NavigationMenu locale={locale} kind="products"/><NavigationMenu locale={locale} kind="solutions"/><NavigationMenu locale={locale} kind="tools"/></nav><Link className="brand" href="/es" aria-label={copy.home}><span className="brand-mark" aria-hidden="true">✳</span><strong>KOMU</strong><small>PLANT NUTRITION</small></Link><nav className="nav right" aria-label={copy.more}>{signatureLinks}<NavigationMenu locale={locale} kind="corporate"/><NavigationMenu locale={locale} kind="insights"/><SearchLink locale={locale}/><LanguageMenu locale={locale} alternatePath={alternatePath} frenchPreview={frenchPreview} previewAllLocales={previewAllLocales}/></nav><MobileMenu locale={locale} alternatePath={alternatePath} frenchPreview={frenchPreview} previewAllLocales={previewAllLocales}/>{mobileHeaderTools}</header></>;
-  return <>{previewBanner}<header className="header">
+  if (locale === "es") return <>{previewBanner}<SiteHeaderScroll><nav className="nav left" aria-label={copy.main}><NavigationMenu locale={locale} kind="crops"/><NavigationMenu locale={locale} kind="products"/><NavigationMenu locale={locale} kind="solutions"/><NavigationMenu locale={locale} kind="tools"/></nav><Link className="brand" href="/es" aria-label={`KOMU PLANT NUTRITION — ${copy.home}`}><span className="brand-mark" aria-hidden="true">✳</span><strong>KOMU</strong>{" "}<small>PLANT NUTRITION</small></Link><nav className="nav right" aria-label={copy.more}>{signatureLinks}<NavigationMenu locale={locale} kind="corporate"/><NavigationMenu locale={locale} kind="insights"/><SearchLink locale={locale}/><LanguageMenu locale={locale} alternatePath={alternatePath} frenchPreview={frenchPreview} previewAllLocales={previewAllLocales}/></nav><MobileMenu locale={locale} alternatePath={alternatePath} frenchPreview={frenchPreview} previewAllLocales={previewAllLocales}/>{mobileHeaderTools}</SiteHeaderScroll></>;
+  return <>{previewBanner}<SiteHeaderScroll>
     <nav className="nav left" aria-label={copy.main}>
       <NavigationMenu locale={locale} kind="crops"/><NavigationMenu locale={locale} kind="products"/><NavigationMenu locale={locale} kind="solutions"/><NavigationMenu locale={locale} kind="tools"/>
     </nav>
-    <Link className="brand" href={`/${locale}`} aria-label={copy.home}><span className="brand-mark" aria-hidden="true">✳</span><strong>KOMU</strong><small>PLANT NUTRITION</small></Link>
+    <Link className="brand" href={`/${locale}`} aria-label={`KOMU PLANT NUTRITION — ${copy.home}`}><span className="brand-mark" aria-hidden="true">✳</span><strong>KOMU</strong>{" "}<small>PLANT NUTRITION</small></Link>
     <nav className="nav right" aria-label={copy.more}>
       {signatureLinks}<NavigationMenu locale={locale} kind="corporate"/><NavigationMenu locale={locale} kind="insights"/><SearchLink locale={locale}/><LanguageMenu locale={locale} alternatePath={alternatePath} frenchPreview={frenchPreview} spanishPreview={spanishPreview}/>
     </nav>
     <MobileMenu locale={locale} alternatePath={alternatePath} frenchPreview={frenchPreview} spanishPreview={spanishPreview} previewAllLocales={previewAllLocales}/>{mobileHeaderTools}
-  </header></>;
+  </SiteHeaderScroll></>;
 }

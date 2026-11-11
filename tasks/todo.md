@@ -1,5 +1,30 @@
 # 当前执行清单
 
+## 2026-11-10 正式多语言与组件验收执行队列
+
+- [x] G0 冻结生产 build、依赖、备份、真实资料清单与未部署工作区边界
+- [x] G1 运行静态契约、locale/UI coverage、内容 validators、RTL、route contracts 和公网基线
+- [x] G2 运行 13 locale × 固定关键页面切片的生产 HTTP/SSR 矩阵（728/728）
+- [x] Checkpoint A：确认 G0/G1 证据完整后再进入浏览器矩阵
+- [x] G3 运行 390×844、768×844、1280×720、1440×900 浏览器内容矩阵（150/150）
+- [x] G4 运行组件 bounding-box、遮挡、固定底栏、表格滚动和长文案视觉审计（当前范围 PASS-SCOPED）
+- [x] G5 回读真实材料、媒体来源、审核状态、Hero 背景和媒体自然尺寸（14 页/21 媒体）
+- [x] G6 验收菜单、语言切换、筛选、搜索、FAQ、产品详情、Contact、键盘焦点和 RTL
+- [x] Checkpoint B：技术失败项已修复；人工翻译/候选签核/询盘运维仍单独记录
+- [x] G7 生成发布后回归与阶段报告；整体项目保持 PARTIAL，不扩大为全部业务完成
+
+## 当前状态（2026-11-09）
+
+- 当前分支：`codex/haifa-reference-rebuild`；生产服务 active，数据库和媒体 readiness 通过。生产审计回读 31 条产品：10 条 FLBOOK 已批准，21 条官方候选保持 `owner-review`。
+- P3 授权范围已部署：13 语言 URL、SEO 放行、询盘写入和冷启动回读。邮件/工单通知未配置，非英语业务文案仍需人工翻译。
+- 询盘运营方式已选后台人工处理：所有 Payload 后台账号可查看/处理，当前账号为 `leon@kowloonglobaltrading.com`；后台常驻人员留意，无固定检查频率或响应 SLA，不承诺自动通知。
+- 翻译范围已确认：默认英语，全部公开页面 UI 与当前可见业务内容覆盖 13 种语言；Codex 起草并自审，不补无来源事实、不改变审核状态。11 个外文 locale 已完成旧值保护生产回填和读回，专业母语/法律/农艺审校保留为可选后续维护，详见 `docs/translation-rollout-plan-2026-11-09.md`。
+- 产品展示：业主确认 21 条官方候选继续公开；工作区已合并两组同名候选目录卡并在详情保留两张来源图，尚未部署。候选仍为 `owner-review` / `claimsVerified=false`。
+- 2026-11-10 依赖升级已部署：生产版本为 Next 16.4.5 / Payload 3.93.0 / Sharp 0.35.5，候选锁文件 audit 为 0 high/critical；备份、构建、standalone、systemd、health/readiness 和公网基线通过。
+- 2026-11-10 Hero 中文横幅热修复已部署：提交 `8e141d2`，生产 build `kQvA_SEwMLo_zDx9zdImU`；英文 390px 截图与中文 SSR 回读确认 Hero 使用干净官方背景。全站图片视觉矩阵仍为 PARTIAL。
+- 2026-11-09 WSL2 Linux 门禁已通过：Node 24.22.1 冻结安装、esbuild rebuild、0 high/critical audit、生产构建、prepare:standalone、Sharp 0.35.5 加载、health/favicon/JS 冷启动通过；占位数据库 readiness 503 为隔离预期。该证据已被 2026-11-10 生产部署回读补充。
+- 下方任务记录保留实施历史；如与当前状态冲突，以 `HANDOFF.md` 和 `docs/current-stage-gate-2026-11-09.md` 为准。
+
 - [x] 同步 CodeGraph 索引并确认当前工作区结构（81 文件、560 节点、858 关系）
 - [x] 建立 FLBOOK 24 页初步分类清单和导入状态规则
 - [x] 从 FLBOOK 阅读器捕获封面、封底及产品跨页预览，并写入页级 manifest 与产品草稿
@@ -31,7 +56,7 @@
 - [x] 增加生产环境配置形状校验器，覆盖 PostgreSQL、密钥和持久化媒体目录
 - [x] 按目标逐项记录完成度、证据范围和外部上线缺口
 - [x] 增加 13 语言配置与公开/预览语言边界校验器
-- [x] 建立 13 语言 UI 草稿安全回退 helper，保持生产 en/zh 准入边界不变
+- [x] 建立 13 语言 UI 草稿安全回退 helper（历史保护态实现；已被后续 13 locale 发布决策取代）
 - [x] 完成 1280×720 / 390×844 的首页与共享导航首轮实测，记录基线和移动端无溢出证据
 - [x] 补齐 1440×900、1051×720、1060×720、768×844、320×720，并验证目录/详情窄屏无根横向溢出
 - [x] 审计方案、FAQ、新闻、知识、案例、搜索和资源页面首屏结构及当前数据边界
@@ -56,14 +81,14 @@
 - [x] 对照 FAQ 横幅、分类栏和折叠问题结构，并加入专门回归检查
 - [x] 为知识中心接入主题标签数据、Payload 字段、URL 筛选和前台标签栏
 - [x] 实时校准产品目录、产品详情、作物指南、企业页、FAQ、新闻和案例列表的首屏结构与垂直节奏
-- [x] 增加 13 语言非生产预览壳，验证所有语言的 lang、dir、noindex 和非法代码 404
-- [x] 完成 13 语言 About 首个业务预览切片：UI 回退、企业页方向属性、语言链接和非公开路由边界均有隔离回归
-- [x] 完成 13 语言产品目录与详情第二个业务预览切片：目录、详情、产品来源数据、方向属性和路由边界均有隔离回归
-- [x] 完成 13 语言 FAQ、联系和搜索第三个业务预览切片：查询参数、禁用表单、方向属性和普通开发边界均有隔离回归
-- [x] 完成 13 语言新闻、知识和案例第四个业务预览切片：列表、详情、富文本、方向属性和普通开发边界均有隔离回归
-- [x] 完成 13 语言方案与作物指南第五个业务预览切片：五段式章节、产品入口、方向属性和普通开发边界均有隔离回归
-- [x] 完成 13 语言首页第六个业务预览切片：Hero、兴趣区、产品、企业、新闻、案例和普通开发边界均有隔离回归
-- [x] 完成 13 语言资源页面第七个业务预览切片：智慧农业、可持续发展、SDS、质量保证和普通开发边界均有隔离回归
+- [x] 增加 13 语言非生产预览壳，验证所有语言的 lang、dir、noindex 和非法代码 404（历史验收任务；当前 13 locale 已公开）
+- [x] 完成 13 语言 About 首个业务预览切片（历史 CMS_EVAL/非公开路由验收；当前公开状态以当前阶段闸门为准）
+- [x] 完成 13 语言产品目录与详情第二个业务预览切片（历史 CMS_EVAL/非公开路由验收；当前公开状态以当前阶段闸门为准）
+- [x] 完成 13 语言 FAQ、联系和搜索第三个业务预览切片（历史 CMS_EVAL/询盘关闭边界验收；当前询盘写入状态以当前阶段闸门为准）
+- [x] 完成 13 语言新闻、知识和案例第四个业务预览切片（历史 CMS_EVAL/非公开路由验收；当前公开状态以当前阶段闸门为准）
+- [x] 完成 13 语言方案与作物指南第五个业务预览切片（历史 CMS_EVAL/非公开路由验收；当前公开状态以当前阶段闸门为准）
+- [x] 完成 13 语言首页第六个业务预览切片（历史 CMS_EVAL/非公开路由验收；当前公开状态以当前阶段闸门为准）
+- [x] 完成 13 语言资源页面第七个业务预览切片（历史 CMS_EVAL/非公开路由验收；当前公开状态以当前阶段闸门为准）
 - [x] 完成真实浏览器交互验收：桌面/移动关键点击、菜单展开、筛选、搜索、详情、表单禁用、中文联系信息和 RTL 截图，证据见 `docs/interaction-acceptance.md`
 - [x] 接入业主提供的企业名、邮箱和 WhatsApp：样例回退、Payload Company Profile 字段、联系页和页脚统一读取
 - [x] 在腾讯云当前实例 `43.160.216.74` 部署并刷新主域名：PostgreSQL 16、FLBOOK 导入、已生成场景素材、`haifa-reference.service`、HTTPS 和英文/中文页面回读通过；旧服务已停止并禁用
@@ -79,14 +104,38 @@
 - [x] 复核 Payload PostgreSQL adapter 的 `prodMigrations` 生产连接行为，并将迁移注册纳入部署文件门禁与运行手册
 - [x] 增加 `/api/ready` 依赖探针（PostgreSQL/SQLite 连通性与媒体目录读写），接入 Compose healthcheck 并加入冒烟回归
 - [x] 建立上线验收矩阵，明确 PASS-SCOPED、CONDITIONAL、WAITING-EXTERNAL 证据和责任边界
-- [x] P2 内容模型与公开安全呈现验收（10 条产品双语详情补充、9 个产品的 76 条来源规格、媒体 alt、About/Contact 缺失信息和 23/23 smoke 已通过；正式 claims/型号/最终翻译继续保持 owner-review，证据见 `docs/p2-acceptance-2026-11-08.md`）
+- [x] P2 内容模型与公开安全呈现验收（历史阶段记录；正式审核后 10 条 FLBOOK 产品已在生产回读为 `approved` / `claimsVerified=true`，见当前阶段闸门）
 - [x] P2 10 条 FLBOOK 产品按业主授权批准并生产回读为 `approved` / `claimsVerified=true`，76 条来源规格通过审计
-- [ ] P2 审核 21 条官方候选的型号、包装、销售状态与技术 claims；逐项处理 3 组同名冲突，继续保持未确认项 `owner-review`
+- [ ] P2 继续审核 21 条官方候选的型号、包装、销售状态与技术 claims；公开展示已部署，但未确认字段继续保持 `owner-review / claimsVerified=false`
+- [x] P2 建立 21 条官方候选逐记录决策矩阵，明确 keep/merge/exclude、canonical/alias、SKU、包装、定量来源、claims、图片授权和签核字段
+- [x] 多语言 UI 字典批次 A/B 补齐 10 个 partial maps 的 13 locale authored entries，并增加 coverage 回归测试；仍需人工审校和生产回填
+- [x] 补齐资源页、可持续发展和首页公司重点的组件内联 13 locale 文案，并增加组件 coverage 回归；剩余少量品牌/专属结构文案按当前闸门保留
+- [x] 补齐询盘表单与产品询盘预览的 13 locale labels/status，并纳入组件 coverage；Contact、工具和方案 inline 文案已在后续批次统一
+- [x] 将 Contact 容器询盘标题/说明/提示/公司标签/地址兜底抽为 13 locale map，并完成组件 coverage
+- [x] 将 Smart farming 页面 inline 分支统一为 13 locale authored map，并完成组件 coverage
+- [x] 将通用方案详情界面文案抽为 13 locale authored map，并完成组件 coverage
+- [x] 将案例轮播文案抽为 13 locale authored map，并完成组件 coverage；fr/es 仅保留方案名称/slug 适配
+- [x] 将首页新闻、种植知识和精选卡片文案抽为 13 locale authored map，并完成组件 coverage；保留西语精选卡片原有 insights 路径
+- [x] 将公司故事、Newsletter、桌面/移动快捷入口、practice menu 和产品相关推荐补齐 13 locale authored map，并完成组件 coverage
+- [x] 将产品系列与种植方式索引的面包屑、产品计数、详情和返回入口文案接入 13 locale route map，并完成 typecheck/locale coverage
+- [x] 将产品信息缺失提示抽为 13 locale map，并移除新闻/知识/案例/站内搜索的 en/zh pending 分支
+- [x] 清理 Hero、首页产品、产品详情和新闻详情的重复 en/zh 缺译分支，并让西语导航方案入口复用 authored label
+- [x] 将共享跳转入口、产品占位图 alt 和资源页面包屑统一接入 13 locale authored map
+- [x] 将方案详情 fr/es 专属重复渲染分支合并为统一 13 locale 文案 map，保留法语/西语方案名称适配和原审核边界
+- [x] 用隔离 SQLite + media 实际导入本地多语言草稿并完成 Hebrew/Portuguese 关键页面浏览器回读；验收后清理临时库，生产回填仍待单独门禁
 - [ ] P2 复合肥料缺少可靠定量规格来源；如业主没有补充正式资料，则保持无定量表，不推断数值
 - [x] P3 生产多语言路由、询盘写入、SEO 放行与部署验收（13 个语言 URL、smoke 23/23、SEO 5/5、冷启动和 readiness 回读通过）
-- [ ] P3 邮件/工单通知尚未配置；当前询盘仅写入 Payload，需另行决定人工处理或通知集成
-- [x] P3 发布前保护措施（robots/sitemap、noindex、询盘 disabled、en/zh 边界与公开 alt 审计）
-- [x] P3 SEO/询盘合同回归（`npm run test:seo` 4/4：robots/sitemap、canonical/noindex、alt、询盘关闭）
+- [x] 依赖安全候选 `81859a6` 生产部署与回读（备份、Next/Payload/Sharp 版本、systemd、health/readiness、静态资源和公网 baseline 通过；完整图片矩阵仍为 PARTIAL）
+- [ ] P3 邮件/工单通知按业主决定不配置；继续人工后台处理，隐私保留、限流和删除责任仍待补齐
+- [x] I1 建立询盘治理闸门，区分 consent/honeypot/后台状态证据与隐私、保留、速率限制、通知和 SLA 外部决策
+- [x] O1 建立运维连续性决策表，区分现有一次性备份/恢复证据与持续排程、告警、RPO/RTO 的外部决策项（见 `docs/ops-continuity-governance-2026-11-10.md`）
+- [ ] O2 当前按业主决定暂不配置生产排程；后续确认频率、保留、异地、加密和 RPO/RTO 后再实施定期联合备份
+- [x] O2 本地实现可调度的联合备份动作、状态文件和失败非零门禁；生产频率/保留/异地/告警仍待外部决策
+- [ ] O3 当前按业主决定暂不配置生产告警；后续确认渠道、接收人和阈值后再实施受控告警演练
+- [ ] O4 当前保留一次性隔离恢复证据；待 RPO/RTO 和演练周期确认后再执行周期恢复演练
+- [ ] O5 当前不配置自动回滚；后续确认停止超时、502 窗口和版本保留策略后再完成回滚验收
+- [x] P3 发布前保护措施（历史实现；保护态已于 2026-11-09 后续授权发布取代）
+- [x] P3 SEO/询盘合同回归（早期 4/4 记录；当前发布记录为 SEO 5/5、询盘启用，详见 P3 发布决策）
 - [x] 以用户提供的参考网页和 FLBOOK 浏览链接完成参考路由补充映射，明确系列页、产品类型、种植方式等尚未独立实现的差距
 - [x] 修正 FLBOOK staging 页码、笔误与审核状态口径，保持未核验 claims 为 `owner-review/false`
 - [x] 修复 FLBOOK dry-run 公开/管理员 provenance 回读边界，隔离 SQLite 全量导入验证通过并清理临时目录
@@ -107,7 +156,7 @@
 - [x] 形成独立系列页/种植方式索引的方案 A/B/C 设计文档，等待架构方案确认后实现
 - [x] 按方案 A 实现并部署独立产品系列索引/详情和种植方式索引，复用现有数据并完成生产 route/smoke/SEO/Playwright 验收
 - [x] 用 WebKit iPhone 13 与 Chrome Pixel 7 补做生产移动引擎验收，确认规格表、固定快捷栏、菜单焦点和根溢出
-- [x] 增加 `check:p2-release` 正式内容只读门禁，明确当前 10 条产品仍需 owner-review，不自动批准 claims
+- [x] 增加 `check:p2-release` 正式内容只读门禁；当前工作区结果 `ready:true`，门禁不会自动批准官方候选或改写生产数据
 - [x] 生成 P2 逐条内容审核包，明确 10 条产品的来源页、规格行数和外部签核项
 - [x] 对账并修复生产历史导入遗漏的 10 条产品 provenance/review 元数据，管理员审计 `missingCount=0` 且不改变公开安全边界
 - [x] 将管理员视图产品完整性审计纳入 `npm run audit:production-products`
@@ -126,9 +175,12 @@
 - [x] 验证官方候选清单 28 条详情页与 28 条图片 URL 全部 HTTP 200
 - [x] 生成官方候选产品审核包，标出 3 组同名冲突并明确不得按名称自动合并
 - [x] 增加官方候选合同测试，防止候选数量、来源状态或同名冲突在后续刷新时漂移
-- [x] 生成当前 P0-P3 阶段闸门审计，明确保护态、preview-only 和正式上线外部门禁
+- [x] 生成 P0-P3 阶段闸门审计；早期保护态记录已被 2026-11-09 后续 P3 正式发布取代
 - [x] 将产品审核元数据 API/HTML 隔离纳入 SEO 合同回归（生产 5/5）
 - [x] 整理 P3 外部上线决策包，明确产品、语言、询盘和 noindex 的确认格式与保护态
-- [x] 记录项目方选择继续保护态，保持 en/zh、询盘 disabled、noindex 和 owner-review 边界
+- [x] 记录早期保护态选择（历史记录，已被同日后续正式发布授权取代）
 - [x] P3 canonical、正式语言、询盘启用和 noindex 解除决策（业主授权及生产回读见 `docs/p3-release-decision-2026-11-09.md`）
+- [x] 2026-11-10 按业主授权完成 11 个外文 locale 的 Codex 全量翻译、自检、旧值保护生产回填和公网读回；2,387 字段 unchanged，0 conflict，0 missing。专业母语/法律/农艺认证作为可选后续维护项。
+- [x] 2026-11-10 新增 `scripts/backfill-localizations.mjs` 双模式脚本：默认只读预览，生产写入需要显式三重确认，支持 Payload 文档/全局回填、并发保护和审计 journal。
+- [x] 2026-11-10 生产 HTTP/SSR 矩阵复核：13 locale、54 路由模板、702 条检查；首轮 695 条通过，7 条瞬时超时经逐条重试全部通过；矩阵脚本已增加 body 超时和并发 worker 保护。
 - [x] 以 FLBOOK 浏览链接与 Haifa 参考网页重新完成来源—页面—交互—发布门禁审计，见 `docs/reference-source-audit-2026-11-09.md`

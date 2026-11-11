@@ -7,12 +7,14 @@ const text = (value: unknown, max: number) => typeof value === "string" && value
 
 export async function handleInquiryPost(request: Request) {
   if (process.env.INQUIRY_MODE !== "enabled") return NextResponse.json({ ok: false, code: "inquiry_disabled" }, { status: 503, headers: noStore });
-  let body: Record<string, unknown>;
+  let value: unknown;
   try {
-    body = await request.json() as Record<string, unknown>;
+    value = await request.json();
   } catch {
     return NextResponse.json({ ok: false, code: "invalid_json" }, { status: 400, headers: noStore });
   }
+  if (!value || typeof value !== "object" || Array.isArray(value)) return NextResponse.json({ ok: false, code: "validation_failed" }, { status: 400, headers: noStore });
+  const body = value as Record<string, unknown>;
   if (text(body.website, 200)) return NextResponse.json({ ok: false, code: "invalid_request" }, { status: 400, headers: noStore });
   const name = text(body.name, 120), email = text(body.email, 320), message = text(body.message, 4000);
   if (!name || !/^\S+@\S+\.\S+$/.test(email) || !message || body.consent !== true) return NextResponse.json({ ok: false, code: "validation_failed" }, { status: 400, headers: noStore });

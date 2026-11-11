@@ -13,7 +13,7 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const current = getLocale(locale);
-  const title = locale === "zh" ? "康姆植物营养 | 安徽康母国际化肥股份有限公司" : locale === "en" ? "KOMU Plant Nutrition | Anhui Kangmu International Fertilizer Co., Ltd." : `KOMU Plant Nutrition | ${current?.label ?? locale}`;
+  const title = locale === "zh" ? "康姆植物营养 | 安徽康坶国际化肥股份有限公司" : locale === "en" ? "KOMU Plant Nutrition | Anhui Kangmu International Fertilizer Co., Ltd." : `KOMU Plant Nutrition | ${current?.label ?? locale}`;
   const description = locale === "zh" ? "康姆植物营养产品、作物方案与种植资料。" : "KOMU plant nutrition products, official product catalog, crop solutions and grower resources.";
   return { title, description, icons: { icon: "/favicon.svg" }, robots: isPublicLocale(locale) ? { index: true, follow: true } : { index: false, follow: false } };
 }

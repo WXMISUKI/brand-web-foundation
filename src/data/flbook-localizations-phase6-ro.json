@@ -1,0 +1,95 @@
+{
+  "locales": ["ro"],
+  "products": {
+    "medium-element-granular-draft": {
+      "ro": {
+        "name": "Îngrășământ granular insolubil în apă pentru nutrienți secundari · Ca-Mg-Si-Zn",
+        "intro": "Paginile 6–7 ale broșurii prezintă un îngrășământ insolubil în apă pentru nutrienți secundari, orientat spre aportul de Ca, Mg, Si și Zn, susținerea fotosintezei, înrădăcinare, reziliența la stres și gestionarea apei în sol. Ambalajul și formula urmează pagina broșurii."
+      }
+    },
+    "organic-water-soluble-growth-draft": {
+      "ro": {
+        "name": "Îngrășământ organic solubil în apă · creștere, calitatea frunzelor și înrădăcinare",
+        "intro": "Pagina 8 a broșurii prezintă un îngrășământ organic solubil în apă indicat pentru creștere, aspectul frunzelor și înrădăcinare, cu o poziționare orientată spre fosfit și un ambalaj de aproximativ 20 kg. Descrierea urmează pagina broșurii."
+      }
+    },
+    "organic-water-soluble-quality-draft": {
+      "ro": {
+        "name": "Îngrășământ organic solubil în apă · creștere, dezvoltarea frunzelor și înrădăcinare",
+        "intro": "Pagina 9 prezintă un al doilea îngrășământ organic solubil în apă, orientat spre creștere, dezvoltarea frunzelor și înrădăcinare, cu un ambalaj de aproximativ 20 kg. Descrierea urmează pagina broșurii."
+      }
+    },
+    "organic-water-soluble-absorption-draft": {
+      "ro": {
+        "name": "Îngrășământ organic solubil în apă · recuperare și reziliență",
+        "intro": "Pagina 10 a broșurii prezintă un îngrășământ organic solubil în apă orientat spre recuperarea după stres, mărirea și colorarea fructelor, activarea solului și diverse funcții fiziologice. Ambalajul este prezentat ca având aproximativ 10 kg; rezumatul public urmează descrierea paginii."
+      }
+    },
+    "organic-water-soluble-root-draft": {
+      "ro": {
+        "name": "Îngrășământ organic solubil în apă · creșterea rădăcinilor și retenția apei",
+        "intro": "Pagina 12 a broșurii prezintă un îngrășământ organic solubil în apă orientat spre creșterea rădăcinilor și absorbția nutrienților, prezentat într-un ambalaj de aproximativ 10 kg. Descrierea urmează pagina broșurii."
+      }
+    },
+    "suspended-fertilizer-120-60-400-draft": {
+      "ro": {
+        "name": "Îngrășământ solubil în apă de tip suspensie Kangmu · 120-60-400+TE",
+        "intro": "Pagina 14 a broșurii prezintă un îngrășământ solubil în apă de tip suspensie Kangmu cu formula indicată 120-60-400+TE, orientat spre mărirea și colorarea fructelor, cu un ambalaj de 10 kg. Valorile și intervalele de utilizare urmează pagina broșurii."
+      }
+    },
+    "suspended-fertilizer-200-150-200-draft": {
+      "ro": {
+        "name": "Îngrășământ solubil în apă de tip suspensie Kangmu · 200-150-200+TE",
+        "intro": "Pagina 16 a broșurii prezintă un îngrășământ solubil în apă de tip suspensie Kangmu cu formula indicată 200-150-200+TE, orientat spre nutriție echilibrată și susținerea rădăcinilor, cu un ambalaj de 10 kg. Valorile și intervalele de utilizare urmează pagina broșurii."
+      }
+    },
+    "massive-element-liquid-quality-draft": {
+      "ro": {
+        "name": "Îngrășământ lichid solubil în apă cu macronutrienți Huangjinwu · randament și calitate",
+        "intro": "Pagina 18 a broșurii prezintă un îngrășământ lichid solubil în apă cu macronutrienți Huangjinwu, orientat spre randament și calitate, prezentat într-un ambalaj de 1000 ml. Formula și detaliile de utilizare urmează pagina broșurii."
+      }
+    },
+    "medium-element-liquid-draft": {
+      "ro": {
+        "name": "Îngrășământ lichid solubil în apă cu nutrienți secundari Huangjinwu · calciu, magneziu și siliciu",
+        "intro": "Pagina 20 a broșurii prezintă un îngrășământ lichid solubil în apă cu nutrienți secundari Huangjinwu. Descrierea menționează calciu, magneziu, siliciu și disponibilitate prelungită; ambalajul este indicat ca având 1000 ml. Consultați sursa pentru datele publicate."
+      }
+    },
+    "organic-inorganic-compound-draft": {
+      "ro": {
+        "name": "Îngrășământ compus organo-anorganic Kangmu · nutriție echilibrată și structura solului",
+        "intro": "Pagina 22 a broșurii prezintă un îngrășământ compus organo-anorganic Kangmu orientat spre nutriție echilibrată și îmbunătățirea structurii solului, prezentat într-un ambalaj de 50 kg. Rezumatul public urmează descrierea paginii."
+      }
+    }
+  },
+  "specificationLabels": {
+    "calcium-magnesium": "Calciu + magneziu (Ca+Mg)",
+    "calcium": "Calciu (Ca)",
+    "magnesium": "Magneziu (Mg)",
+    "zinc": "Zinc (Zn)",
+    "boron": "Bor (B)",
+    "silicon": "Siliciu (SiO₂)",
+    "humic-acid": "Acid humic",
+    "organic-matter": "Materie organică",
+    "moisture": "Umiditate (H₂O)",
+    "phosphite": "Fosfit (HPO₃²⁻)",
+    "ph": "pH (diluție 1:250)",
+    "particle-size-pass-rate": "Rată de trecere în funcție de dimensiunea particulelor (1.00 mm–4.75 mm)",
+    "acid-soluble-protein": "Proteină solubilă în acid",
+    "peptides": "Peptide",
+    "npk": "N-P-K",
+    "insoluble": "Materie insolubilă în apă",
+    "amino-acid": "Aminoacizi",
+    "npk-total": "N-P-K total",
+    "nitrogen": "Azot (N)",
+    "phosphate": "Fosfat (P₂O₅)",
+    "potassium": "Potasiu (K₂O)",
+    "manganese": "Mangan (Mn)",
+    "biuret": "Biuret"
+  },
+  "categoryNames": {
+    "water-soluble": "Îngrășăminte solubile în apă",
+    "medium-elements": "Nutrienți secundari",
+    "compound": "Îngrășăminte compuse"
+  }
+}

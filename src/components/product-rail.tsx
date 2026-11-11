@@ -28,5 +28,5 @@ export function ProductRail({ children, locale, sample }: { children: ReactNode;
   };
 
   const copy = homeProductMessages[locale], catalog = catalogMessages[locale];
-  return <div className="product-rail-wrap"><div ref={rail} className="home-products-grid" aria-label={sample ? catalog.sampleProducts : catalog.products}>{children}</div><div className="product-rail-controls" hidden={!edges.overflow}><button type="button" onClick={() => move(-1)} disabled={edges.start} aria-label={copy.previousProducts}>‹</button><button type="button" onClick={() => move(1)} disabled={edges.end} aria-label={copy.nextProducts}>›</button></div></div>;
+  return <div className="product-rail-wrap"><div ref={rail} role="group" className="home-products-grid" aria-label={sample ? catalog.sampleProducts : catalog.products}>{children}</div><div className="product-rail-controls" hidden={!edges.overflow}><button type="button" onClick={() => move(-1)} disabled={edges.start} aria-label={copy.previousProducts}>‹</button><button type="button" onClick={() => move(1)} disabled={edges.end} aria-label={copy.nextProducts}>›</button></div></div>;
 }

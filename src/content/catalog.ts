@@ -4,7 +4,9 @@ import { type Where } from "payload";
 import { cache } from "react";
 import type { LocaleCode } from "../i18n/locales";
 import { localizedText } from "../lib/localized-text";
-import { publicProductIntro } from "../lib/public-content";
+import { publicProductDetail, publicProductIntro } from "../lib/public-content";
+import { officialProductDisplayName } from "../data/official-product-display-names";
+import { canonicalProductSlug, productAliasSlugs, publicProductAliasSlugs, uniqueSourceMedia, type ProductSourceMedia } from "../data/catalog-product-groups";
 
 export type CatalogLocale = LocaleCode;
 export type CatalogCategory = { slug: string; name: string | null };
@@ -14,6 +16,7 @@ export type CatalogProduct = {
   name: string | null;
   intro: string | null;
   media: { src: string; alt: string | null } | null;
+  sourceMedia?: ProductSourceMedia[];
   details: { materials: string | null; packaging: string | null; uses: string | null; instructions: string | null };
   specifications: Array<{ id: string; label: string | null; unit: string | null; typical: string | null; minimum: string | null; maximum: string | null }>;
   provenance: { sourcePages: number[]; sourceRelatedPages: Array<{ page: number; role: string; note: string | null }>; sourcePreviewPath: string | null; sourceDetailPreviewPath: string | null; sourceUrl: string | null; sourceNote: string | null; reviewStatus: string | null; assetStatus: string | null; claimsVerified: boolean | null };
@@ -52,9 +55,10 @@ function product(value: unknown, locale: CatalogLocale): CatalogProduct | null {
       })
     : [];
   return {
-    slug, category: category(item.category), name: text(item.name), intro: publicProductIntro(item.intro),
+    slug, category: category(item.category), name: officialProductDisplayName(locale, slug, text(item.name)), intro: publicProductIntro(item.intro, locale),
     media: src ? { src, alt: localizedText(image?.alt, locale) } : null,
-    details: { materials: text(item.materials), packaging: text(item.packaging), uses: text(item.uses), instructions: text(item.instructions) },
+    sourceMedia: src ? [{ src, alt: localizedText(image?.alt, locale), sourceUrl: text(item.sourceUrl) }] : [],
+    details: { materials: publicProductDetail(item.materials, locale), packaging: publicProductDetail(item.packaging, locale), uses: publicProductDetail(item.uses, locale), instructions: publicProductDetail(item.instructions, locale) },
     specifications: rows.flatMap((value, index) => {
       const row = record(value);
       return row ? [{ id: text(row.id) ?? `row-${index}`, label: text(row.label), unit: text(row.unit), typical: text(row.typical), minimum: text(row.minimum), maximum: text(row.maximum) }] : [];
@@ -76,14 +80,26 @@ function product(value: unknown, locale: CatalogLocale): CatalogProduct | null {
 /** Read a bounded set for homepage and detail navigation. */
 export const getCatalogHighlights = cache(async (locale: CatalogLocale, limit: number, excludeSlug?: string): Promise<CatalogProduct[]> => {
   const payload = await getAppPayload();
-  const result = await payload.find({ collection: "products", locale, fallbackLocale: "en", depth: 1, overrideAccess: true, sort: ["-createdAt", "-id"], limit, ...(excludeSlug ? { where: { slug: { not_equals: excludeSlug } } } : {}) });
+  const conditions: Where[] = [{ slug: { not_in: publicProductAliasSlugs } }];
+  if (excludeSlug) conditions.push({ slug: { not_equals: excludeSlug } });
+  const result = await payload.find({ collection: "products", locale, fallbackLocale: "en", depth: 1, overrideAccess: true, sort: ["-createdAt", "-id"], limit, where: { and: conditions } });
   return result.docs.flatMap(item => { const mapped = product(item, locale); return mapped ? [mapped] : []; });
 });
 
 export const getCatalogProduct = cache(async (locale: CatalogLocale, slug: string): Promise<CatalogProduct | null> => {
   const payload = await getAppPayload();
-  const result = await payload.find({ collection: "products", locale, fallbackLocale: "en", depth: 1, overrideAccess: true, where: { slug: { equals: slug } }, limit: 1 });
-  return result.docs.map(item => product(item, locale)).find(item => item !== null) ?? null;
+  const canonicalSlug = canonicalProductSlug(slug);
+  const result = await payload.find({ collection: "products", locale, fallbackLocale: "en", depth: 1, overrideAccess: true, where: { slug: { equals: canonicalSlug } }, limit: 1 });
+  const primary = result.docs.map(item => product(item, locale)).find(item => item !== null);
+  if (!primary) return null;
+  const aliases = productAliasSlugs(canonicalSlug);
+  if (!aliases.length) return primary;
+  const variants = await payload.find({ collection: "products", locale, fallbackLocale: "en", depth: 1, overrideAccess: true, where: { slug: { in: aliases } }, limit: aliases.length });
+  const sourceMedia = variants.docs
+    .map(item => product(item, locale))
+    .filter((item): item is CatalogProduct => item !== null && item.name === primary.name)
+    .flatMap(item => item.sourceMedia ?? []);
+  return { ...primary, sourceMedia: uniqueSourceMedia([...(primary.sourceMedia ?? []), ...sourceMedia]) };
 });
 
 export const getCatalogOverview = cache(async (locale: CatalogLocale): Promise<CatalogOverviewData> => {
@@ -95,7 +111,7 @@ export const getCatalogOverview = cache(async (locale: CatalogLocale): Promise<C
   const categories = await Promise.all(categoryResult.docs.map(async value => {
     const item = record(value), mapped = category(value), id = item?.id;
     if (!mapped || (typeof id !== "number" && typeof id !== "string")) return null;
-    const result = await payload.find({ collection: "products", locale, fallbackLocale: "en", depth: 1, overrideAccess: true, where: { category: { equals: id } }, sort: ["-createdAt", "-id"], limit: 3 });
+    const result = await payload.find({ collection: "products", locale, fallbackLocale: "en", depth: 1, overrideAccess: true, where: { and: [{ category: { equals: id } }, { slug: { not_in: publicProductAliasSlugs } }] }, sort: ["-createdAt", "-id"], limit: 3 });
     return { ...mapped, count: result.totalDocs, products: result.docs.flatMap(entry => { const found = product(entry, locale); return found ? [found] : []; }) };
   }));
   return { source: "payload", featured: featured[0] ?? null, categories: categories.filter(item => item !== null) };
@@ -111,7 +127,8 @@ export const getCatalogResults = cache(async (locale: CatalogLocale, categorySlu
     conditions.push({ category: { equals: id } });
   }
   if (query) conditions.push({ or: [{ name: { contains: query } }, { intro: { contains: query } }] });
-  const result = await payload.find({ collection: "products", locale, fallbackLocale: "en", depth: 1, overrideAccess: true, sort: ["-createdAt", "-id"], limit, page, ...(conditions.length ? { where: { and: conditions } } : {}) });
+  conditions.push({ slug: { not_in: publicProductAliasSlugs } });
+  const result = await payload.find({ collection: "products", locale, fallbackLocale: "en", depth: 1, overrideAccess: true, sort: ["-createdAt", "-id"], limit, page, where: { and: conditions } });
   return { products: result.docs.flatMap(entry => { const found = product(entry, locale); return found ? [found] : []; }), totalDocs: result.totalDocs, totalPages: result.totalPages };
 });
 
@@ -127,7 +144,7 @@ export async function getCatalog(locale: CatalogLocale): Promise<Catalog> {
   const payload = await getAppPayload();
   const [categories, productResult] = await Promise.all([
     getCatalogCategories(locale),
-    payload.find({ collection: "products", locale, fallbackLocale: "en", pagination: false, depth: 1, overrideAccess: true }),
+    payload.find({ collection: "products", locale, fallbackLocale: "en", pagination: false, depth: 1, overrideAccess: true, where: { slug: { not_in: publicProductAliasSlugs } } }),
   ]);
   return {
     source: "payload",

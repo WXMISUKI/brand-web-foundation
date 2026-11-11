@@ -17,9 +17,17 @@ const absolute = (src) => {
 };
 
 for (const path of paths) {
-  const response = await fetch(`${base}${path}`, { signal: AbortSignal.timeout(timeoutMs) });
+  let response;
+  try {
+    response = await fetch(`${base}${path}`, { signal: AbortSignal.timeout(timeoutMs) });
+  } catch (error) {
+    warnings.push(`${path}: page fetch timeout or network error (${error?.name ?? "unknown"})`);
+    continue;
+  }
   if (!response.ok) { errors.push(`${path}: page HTTP ${response.status}`); continue; }
-  const html = await response.text();
+  let html;
+  try { html = await response.text(); }
+  catch (error) { warnings.push(`${path}: page body read timeout or network error (${error?.name ?? "unknown"})`); continue; }
   const images = [...html.matchAll(/<img\b[^>]*>/gi)].map(match => match[0]).map(tag => ({
     src: absolute(tag.match(/\bsrc=["']([^"']+)["']/i)?.[1] ?? ""),
     alt: tag.match(/\balt=["']([^"']*)["']/i)?.[1] ?? "",
@@ -37,7 +45,9 @@ await Promise.all([...media.entries()].map(async ([url, refs]) => {
   try { response = await fetch(url, { signal: AbortSignal.timeout(timeoutMs) }); }
   catch (error) { warnings.push(`${url}: media fetch timeout or network error (${error?.name ?? "unknown"})`); return; }
   if (!response.ok) { errors.push(`${url}: image HTTP ${response.status}`); return; }
-  const bytes = Buffer.from(await response.arrayBuffer());
+  let bytes;
+  try { bytes = Buffer.from(await response.arrayBuffer()); }
+  catch (error) { warnings.push(`${url}: media body read timeout or network error (${error?.name ?? "unknown"})`); return; }
   const hash = crypto.createHash("sha256").update(bytes).digest("hex");
   const row = { url, bytes: bytes.length, hash, pages: [...new Set(refs.pages)], alts: [...refs.alts] };
   resolved.push(row);

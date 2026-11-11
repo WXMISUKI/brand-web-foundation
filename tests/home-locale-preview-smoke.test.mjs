@@ -5,7 +5,7 @@ import { locales } from "../src/i18n/locales.ts";
 const previewBase = process.env.PREVIEW_EVAL_URL || "http://localhost:3123";
 const publicBase = process.env.PREVIEW_URL || "http://localhost:3118";
 
-test("CMS_EVAL exposes the homepage for all configured locales", async () => {
+test("released homepages expose all configured locales", async () => {
   for (const locale of locales) {
     const response = await fetch(new URL(`/${locale.code}`, previewBase));
     assert.equal(response.status, 200, locale.code);
@@ -17,6 +17,6 @@ test("CMS_EVAL exposes the homepage for all configured locales", async () => {
   }
 });
 
-test("homepage preview remains closed outside CMS_EVAL", async () => {
-  assert.equal((await fetch(new URL("/he", publicBase))).status, 404);
+test("released homepages remain open on the public instance", async () => {
+  assert.equal((await fetch(new URL("/he", publicBase))).status, 200);
 });

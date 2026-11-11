@@ -3,6 +3,9 @@ import { withPayload } from "@payloadcms/next/withPayload";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  outputFileTracingIncludes: {
+    "/*": ["node_modules/sharp/**/*", "node_modules/@img/**/*"],
+  },
   ...(process.env.CMS_EVAL === "1" ? { distDir: ".next-cms" } : {}),
   async redirects() {
     return [

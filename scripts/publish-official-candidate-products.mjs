@@ -3,6 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { getPayload } from "payload";
 import config from "../src/payload.config.ts";
+import { candidateEnglishCopy } from "../src/lib/official-candidate-copy.mjs";
 
 if (process.env.PUBLISH_OFFICIAL_CANDIDATES_CONFIRM !== "YES") throw new Error("Set PUBLISH_OFFICIAL_CANDIDATES_CONFIRM=YES to publish official candidate products.");
 
@@ -14,8 +15,6 @@ const mergedCandidateIds = new Set([754923, 754921, 754926, 754931, 754932, 7549
 const mediaIds = new Map();
 
 const categoryFor = (candidate) => candidate.sourceUrl.includes("/56968") || candidate.sourceUrl.includes("/56969") ? "compound" : "water-soluble";
-const englishName = (name) => `KOMU product · ${name}`;
-const safeIntro = (name) => `The official KOMU product center lists ${name}. Model, packaging, technical values and claims remain subject to formal review.`;
 const safeIntroZh = (name) => `原官网产品中心列出“${name}”。型号、包装、技术参数和 claims 仍以正式审核资料为准。`;
 
 async function findOrCreateMedia(candidate) {
@@ -26,8 +25,8 @@ async function findOrCreateMedia(candidate) {
   const response = await fetch(candidate.imageUrl, { signal: AbortSignal.timeout(20000) });
   if (!response.ok) throw new Error(`${candidate.imageUrl}: HTTP ${response.status}`);
   const bytes = Buffer.from(await response.arrayBuffer());
-  const name = { en: englishName(candidate.name), zh: candidate.name };
-  const media = await payload.create({ collection: "media", data: { alt: name }, file: { data: bytes, mimetype: response.headers.get("content-type") || "image/jpeg", name: filename, size: bytes.length }, overrideAccess: true });
+  const media = await payload.create({ collection: "media", data: { alt: candidateEnglishCopy(candidate).name }, locale: "en", file: { data: bytes, mimetype: response.headers.get("content-type") || "image/jpeg", name: filename, size: bytes.length }, overrideAccess: true });
+  await payload.update({ collection: "media", id: media.id, data: { alt: candidate.name }, locale: "zh", overrideAccess: true });
   mediaIds.set(filename, media.id);
   return media.id;
 }
@@ -46,9 +45,9 @@ for (const candidate of candidates.products) {
   const category = categoryIds.get(categoryFor(candidate));
   if (!category) throw new Error(`Missing category for ${candidate.name}`);
   const image = await findOrCreateMedia(candidate);
-  const en = englishName(candidate.name);
+  const en = candidateEnglishCopy(candidate).name;
   const name = Object.fromEntries(locales.map(locale => [locale, locale === "zh" ? candidate.name : en]));
-  const intro = Object.fromEntries(locales.map(locale => [locale === "zh" ? "zh" : locale, locale === "zh" ? safeIntroZh(candidate.name) : safeIntro(candidate.name)]));
+  const intro = Object.fromEntries(locales.map(locale => [locale, locale === "zh" ? safeIntroZh(candidate.name) : candidateEnglishCopy(candidate).intro]));
   await payload.create({ collection: "products", data: {
     slug, category, name, intro, image,
     sourceUrl: candidate.sourceUrl,

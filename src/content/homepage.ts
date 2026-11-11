@@ -2,25 +2,34 @@ import "server-only";
 import { getAppPayload } from "../lib/payload";
 import { cache } from "react";
 
-import { sampleHeroSlides, type HeroSlide } from "../data/hero-slides";
+import { fallbackFeatured, sampleHeroSlides, type HeroSlide } from "../data/hero-slides";
 import { heroMedia } from "../data/hero-media";
 import type { CatalogPageLocale } from "../i18n/catalog-messages";
 import { localizedText } from "../lib/localized-text";
+import { featuredMediaForLocale } from "../data/featured-media.mjs";
+import { correctKnownCompanyName } from "../data/company-public-copy.mjs";
+import { featuredDescriptionForDisplay } from "../data/homepage-public-copy.mjs";
 
 const object = (value: unknown): Record<string, unknown> | null => value !== null && typeof value === "object" && !Array.isArray(value) ? value as Record<string, unknown> : null;
 const text = (value: unknown): string | null => typeof value === "string" && value.trim() ? value : null;
 export type FeaturedCard = { id: string; title: string | null; description: string | null; actionLabel: string | null; actionPath: string | null; image: { src: string; alt: string | null } | null; sample: boolean };
 export const getFeaturedCards = cache(async (locale: CatalogPageLocale): Promise<FeaturedCard[]> => {
   const source = process.env.CATALOG_SOURCE || "sample";
-  if (source === "sample") return [];
+  const fallback = () => fallbackFeatured(locale).map((row, index) => ({
+    id: String(index), title: row.title, description: row.description, actionLabel: row.actionLabel, actionPath: row.actionPath,
+    image: { src: row.actionPath === "/products" ? "/images/official-site/company-products.jpg" : row.actionPath === "/about" ? "/images/official-site/company-research.jpg" : "/images/illustrative/greenhouse-scene-v1.webp", alt: "" },
+    sample: true,
+  }));
+  if (source === "sample") return fallback();
   if (source !== "payload") throw new Error(`Unsupported CATALOG_SOURCE: ${source}`);
   const payload = await getAppPayload();
   const result = await payload.findGlobal({ slug: "homepage", locale, fallbackLocale: "en", depth: 1, overrideAccess: false });
   const rows = Array.isArray(result.featured) ? result.featured : [];
+  if (!rows.length) return fallback();
   return rows.flatMap((value, index) => {
     const row = object(value); if (!row) return [];
     const media = object(row.image), src = text(media?.url);
-    return [{ id: text(row.id) ?? String(index), title: text(row.title), description: text(row.description), actionLabel: text(row.actionLabel), actionPath: text(row.actionPath), image: src ? { src, alt: localizedText(media?.alt, locale) } : null, sample: false }];
+    return [{ id: text(row.id) ?? String(index), title: text(row.title), description: featuredDescriptionForDisplay(locale, correctKnownCompanyName(text(row.description))), actionLabel: text(row.actionLabel), actionPath: text(row.actionPath), image: featuredMediaForLocale(locale, src ? { src, alt: localizedText(media?.alt, locale) } : null), sample: false }];
   });
 });
 export const getHeroSlides = cache(async (locale: CatalogPageLocale): Promise<HeroSlide[]> => {
@@ -35,7 +44,7 @@ export const getHeroSlides = cache(async (locale: CatalogPageLocale): Promise<He
     const row = object(value);
     if (!row) return [];
     const image = text(object(row.image)?.url);
-    return [{ eyebrow: text(row.eyebrow), title: text(row.title), description: text(row.description), actionLabel: text(row.actionLabel), actionPath: text(row.actionPath), image: image ?? heroMedia[0].image, sampleText: false, sampleImage: !image }];
+    return [{ eyebrow: text(row.eyebrow), title: text(row.title), description: correctKnownCompanyName(text(row.description)), actionLabel: text(row.actionLabel), actionPath: text(row.actionPath), image: image ?? heroMedia[0].image, sampleText: false, sampleImage: !image }];
   });
   return slides.length ? slides : sampleHeroSlides(locale);
 });

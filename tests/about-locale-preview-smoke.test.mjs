@@ -5,7 +5,7 @@ import { locales } from "../src/i18n/locales.ts";
 const previewBase = process.env.PREVIEW_EVAL_URL || "http://localhost:3123";
 const publicBase = process.env.PREVIEW_URL || "http://localhost:3118";
 
-test("CMS_EVAL exposes the about page for all configured locales with correct direction metadata", async () => {
+test("released about pages expose all configured locales with correct direction metadata", async () => {
   for (const locale of locales) {
     const response = await fetch(new URL(`/${locale.code}/about`, previewBase));
     assert.equal(response.status, 200, `${locale.code}/about`);
@@ -21,8 +21,8 @@ test("CMS_EVAL exposes the about page for all configured locales with correct di
   }
 });
 
-test("non-public locales remain closed outside CMS_EVAL while the approved preview slices stay open", async () => {
-  assert.equal((await fetch(new URL("/he/about", publicBase))).status, 404);
+test("released about pages remain open on public and evaluation instances", async () => {
+  assert.equal((await fetch(new URL("/he/about", publicBase))).status, 200);
   assert.equal((await fetch(new URL("/he", previewBase))).status, 200);
   assert.equal((await fetch(new URL("/he/products", previewBase))).status, 200);
 });

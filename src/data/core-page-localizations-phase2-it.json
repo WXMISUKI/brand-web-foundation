@@ -1,0 +1,45 @@
+{
+  "locales": ["it"],
+  "company": {
+    "it": {
+      "title": "Informazioni su Anhui Kangmu International Fertilizer Co., Ltd.",
+      "summary": "Ricerca, sviluppo, produzione e vendita da Bengbu, Anhui",
+      "description": "Il sito ufficiale descrive Anhui Kangmu come un'impresa tecnologica privata che integra ricerca, sviluppo, produzione e vendita di fertilizzanti, con sede nel parco industriale Huai Shang di Bengbu. La pagina fonte indica che l'azienda è stata fondata nel 2014; i dati operativi restano da verificare.",
+      "address": "Distretto di Huai Shang, Bengbu, Anhui, Cina · Jinhuai Road a est, Kaiyuan Avenue a sud",
+      "focusAreas": [
+        {"title":"Ricerca e sviluppo","description":"Il profilo aziendale ufficiale descrive un'impresa integrata di ricerca, sviluppo, produzione e vendita."},
+        {"title":"Centro prodotti","description":"Il centro prodotti ufficiale elenca categorie di fertilizzanti KOMU e singole pagine prodotto; modello e confezione restano da verificare."},
+        {"title":"Tecnologia principale","description":"Il sito ufficiale presenta una sezione dedicata alla tecnologia principale; le dichiarazioni tecniche restano soggette alla revisione del titolare."}
+      ]
+    }
+  },
+  "faq": {
+    "products": {
+      "it": {
+        "name": "Informazioni sui prodotti",
+        "questions": {
+          "specifications": {"question":"Dove posso trovare le specifiche del prodotto?","answer":"Apri una pagina prodotto per leggere la descrizione collegata alla brochure, le informazioni sulla confezione e la pagina fonte. Richiedi la scheda tecnica più recente via e-mail o WhatsApp."},
+          "documentation": {"question":"Come posso richiedere la documentazione del prodotto?","answer":"Invia il nome del prodotto e il tuo mercato a leon@kowloonglobaltrading.com oppure tramite WhatsApp al numero +852 9074 0009."}
+        }
+      }
+    },
+    "applications": {
+      "it": {
+        "name": "Applicazioni per la coltivazione",
+        "questions": {
+          "choose-products": {"question":"Come scelgo i prodotti per un'applicazione colturale?","answer":"Parti dalla coltura e dal metodo di coltivazione, poi confronta le descrizioni dei prodotti collegate alla brochure e i formati delle confezioni."},
+          "application-guidance": {"question":"Dove posso trovare indicazioni per l'applicazione?","answer":"Apri una guida colturale dal menu Growing Practice, poi usa i link ai prodotti e i contatti per pianificare il prossimo confronto."}
+        }
+      }
+    },
+    "orders": {
+      "it": {
+        "name": "Acquisti e supporto",
+        "questions": {
+          "enquiry": {"question":"Come posso inviare una richiesta su un prodotto?","answer":"Usa la pagina dei contatti oppure scrivi a leon@kowloonglobaltrading.com indicando il prodotto e il mercato di interesse."},
+          "distributor": {"question":"Come posso discutere della distribuzione?","answer":"Contatta Anhui Kangmu International Fertilizer Co., Ltd. via e-mail o WhatsApp e indica il tuo mercato e il profilo dei tuoi canali."}
+        }
+      }
+    }
+  }
+}

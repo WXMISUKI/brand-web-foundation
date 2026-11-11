@@ -19,6 +19,8 @@
 
 官方素材已复制到 `public/images/official-site/`，文件名与来源保持稳定：
 
+- `compound-category-569687.png`：来源为官方候选产品 `official-569687` 的记录图片 `http://m.zgkomu.cn/u/ac80e598-8dbe-4c6b-9ef5-29ea000a6abd/image/6391064781736303272116_small.png`；用于英文复合肥分类卡，文件与来源 URL 按字节下载，SHA-256 `8d9257695a756b46380818bc41594f07c7ba5dd741229f8db2ccd5091ea8caa9`。包装带中文，属于原始产品展示材料；该映射不改变候选审核状态或产品规格事实。
+
 - `hero-01.jpg`、`hero-02.jpg`、`hero-03.jpg`：原官网首页 `/banner?mode=jsMobile&defaultBannerId=8397` 接口返回的移动横幅；由于横幅由 JS 接口加载，未出现在静态首页 HTML 的 42 个图片 URL 中，但已保存来源接口和本地文件。
 - `company-products.jpg`、`company-laboratory.jpg`、`company-research.jpg`、`contact-office.jpg`、`technology.jpg`：原官网首页/关于/联系/核心技术页面图片。
 - `product-non-water-soluble.jpg`、`product-organic-peptide.jpg`、`product-organic-fulvic.jpg`、`product-organic-fish-peptide-protein.jpg`、`product-organic-fish-peptide-bacteria.jpg`、`product-suspended-120.jpg`、`product-suspended-200.jpg`：可与现有 10 条 FLBOOK 产品稳定对应的原官网产品卡图。

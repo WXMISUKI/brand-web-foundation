@@ -13,7 +13,7 @@ const paths = {
 };
 assert.ok(paths[kind], `unsupported resource preview path: ${kind}`);
 
-test(`CMS_EVAL exposes ${kind} for all configured locales`, async () => {
+test(`released ${kind} pages expose all configured locales`, async () => {
   for (const locale of locales) {
     const response = await fetch(new URL(`/${locale.code}/${paths[kind]}`, previewBase));
     assert.equal(response.status, 200, `${locale.code}/${paths[kind]}`);
@@ -25,6 +25,6 @@ test(`CMS_EVAL exposes ${kind} for all configured locales`, async () => {
   }
 });
 
-test("resource preview remains closed outside CMS_EVAL", async () => {
-  assert.equal((await fetch(new URL(`/he/${paths[kind]}`, publicBase))).status, 404, kind);
+test("released resource pages remain open on the public instance", async () => {
+  assert.equal((await fetch(new URL(`/he/${paths[kind]}`, publicBase))).status, 200, kind);
 });

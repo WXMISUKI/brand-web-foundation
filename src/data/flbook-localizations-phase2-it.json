@@ -1,0 +1,95 @@
+{
+  "locales": ["it"],
+  "products": {
+    "medium-element-granular-draft": {
+      "it": {
+        "name": "Fertilizzante granulare non idrosolubile per nutrienti secondari · Ca-Mg-Si-Zn",
+        "intro": "Le pagine 6–7 della brochure presentano un fertilizzante non idrosolubile per nutrienti secondari, orientato all'apporto di Ca, Mg, Si e Zn, al supporto della fotosintesi, alla radicazione, alla resilienza allo stress e alla gestione dell'acqua nel suolo. La confezione e la formula seguono la pagina della brochure."
+      }
+    },
+    "organic-water-soluble-growth-draft": {
+      "it": {
+        "name": "Fertilizzante organico idrosolubile · crescita, qualità delle foglie e radicazione",
+        "intro": "La pagina 8 della brochure presenta un fertilizzante organico idrosolubile indicato per crescita, aspetto delle foglie e radicazione, con un posizionamento orientato al fosfito e una confezione di circa 20 kg. La descrizione segue la pagina della brochure."
+      }
+    },
+    "organic-water-soluble-quality-draft": {
+      "it": {
+        "name": "Fertilizzante organico idrosolubile · crescita, sviluppo fogliare e radicazione",
+        "intro": "La pagina 9 mostra un secondo fertilizzante organico idrosolubile, orientato alla crescita, allo sviluppo fogliare e alla radicazione, con una confezione di circa 20 kg. La descrizione segue la pagina della brochure."
+      }
+    },
+    "organic-water-soluble-absorption-draft": {
+      "it": {
+        "name": "Fertilizzante organico idrosolubile · recupero e resilienza",
+        "intro": "La pagina 10 della brochure presenta un fertilizzante organico idrosolubile orientato al recupero dallo stress, all'ingrossamento e alla colorazione dei frutti, all'attivazione del suolo e a diverse funzioni fisiologiche. La confezione è mostrata da circa 10 kg; il riepilogo pubblico segue la descrizione della pagina."
+      }
+    },
+    "organic-water-soluble-root-draft": {
+      "it": {
+        "name": "Fertilizzante organico idrosolubile · crescita delle radici e ritenzione idrica",
+        "intro": "La pagina 12 della brochure presenta un fertilizzante organico idrosolubile orientato alla crescita delle radici e all'assorbimento dei nutrienti, mostrato in una confezione di circa 10 kg. La descrizione segue la pagina della brochure."
+      }
+    },
+    "suspended-fertilizer-120-60-400-draft": {
+      "it": {
+        "name": "Fertilizzante idrosolubile in sospensione Kangmu · 120-60-400+TE",
+        "intro": "La pagina 14 della brochure presenta un fertilizzante idrosolubile in sospensione Kangmu con la formula indicata 120-60-400+TE, orientato all'ingrossamento e alla colorazione dei frutti, con confezione da 10 kg. Valori e intervalli d'uso seguono la pagina della brochure."
+      }
+    },
+    "suspended-fertilizer-200-150-200-draft": {
+      "it": {
+        "name": "Fertilizzante idrosolubile in sospensione Kangmu · 200-150-200+TE",
+        "intro": "La pagina 16 della brochure presenta un fertilizzante idrosolubile in sospensione Kangmu con la formula indicata 200-150-200+TE, orientato all'alimentazione equilibrata e al sostegno delle radici, con confezione da 10 kg. Valori e intervalli d'uso seguono la pagina della brochure."
+      }
+    },
+    "massive-element-liquid-quality-draft": {
+      "it": {
+        "name": "Fertilizzante idrosolubile liquido Huangjinwu con macroelementi · resa e qualità",
+        "intro": "La pagina 18 della brochure presenta un fertilizzante idrosolubile liquido Huangjinwu con macroelementi, orientato alla resa e alla qualità, mostrato in una confezione da 1000 ml. Formula e dettagli d'uso seguono la pagina della brochure."
+      }
+    },
+    "medium-element-liquid-draft": {
+      "it": {
+        "name": "Fertilizzante idrosolubile liquido Huangjinwu con elementi secondari · calcio, magnesio e silicio",
+        "intro": "La pagina 20 della brochure presenta un fertilizzante idrosolubile liquido Huangjinwu con elementi secondari, orientato all'integrazione di calcio, magnesio e silicio con effetto nutritivo prolungato, mostrato in una confezione da 1000 ml. Formula e dettagli d'uso seguono la pagina della brochure."
+      }
+    },
+    "organic-inorganic-compound-draft": {
+      "it": {
+        "name": "Fertilizzante composto organico-inorganico Kangmu · nutrizione equilibrata e struttura del suolo",
+        "intro": "La pagina 22 della brochure presenta un fertilizzante composto organico-inorganico Kangmu orientato alla nutrizione equilibrata e al miglioramento della struttura del suolo, mostrato in una confezione da 50 kg. Il riepilogo pubblico segue la descrizione della pagina."
+      }
+    }
+  },
+  "specificationLabels": {
+    "calcium-magnesium": "Calcio + magnesio (Ca+Mg)",
+    "calcium": "Calcio (Ca)",
+    "magnesium": "Magnesio (Mg)",
+    "zinc": "Zinco (Zn)",
+    "boron": "Boro (B)",
+    "silicon": "Silicio (SiO₂)",
+    "humic-acid": "Acido umico",
+    "organic-matter": "Materia organica",
+    "moisture": "Umidità (H₂O)",
+    "phosphite": "Fosfito (HPO₃²⁻)",
+    "ph": "pH (diluizione 1:250)",
+    "particle-size-pass-rate": "Tasso di passaggio granulometrico (1.00 mm–4.75 mm)",
+    "acid-soluble-protein": "Proteina solubile in acido",
+    "peptides": "Peptidi",
+    "npk": "N-P-K",
+    "insoluble": "Materia insolubile in acqua",
+    "amino-acid": "Amminoacidi",
+    "npk-total": "N-P-K totale",
+    "nitrogen": "Azoto (N)",
+    "phosphate": "Fosfato (P₂O₅)",
+    "potassium": "Potassio (K₂O)",
+    "manganese": "Manganese (Mn)",
+    "biuret": "Biureto"
+  },
+  "categoryNames": {
+    "water-soluble": "Idrosolubili",
+    "medium-elements": "Nutrienti secondari",
+    "compound": "Fertilizzanti composti"
+  }
+}

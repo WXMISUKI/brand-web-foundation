@@ -1,0 +1,69 @@
+{
+  "locales": ["es", "fr", "pt", "ru"],
+  "company": {
+    "es": {
+      "title": "Acerca de Anhui Kangmu International Fertilizer Co., Ltd.",
+      "summary": "Investigación, desarrollo, producción y venta en Bengbu, Anhui",
+      "description": "El sitio oficial describe a Anhui Kangmu como una empresa privada de base tecnológica que integra la investigación, el desarrollo, la producción y la venta de fertilizantes, con sede en el parque industrial Huai Shang de Bengbu. La página indica que la empresa se fundó en 2014; las cifras operativas siguen pendientes de revisión.",
+      "address": "Distrito de Huai Shang, ciudad de Bengbu, Anhui, China · al este de Jinhuai Road y al sur de Kaiyuan Avenue",
+      "focusAreas": [
+        {"title":"Investigación y desarrollo","description":"El perfil oficial describe una empresa integrada de investigación, desarrollo, producción y venta."},
+        {"title":"Centro de productos","description":"El centro oficial enumera categorías de fertilizantes KOMU y páginas de productos individuales; los modelos y envases siguen pendientes de revisión."},
+        {"title":"Tecnología principal","description":"El sitio oficial cuenta con una sección de tecnología; las afirmaciones técnicas se mantienen sujetas a revisión."}
+      ]
+    },
+    "fr": {
+      "title": "À propos d’Anhui Kangmu International Fertilizer Co., Ltd.",
+      "summary": "Recherche, développement, production et vente à Bengbu, dans l’Anhui",
+      "description": "Le site officiel présente Anhui Kangmu comme une entreprise technologique privée qui intègre la recherche, le développement, la production et la vente d’engrais, située dans le parc industriel de Huai Shang à Bengbu. La page indique une création en 2014 ; les données opérationnelles restent à vérifier.",
+      "address": "District de Huai Shang, ville de Bengbu, Anhui, Chine · à l’est de Jinhuai Road et au sud de Kaiyuan Avenue",
+      "focusAreas": [
+        {"title":"Recherche et développement","description":"Le profil officiel décrit une entreprise intégrant la recherche, le développement, la production et la vente."},
+        {"title":"Centre de produits","description":"Le centre officiel répertorie les catégories d’engrais KOMU et des pages produits ; les modèles et emballages restent à vérifier."},
+        {"title":"Technologies clés","description":"Le site officiel comporte une rubrique consacrée aux technologies ; les affirmations techniques restent soumises à vérification."}
+      ]
+    },
+    "pt": {
+      "title": "Sobre a Anhui Kangmu International Fertilizer Co., Ltd.",
+      "summary": "Investigação, desenvolvimento, produção e venda em Bengbu, Anhui",
+      "description": "O site oficial descreve a Anhui Kangmu como uma empresa privada de base tecnológica que integra investigação, desenvolvimento, produção e venda de fertilizantes, situada no Parque Industrial de Huai Shang, em Bengbu. A página indica que a empresa foi fundada em 2014; os dados operacionais continuam por verificar.",
+      "address": "Distrito de Huai Shang, cidade de Bengbu, Anhui, China · a leste da Jinhuai Road e a sul da Kaiyuan Avenue",
+      "focusAreas": [
+        {"title":"Investigação e desenvolvimento","description":"O perfil oficial descreve uma empresa integrada de investigação, desenvolvimento, produção e venda."},
+        {"title":"Centro de produtos","description":"O centro oficial apresenta categorias de fertilizantes KOMU e páginas de produtos; os modelos e as embalagens continuam por rever."},
+        {"title":"Tecnologia central","description":"O site oficial apresenta uma secção dedicada à tecnologia; as alegações técnicas continuam sujeitas a revisão."}
+      ]
+    },
+    "ru": {
+      "title": "Об Anhui Kangmu International Fertilizer Co., Ltd.",
+      "summary": "Исследования, разработка, производство и продажа в Бэнбу, провинция Аньхой",
+      "description": "На официальном сайте Anhui Kangmu описывается как частное технологическое предприятие, объединяющее исследования, разработку, производство и продажу удобрений. Компания расположена в промышленном парке Хуайшан города Бэнбу. На странице указано, что компания основана в 2014 году; операционные показатели остаются на проверке.",
+      "address": "Район Хуайшан, город Бэнбу, провинция Аньхой, Китай · к востоку от Jinhuai Road и к югу от Kaiyuan Avenue",
+      "focusAreas": [
+        {"title":"Исследования и разработки","description":"В официальном профиле компания описана как предприятие, объединяющее исследования, разработку, производство и продажу."},
+        {"title":"Каталог продукции","description":"В официальном каталоге перечислены категории удобрений KOMU и отдельные страницы продуктов; модели и упаковка остаются на проверке."},
+        {"title":"Ключевые технологии","description":"На официальном сайте есть отдельный раздел о технологиях; технические заявления остаются на проверке."}
+      ]
+    }
+  },
+  "faq": {
+    "products": {
+      "es": {"name":"Información sobre productos","questions":{"specifications":{"question":"¿Dónde puedo consultar las especificaciones del producto?","answer":"Abra la página del producto para consultar la descripción vinculada al folleto, la información del envase y la página de origen. Solicite la ficha técnica más reciente por correo electrónico o WhatsApp."},"documentation":{"question":"¿Cómo puedo solicitar documentación del producto?","answer":"Envíe el nombre del producto y su mercado a leon@kowloonglobaltrading.com o por WhatsApp al +852 9074 0009."}}},
+      "fr": {"name":"Informations sur les produits","questions":{"specifications":{"question":"Où puis-je consulter les spécifications du produit ?","answer":"Consultez la page du produit pour lire la description liée à la brochure, les informations sur l’emballage et la page source. Demandez la fiche technique la plus récente par e-mail ou WhatsApp."},"documentation":{"question":"Comment demander la documentation d’un produit ?","answer":"Envoyez le nom du produit et votre marché à leon@kowloonglobaltrading.com ou par WhatsApp au +852 9074 0009."}}},
+      "pt": {"name":"Informações sobre produtos","questions":{"specifications":{"question":"Onde posso consultar as especificações do produto?","answer":"Aceda à página do produto para consultar a descrição associada à brochura, as informações da embalagem e a página de origem. Peça a ficha técnica mais recente por e-mail ou WhatsApp."},"documentation":{"question":"Como posso solicitar a documentação do produto?","answer":"Envie o nome do produto e o seu mercado para leon@kowloonglobaltrading.com ou pelo WhatsApp +852 9074 0009."}}},
+      "ru": {"name":"Информация о продукции","questions":{"specifications":{"question":"Где можно посмотреть характеристики продукта?","answer":"Откройте страницу продукта, чтобы ознакомиться с описанием по брошюре, сведениями об упаковке и страницей-источником. Запросите актуальный технический лист по электронной почте или WhatsApp."},"documentation":{"question":"Как запросить документацию на продукцию?","answer":"Отправьте название продукта и ваш рынок на leon@kowloonglobaltrading.com или в WhatsApp по номеру +852 9074 0009."}}}
+    },
+    "applications": {
+      "es": {"name":"Aplicaciones de cultivo","questions":{"choose-products":{"question":"¿Cómo elijo productos para una aplicación de cultivo?","answer":"Empiece por el cultivo y el método de producción; después compare las descripciones vinculadas al folleto y los formatos de envase."},"application-guidance":{"question":"¿Dónde puedo encontrar orientación de aplicación?","answer":"Abra una guía de cultivo desde el menú de prácticas de cultivo y utilice los enlaces de productos y los datos de contacto para continuar la conversación."}}},
+      "fr": {"name":"Applications culturales","questions":{"choose-products":{"question":"Comment choisir des produits pour une culture donnée ?","answer":"Commencez par la culture et le mode de production, puis comparez les descriptions liées à la brochure et les formats d’emballage."},"application-guidance":{"question":"Où trouver des conseils d’utilisation ?","answer":"Ouvrez un guide des cultures dans le menu « Pratiques culturales », puis utilisez les liens produits et les coordonnées pour poursuivre l’échange."}}},
+      "pt": {"name":"Aplicações de cultivo","questions":{"choose-products":{"question":"Como escolher produtos para uma aplicação de cultivo?","answer":"Comece pela cultura e pelo método de cultivo; depois compare as descrições associadas à brochura e os formatos de embalagem."},"application-guidance":{"question":"Onde posso encontrar orientações de utilização?","answer":"Abra um guia de culturas no menu de práticas de cultivo e utilize as ligações para os produtos e os contactos para continuar a conversa."}}},
+      "ru": {"name":"Применение при выращивании","questions":{"choose-products":{"question":"Как выбрать продукты для конкретной культуры или способа выращивания?","answer":"Сначала определите культуру и способ выращивания, затем сравните описания продуктов по брошюре и варианты упаковки."},"application-guidance":{"question":"Где можно найти рекомендации по применению?","answer":"Откройте руководство по культуре в разделе «Методы выращивания», затем используйте ссылки на продукты и контакты, чтобы продолжить обсуждение."}}}
+    },
+    "orders": {
+      "es": {"name":"Compras y asistencia","questions":{"enquiry":{"question":"¿Cómo puedo realizar una consulta sobre un producto?","answer":"Utilice la página de contacto o escriba a leon@kowloonglobaltrading.com e indique el producto y el mercado que le interesan."},"distributor":{"question":"¿Cómo puedo hablar sobre la distribución?","answer":"Póngase en contacto con Anhui Kangmu International Fertilizer Co., Ltd. por correo electrónico o WhatsApp e incluya información sobre su mercado y sus canales."}}},
+      "fr": {"name":"Achats et assistance","questions":{"enquiry":{"question":"Comment poser une question sur un produit ?","answer":"Utilisez la page de contact ou écrivez à leon@kowloonglobaltrading.com en indiquant le produit et le marché qui vous intéressent."},"distributor":{"question":"Comment discuter d’un partenariat de distribution ?","answer":"Contactez Anhui Kangmu International Fertilizer Co., Ltd. par e-mail ou WhatsApp en précisant votre marché et votre profil de distribution."}}},
+      "pt": {"name":"Compras e apoio","questions":{"enquiry":{"question":"Como posso fazer uma consulta sobre um produto?","answer":"Utilize a página de contacto ou envie um e-mail para leon@kowloonglobaltrading.com, indicando o produto e o mercado do seu interesse."},"distributor":{"question":"Como posso conversar sobre distribuição?","answer":"Contacte a Anhui Kangmu International Fertilizer Co., Ltd. por e-mail ou WhatsApp e indique o seu mercado e o perfil dos seus canais."}}},
+      "ru": {"name":"Покупка и поддержка","questions":{"enquiry":{"question":"Как задать вопрос о продукте?","answer":"Воспользуйтесь страницей контактов или напишите на leon@kowloonglobaltrading.com, указав интересующий продукт и рынок."},"distributor":{"question":"Как обсудить дистрибуцию продукции?","answer":"Свяжитесь с Anhui Kangmu International Fertilizer Co., Ltd. по электронной почте или WhatsApp и укажите ваш рынок и профиль каналов сбыта."}}}
+    }
+  }
+}

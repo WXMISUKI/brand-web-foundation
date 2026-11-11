@@ -5,7 +5,7 @@ import { newsMessages } from "../i18n/news-messages";
 import { aboutMessages } from "../i18n/about-messages";
 
 export function NewsListItem({ item, locale, basePath }: { item: NewsItem; locale: CatalogPageLocale; basePath?: string }) {
-  const copy = newsMessages[locale], title = item.title ?? (locale === "en" ? "Translation pending" : locale === "zh" ? "待翻译" : aboutMessages[locale].pending);
+  const copy = newsMessages[locale], title = item.title ?? aboutMessages[locale].pending;
   return <article className={item.image ? "news-list-item has-image" : "news-list-item"}>
     {item.image && <img className="news-list-image" src={item.image.src} alt={item.image.alt ?? title} loading="lazy" />}
     <div><time dateTime={item.publishedOn ?? undefined}>{item.publishedOn?.slice(0, 10) ?? copy.date}</time>

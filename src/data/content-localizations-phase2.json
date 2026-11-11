@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "approved",
+  "source": {
+    "kind": "authorized-example",
+    "locales": ["en", "zh"],
+    "note": "AI-drafted translations are based only on the existing content-staging.json en/zh source text. Metadata, source media and review boundaries remain in content-staging.json; owner and language review remain required."
+  },
+  "locales": ["it", "tr", "th"],
+  "records": {
+    "news": {
+      "nutrition-showcase": {
+        "it": {"title":"La nutrizione vegetale KOMU nelle diverse fasi di crescita","summary":"La collezione di nutrizione vegetale KOMU e la biblioteca prodotti collegata alla brochure per coltivatori e acquirenti.","body":"La collezione di nutrizione vegetale KOMU e la biblioteca prodotti collegata alla brochure per coltivatori e acquirenti.\n\nApri il catalogo prodotti per confrontare le pagine correlate e contattare il team per la documentazione aggiornata."},
+        "tr": {"title":"Büyüme aşamalarında KOMU bitki besleme","summary":"Üreticiler ve alıcılar için KOMU bitki besleme koleksiyonu ve broşür bağlantılı ürün kütüphanesi.","body":"Üreticiler ve alıcılar için KOMU bitki besleme koleksiyonu ve broşür bağlantılı ürün kütüphanesi.\n\nİlgili ürün sayfalarını karşılaştırmak ve güncel belgeler için ekiple iletişime geçmek üzere ürün kataloğunu açın."},
+        "th": {"title":"โภชนาการพืช KOMU ในทุกช่วงการเติบโต","summary":"กลุ่มผลิตภัณฑ์โภชนาการพืช KOMU และคลังผลิตภัณฑ์ที่เชื่อมโยงกับโบรชัวร์สำหรับผู้ปลูกและผู้ซื้อ","body":"กลุ่มผลิตภัณฑ์โภชนาการพืช KOMU และคลังผลิตภัณฑ์ที่เชื่อมโยงกับโบรชัวร์สำหรับผู้ปลูกและผู้ซื้อ\n\nเปิดแคตตาล็อกผลิตภัณฑ์เพื่อเปรียบเทียบหน้าที่เกี่ยวข้องและติดต่อทีมงานเพื่อขอเอกสารปัจจุบัน"}
+      },
+      "grower-dialogue": {
+        "it": {"title":"Pianificare la nutrizione delle colture con i coltivatori","summary":"Un quadro pratico di confronto tra esigenze colturali, formati delle confezioni e documentazione dei prodotti.","body":"Un quadro pratico di confronto tra esigenze colturali, formati delle confezioni e documentazione dei prodotti.\n\nApri il catalogo prodotti per confrontare le pagine correlate e contattare il team per la documentazione aggiornata."},
+        "tr": {"title":"Üreticilerle birlikte bitki beslemeyi planlamak","summary":"Bitki ihtiyaçlarını, ambalaj biçimlerini ve ürün belgelerini karşılaştırmak için pratik bir görüşme çerçevesi.","body":"Bitki ihtiyaçlarını, ambalaj biçimlerini ve ürün belgelerini karşılaştırmak için pratik bir görüşme çerçevesi.\n\nİlgili ürün sayfalarını karşılaştırmak ve güncel belgeler için ekiple iletişime geçmek üzere ürün kataloğunu açın."},
+        "th": {"title":"วางแผนโภชนาการพืชร่วมกับผู้ปลูก","summary":"กรอบการสนทนาเชิงปฏิบัติสำหรับเปรียบเทียบความต้องการของพืช รูปแบบบรรจุภัณฑ์ และเอกสารผลิตภัณฑ์","body":"กรอบการสนทนาเชิงปฏิบัติสำหรับเปรียบเทียบความต้องการของพืช รูปแบบบรรจุภัณฑ์ และเอกสารผลิตภัณฑ์\n\nเปิดแคตตาล็อกผลิตภัณฑ์เพื่อเปรียบเทียบหน้าที่เกี่ยวข้องและติดต่อทีมงานเพื่อขอเอกสารปัจจุบัน"}
+      },
+      "catalog-preview": {
+        "it": {"title":"Il catalogo prodotti KOMU è online","summary":"Le prime dieci pagine prodotto collegano pagine fonte della brochure, immagini delle confezioni e descrizioni in un unico catalogo.","body":"Le prime dieci pagine prodotto collegano pagine fonte della brochure, immagini delle confezioni e descrizioni in un unico catalogo.\n\nApri il catalogo prodotti per confrontare le pagine correlate e contattare il team per la documentazione aggiornata."},
+        "tr": {"title":"KOMU ürün kataloğu çevrimiçi","summary":"İlk on ürün sayfası broşür kaynak sayfalarını, ambalaj görsellerini ve ürün açıklamalarını tek katalogda birleştiriyor.","body":"İlk on ürün sayfası broşür kaynak sayfalarını, ambalaj görsellerini ve ürün açıklamalarını tek katalogda birleştiriyor.\n\nİlgili ürün sayfalarını karşılaştırmak ve güncel belgeler için ekiple iletişime geçmek üzere ürün kataloğunu açın."},
+        "th": {"title":"แคตตาล็อกผลิตภัณฑ์ KOMU ออนไลน์แล้ว","summary":"หน้าผลิตภัณฑ์สิบรายการแรกเชื่อมโยงหน้าแหล่งที่มาจากโบรชัวร์ ภาพบรรจุภัณฑ์ และคำอธิบายผลิตภัณฑ์ไว้ในแคตตาล็อกเดียว","body":"หน้าผลิตภัณฑ์สิบรายการแรกเชื่อมโยงหน้าแหล่งที่มาจากโบรชัวร์ ภาพบรรจุภัณฑ์ และคำอธิบายผลิตภัณฑ์ไว้ในแคตตาล็อกเดียว\n\nเปิดแคตตาล็อกผลิตภัณฑ์เพื่อเปรียบเทียบหน้าที่เกี่ยวข้องและติดต่อทีมงานเพื่อขอเอกสารปัจจุบัน"}
+      }
+    },
+    "insights": {
+      "plant-nutrition": {
+        "it": {"title":"Nutrizione vegetale per fase di crescita","summary":"Una guida sintetica per leggere le fasi colturali, il ruolo dei nutrienti e la documentazione dei prodotti.","author":"Team editoriale KOMU","body":"Una guida sintetica per leggere le fasi colturali, il ruolo dei nutrienti e la documentazione dei prodotti.\n\nUsa le pagine prodotto collegate e il canale di contatto per continuare il confronto."},
+        "tr": {"title":"Büyüme aşamasına göre bitki besleme","summary":"Bitki aşamalarını, besin rollerini ve ürün belgelerini okumak için kısa bir rehber.","author":"KOMU editör ekibi","body":"Bitki aşamalarını, besin rollerini ve ürün belgelerini okumak için kısa bir rehber.\n\nGörüşmeyi sürdürmek için bağlantılı ürün sayfalarını ve iletişim kanalını kullanın."},
+        "th": {"title":"โภชนาการพืชตามช่วงการเติบโต","summary":"คู่มือสั้น ๆ สำหรับทำความเข้าใจช่วงของพืช บทบาทของธาตุอาหาร และเอกสารผลิตภัณฑ์","author":"ทีมบรรณาธิการ KOMU","body":"คู่มือสั้น ๆ สำหรับทำความเข้าใจช่วงของพืช บทบาทของธาตุอาหาร และเอกสารผลิตภัณฑ์\n\nใช้หน้าผลิตภัณฑ์ที่เชื่อมโยงและช่องทางติดต่อเพื่อพูดคุยต่อ"}
+      },
+      "growing-practices": {
+        "it": {"title":"Pratiche di coltivazione e pianificazione della nutrizione","summary":"Come strutturare una revisione delle pratiche di coltivazione prima di confrontare le categorie di prodotto.","author":"Team editoriale KOMU","body":"Come strutturare una revisione delle pratiche di coltivazione prima di confrontare le categorie di prodotto.\n\nUsa le pagine prodotto collegate e il canale di contatto per continuare il confronto."},
+        "tr": {"title":"Yetiştirme uygulamaları ve beslenme planlaması","summary":"Ürün kategorilerini karşılaştırmadan önce yetiştirme uygulaması incelemesi nasıl yapılandırılır.","author":"KOMU editör ekibi","body":"Ürün kategorilerini karşılaştırmadan önce yetiştirme uygulaması incelemesi nasıl yapılandırılır.\n\nGörüşmeyi sürdürmek için bağlantılı ürün sayfalarını ve iletişim kanalını kullanın."},
+        "th": {"title":"แนวทางการปลูกและการวางแผนโภชนาการ","summary":"วิธีจัดโครงสร้างการทบทวนแนวทางการปลูกก่อนเปรียบเทียบหมวดหมู่ผลิตภัณฑ์","author":"ทีมบรรณาธิการ KOMU","body":"วิธีจัดโครงสร้างการทบทวนแนวทางการปลูกก่อนเปรียบเทียบหมวดหมู่ผลิตภัณฑ์\n\nใช้หน้าผลิตภัณฑ์ที่เชื่อมโยงและช่องทางติดต่อเพื่อพูดคุยต่อ"}
+      },
+      "product-knowledge": {
+        "it": {"title":"Come leggere una pagina prodotto di un fertilizzante","summary":"Una spiegazione pratica dei formati delle confezioni, dei riferimenti alle pagine fonte e della preparazione di una richiesta.","author":"Team editoriale KOMU","body":"Una spiegazione pratica dei formati delle confezioni, dei riferimenti alle pagine fonte e della preparazione di una richiesta.\n\nUsa le pagine prodotto collegate e il canale di contatto per continuare il confronto."},
+        "tr": {"title":"Bir gübre ürün sayfası nasıl okunur","summary":"Ambalaj biçimlerini, kaynak sayfa referanslarını ve talep hazırlığını açıklayan pratik bir metin.","author":"KOMU editör ekibi","body":"Ambalaj biçimlerini, kaynak sayfa referanslarını ve talep hazırlığını açıklayan pratik bir metin.\n\nGörüşmeyi sürdürmek için bağlantılı ürün sayfalarını ve iletişim kanalını kullanın."},
+        "th": {"title":"วิธีอ่านหน้าผลิตภัณฑ์ปุ๋ย","summary":"คำอธิบายเชิงปฏิบัติเกี่ยวกับรูปแบบบรรจุภัณฑ์ การอ้างอิงหน้าแหล่งที่มา และการเตรียมคำสอบถาม","author":"ทีมบรรณาธิการ KOMU","body":"คำอธิบายเชิงปฏิบัติเกี่ยวกับรูปแบบบรรจุภัณฑ์ การอ้างอิงหน้าแหล่งที่มา และการเตรียมคำสอบถาม\n\nใช้หน้าผลิตภัณฑ์ที่เชื่อมโยงและช่องทางติดต่อเพื่อพูดคุยต่อ"}
+      }
+    },
+    "cases": {
+      "fruit-growing": {
+        "it": {"title":"Pianificazione della nutrizione del frutteto","summary":"Una guida strutturata al frutteto che comprende osservazioni stagionali, formati delle confezioni e documentazione dei prodotti.","body":"Una guida strutturata al frutteto che comprende osservazioni stagionali, formati delle confezioni e documentazione dei prodotti.\n\nQuesta guida serve a scoprire i prodotti e preparare richieste; le decisioni agronomiche locali devono seguire le condizioni del campo."},
+        "tr": {"title":"Bahçe besleme planlaması","summary":"Mevsimsel gözlemleri, ambalaj biçimlerini ve ürün belgelerini kapsayan yapılandırılmış bir bahçe rehberi.","body":"Mevsimsel gözlemleri, ambalaj biçimlerini ve ürün belgelerini kapsayan yapılandırılmış bir bahçe rehberi.\n\nBu rehber ürün keşfi ve talep hazırlığı içindir; yerel agronomik kararlar tarla koşullarını izlemelidir."},
+        "th": {"title":"การวางแผนโภชนาการในสวนผลไม้","summary":"คู่มือสวนผลไม้ที่จัดโครงสร้างโดยครอบคลุมการสังเกตตามฤดูกาล รูปแบบบรรจุภัณฑ์ และเอกสารผลิตภัณฑ์","body":"คู่มือสวนผลไม้ที่จัดโครงสร้างโดยครอบคลุมการสังเกตตามฤดูกาล รูปแบบบรรจุภัณฑ์ และเอกสารผลิตภัณฑ์\n\nคู่มือนี้ใช้สำหรับทำความรู้จักผลิตภัณฑ์และเตรียมคำสอบถาม การตัดสินใจด้านเกษตรกรรมในพื้นที่ควรยึดตามสภาพแปลง"}
+      },
+      "greenhouse-growing": {
+        "it": {"title":"Pianificazione della coltivazione protetta","summary":"Una guida alla serra per organizzare condizioni colturali, fasi di crescita e discussioni sui prodotti.","body":"Una guida alla serra per organizzare condizioni colturali, fasi di crescita e discussioni sui prodotti.\n\nQuesta guida serve a scoprire i prodotti e preparare richieste; le decisioni agronomiche locali devono seguire le condizioni del campo."},
+        "tr": {"title":"Örtü altı yetiştirme planlaması","summary":"Bitki koşullarını, büyüme aşamalarını ve ürün görüşmelerini düzenlemek için bir sera rehberi.","body":"Bitki koşullarını, büyüme aşamalarını ve ürün görüşmelerini düzenlemek için bir sera rehberi.\n\nBu rehber ürün keşfi ve talep hazırlığı içindir; yerel agronomik kararlar tarla koşullarını izlemelidir."},
+        "th": {"title":"การวางแผนการปลูกในพื้นที่ควบคุม","summary":"คู่มือโรงเรือนสำหรับจัดระเบียบสภาพพืช ระยะการเติบโต และการสนทนาเกี่ยวกับผลิตภัณฑ์","body":"คู่มือโรงเรือนสำหรับจัดระเบียบสภาพพืช ระยะการเติบโต และการสนทนาเกี่ยวกับผลิตภัณฑ์\n\nคู่มือนี้ใช้สำหรับทำความรู้จักผลิตภัณฑ์และเตรียมคำสอบถาม การตัดสินใจด้านเกษตรกรรมในพื้นที่ควรยึดตามสภาพแปลง"}
+      },
+      "field-growing": {
+        "it": {"title":"Pianificazione della nutrizione delle colture in campo","summary":"Una guida alle colture in campo che collega le fasi colturali ai prodotti di nutrizione vegetale associati alla brochure.","body":"Una guida alle colture in campo che collega le fasi colturali ai prodotti di nutrizione vegetale associati alla brochure.\n\nQuesta guida serve a scoprire i prodotti e preparare richieste; le decisioni agronomiche locali devono seguire le condizioni del campo."},
+        "tr": {"title":"Tarla bitkileri besleme planlaması","summary":"Bitki aşamalarını broşür bağlantılı bitki besleme ürünleriyle ilişkilendiren bir tarla bitkileri rehberi.","body":"Bitki aşamalarını broşür bağlantılı bitki besleme ürünleriyle ilişkilendiren bir tarla bitkileri rehberi.\n\nBu rehber ürün keşfi ve talep hazırlığı içindir; yerel agronomik kararlar tarla koşullarını izlemelidir."},
+        "th": {"title":"การวางแผนโภชนาการพืชไร่","summary":"คู่มือพืชไร่ที่เชื่อมโยงระยะของพืชเข้ากับผลิตภัณฑ์โภชนาการพืชที่เชื่อมโยงกับโบรชัวร์","body":"คู่มือพืชไร่ที่เชื่อมโยงระยะของพืชเข้ากับผลิตภัณฑ์โภชนาการพืชที่เชื่อมโยงกับโบรชัวร์\n\nคู่มือนี้ใช้สำหรับทำความรู้จักผลิตภัณฑ์และเตรียมคำสอบถาม การตัดสินใจด้านเกษตรกรรมในพื้นที่ควรยึดตามสภาพแปลง"}
+      }
+    }
+  }
+}
