@@ -30,7 +30,9 @@ npm run bootstrap:admin
 
 ## systemd standalone 发布顺序
 
-2026-11-14 导航与产品图片修复：生产运行 build `C3PwoBDZ8j8x4lJA2VjEC`。构建源为 `/home/ubuntu/haifa-release-93d26bc`，以先前生产构建源为基底，仅同步提交 `93d26bc` 的导航组件和样式修复，以及部署文件检查所需的配置；不要把它当作该提交的完整仓库快照。上一运行版保存在 `/home/ubuntu/haifa-reference-rebuild/.local/backups/release-93d26bc/standalone-live`。恢复时仅切换 standalone 并重启服务，不恢复数据库或媒体。生产切换期间旧进程退出较慢，曾短暂无法连接。
+2026-11-14 询盘表单修复：生产运行 build `4A7JIgaEHzAjtzSylrDBZ`，构建源为 `/home/ubuntu/haifa-release-374f875`。候选基于上一生产构建源，仅同步提交 `374f875` 的询盘表单文件；不是分支完整仓库快照。上一运行版保存在 `/home/ubuntu/haifa-reference-rebuild/.local/backups/release-374f875/standalone-live`。恢复时仅切换 standalone 并重启服务，不恢复数据库或媒体。本次生产构建、候选独立端口及生产就绪检查通过；生产表单成功和失败状态使用浏览器拦截模拟，未创建真实生产询盘。公网只读 smoke 23/23，13 语言公开基线无错误和警告，抽样 CSS、JS 与媒体均返回 200。
+
+2026-11-14 导航与产品图片修复：当时生产运行 build `C3PwoBDZ8j8x4lJA2VjEC`。构建源为 `/home/ubuntu/haifa-release-93d26bc`，以先前生产构建源为基底，仅同步提交 `93d26bc` 的导航组件和样式修复，以及部署文件检查所需的配置；不要把它当作该提交的完整仓库快照。上一运行版保存在 `/home/ubuntu/haifa-reference-rebuild/.local/backups/release-93d26bc/standalone-live`。恢复时仅切换 standalone 并重启服务，不恢复数据库或媒体。生产切换期间旧进程退出较慢，曾短暂无法连接。
 
 2026-11-11 内容修复发布说明：当时的 standalone 构建为 `aYk82dGusLwksofqMmRJE`，对应的完整构建源在服务器 `/home/ubuntu/haifa-release-content-20261111`。本次为保护服务器原工作目录，只切换了 `.next/standalone`，未覆盖 `/home/ubuntu/haifa-reference-rebuild/src` 或根目录的依赖；**根目录源码不是当前运行版本**。下次构建应先从已核对的当前源准备新的隔离候选，不要直接从旧根目录构建以免回退。部署前备份位于 `/home/ubuntu/haifa-reference-rebuild/.local/backups/content-release-20261111-064507`；其中 `standalone-live` 为本轮发布前版本，`standalone-before-hotfix` 和 `standalone-before-label` 为中间版本。数据库 69 条精确值已更新，恢复数据库前必须评估是否会覆盖后续后台编辑。
 
