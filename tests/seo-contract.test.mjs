@@ -17,7 +17,6 @@ test("prelaunch crawler controls and sitemap are published", async () => {
   assert.match(sitemap, /https:\/\/www\.kowloonglobaltrading\.com\/en/);
   assert.match(sitemap, /https:\/\/www\.kowloonglobaltrading\.com\/zh/);
 });
-
 test("public locale pages expose current-path canonical and are indexable", async () => {
   for (const path of [
     "/en", "/en/about", "/en/contact", "/en/faq", "/en/search?q=nutrition",
@@ -54,16 +53,4 @@ test("product review metadata stays behind the authenticated API boundary", asyn
   assert.equal(api.status, 403);
   const html = await get("/en/products/medium-element-granular-draft");
   assert.doesNotMatch(html, /reviewStatus|assetStatus|claimsVerified/);
-});
-
-test("inquiry endpoint records the owner-approved public inquiry", async () => {
-  const response = await fetch(new URL("/api/inquiries", base), {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify({ name: "SEO contract", email: "seo@example.test", message: "Authorized SEO acceptance test", consent: true }),
-  });
-  assert.equal(response.status, 201);
-  const body = await response.json();
-  assert.equal(body.ok, true);
-  assert.equal(typeof body.id, "number");
 });

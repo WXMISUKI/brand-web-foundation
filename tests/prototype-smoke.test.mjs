@@ -83,7 +83,7 @@ test("search uses current-language product text", async () => {
   assert.match(noMatch, /No matching products found/);
 });
 
-test("FLBOOK product detail supports direct access, counterpart language and public source preview", async () => {
+test("FLBOOK product details support direct access and counterpart languages without exposing internal provenance", async () => {
   const slug = "medium-element-granular-draft";
   const zh = await page(`/zh/products/${slug}`);
   assert.match(visibleText(zh), /非水溶中量元素肥料/);
@@ -91,18 +91,15 @@ test("FLBOOK product detail supports direct access, counterpart language and pub
   const en = await page(`/en/products/${slug}`);
   assert.match(visibleText(en), /Non-water-soluble secondary/);
   assert.match(en, new RegExp(`href="/zh/products/${slug}"`));
-  assert.match(visibleText(en), /Brochure pages:\s*6, 7/);
-  assert.match(en, /src="\/images\/flbook-pages\/page-06-product\.jpg"/);
-  assert.match(visibleText(en), /transcribed from the owner-provided brochure link/);
-  assert.doesNotMatch(visibleText(en), /Related brochure pages|excluded-candidate/);
+  assert.match(en, /class="detail-product-visual/);
+  assert.doesNotMatch(visibleText(en), /Brochure pages:|Related brochure pages|excluded-candidate/);
   const suspended = await page("/en/products/suspended-fertilizer-120-60-400-draft");
   assert.match(visibleText(suspended), /120-60-400\+TE/);
-  assert.match(visibleText(suspended), /Brochure pages:\s*14, 15/);
-  assert.match(suspended, /src="\/images\/flbook-pages\/page-14-product\.jpg"/);
+  assert.match(suspended, /class="detail-product-visual/);
+  assert.doesNotMatch(visibleText(suspended), /Brochure pages:|excluded-candidate/);
   const compound = await page("/en/products/organic-inorganic-compound-draft");
-  assert.doesNotMatch(visibleText(compound), /Related brochure pages|excluded-candidate/);
-  assert.match(visibleText(compound), /Brochure pages:\s*22/);
-  assert.match(compound, /src="\/images\/flbook-pages\/page-22-product\.jpg"/);
+  assert.doesNotMatch(visibleText(compound), /Brochure pages:|Related brochure pages|excluded-candidate/);
+  assert.match(compound, /class="detail-product-visual/);
 });
 
 test("anonymous Payload products endpoint is disabled while public pages remain available", async () => {
@@ -220,15 +217,10 @@ test("site search combines current-language examples and preserves the keyword",
   assert.match(visibleText(await page("/en/search?q=unmatchedxyz")), /No matching content found/);
 });
 
-test("contact page exposes direct routes and records authorized inquiries", async () => {
+test("contact page exposes direct routes", async () => {
   for (const locale of ["en", "zh"]) {
     const html = await page(`/${locale}/contact`);
     assert.match(html, /mailto:leon@kowloonglobaltrading\.com/);
     assert.match(html, /https:\/\/wa\.me\/85290740009/);
   }
-  const inquiry = await fetch(new URL("/api/inquiries", base), { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ name: "Smoke test", email: "smoke@example.test", message: "Authorized inquiry acceptance test", consent: true }) });
-  assert.equal(inquiry.status, 201);
-  const body = await inquiry.json();
-  assert.equal(body.ok, true);
-  assert.equal(typeof body.id, "number");
 });

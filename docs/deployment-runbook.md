@@ -64,3 +64,7 @@ PUBLIC_BASE_URL=https://www.kowloonglobaltrading.com npm run audit:public-baseli
 ```
 
 该脚本检查 `/api/ready`、`/api/health`、匿名产品 API 403、13 locale 的 `lang/dir`、robots、sitemap、公开审核字段边界和抽样静态/媒体资源。它只执行 GET 请求，不提交询盘或修改 Payload；通过后仍需单独完成真实浏览器交互和人工内容审校。
+
+### 冒烟与询盘验证的边界
+
+`npm run test:public-readonly` 在本机模拟服务上检查 `test:smoke` 和 `test:seo` 的 HTTP 请求方法；随后可用 `PREVIEW_URL` 指向生产站运行这两个只读套件。它们检查公开页面和联系入口，不验证生产询盘写入。`npm run test:inquiry` 启动专用本地服务和隔离 SQLite 数据库，覆盖有效请求创建及无效请求拒绝；该结果不能替代真实生产数据库写入或通知送达的验证。不要将询盘 POST 加回公开验收套件。若确需生产端到端写入，应单独安排并明确授权测试记录的标识和清理方式。

@@ -13,6 +13,7 @@ export default defineConfig({
     "header-scroll.spec.mjs",
     "header-navigation-overlap.spec.mjs",
     "header-product-layout.spec.mjs",
+    "site-interactions.spec.mjs",
     "desktop-quick-links-layout.spec.mjs",
     "quick-links-availability.spec.mjs",
     "public-copy-display.spec.mjs",
