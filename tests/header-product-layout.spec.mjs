@@ -4,6 +4,7 @@ const baseURL = process.env.LOCAL_REVIEW_URL || 'http://localhost:3125';
 test('desktop menus open on click, not hover, and remain open while entering the panel', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto(`${baseURL}/en`, { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('.header')).toHaveAttribute('data-scroll-ready', 'true', { timeout: 30000 });
   for (const menu of await page.locator('.nav .navigation-menu').all()) {
     const summary = menu.locator('summary');
     await summary.hover();
@@ -37,10 +38,33 @@ test('tall product images stay inside their visual container', async ({ page }) 
   expect(dimensions.bottom).toBeGreaterThanOrEqual(-1);
 });
 
+test('the series page actual product images do not overlap card text', async ({ page }) => {
+  await page.setViewportSize({ width: 1910, height: 900 });
+  await page.goto(`${baseURL}/en/products/series/medium-elements`, { waitUntil: 'domcontentloaded' });
+  await expect(page.locator('.header')).toHaveAttribute('data-scroll-ready', 'true', { timeout: 30000 });
+  const cards = page.locator('.product-card');
+  expect(await cards.count()).toBeGreaterThan(0);
+  for (const card of await cards.all()) {
+    const image = card.locator('.product-image');
+    if (!await image.count()) continue;
+    await image.scrollIntoViewIfNeeded();
+    await expect.poll(() => image.evaluate(el => el.complete && el.naturalWidth > 0), { timeout: 30000 }).toBe(true);
+    const geometry = await card.evaluate(el => {
+      const image = el.querySelector('.product-image').getBoundingClientRect();
+      const visual = el.querySelector('.product-visual').getBoundingClientRect();
+      const copy = el.querySelector('.product-copy').getBoundingClientRect();
+      return { withinVisual: visual.bottom - image.bottom, beforeCopy: copy.top - image.bottom };
+    });
+    expect(geometry.withinVisual).toBeGreaterThanOrEqual(-1);
+    expect(geometry.beforeCopy).toBeGreaterThanOrEqual(-1);
+  }
+});
+
 test('menus support click switching, keyboard, and language selection', async ({ page }) => {
   await page.setViewportSize({ width: 1910, height: 900 });
   for (const locale of ['en', 'he', 'es']) {
     await page.goto(`${baseURL}/${locale}`, { waitUntil: 'domcontentloaded' });
+    await expect(page.locator('.header')).toHaveAttribute('data-scroll-ready', 'true', { timeout: 30000 });
     const menus = page.locator('.nav .navigation-menu');
     await menus.nth(0).locator('summary').click();
     await expect(menus.nth(0)).toHaveAttribute('open', '');
